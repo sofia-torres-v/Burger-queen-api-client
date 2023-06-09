@@ -1,33 +1,54 @@
 import './login.css'
-import Logo from '../img/logoBlanco.png'
+
+import Logo from '../assets/12.jpg'
 
 export default function Login() {
     return (
-        <>     
-        <h1> <img src={Logo} alt="logo" /></h1>       
-                <div id="globalContainer">
+        <section className="global-container">
+
+            <div className='container-columns container'>
+
+                {/* columna 1 */}
+                <div className='column-header'>
+                    <h1>Buguer Queen</h1>
+                    <figure className='content-logo'>
+                        <img src={Logo} alt="logo" />
+                    </figure>
+                </div> 
+                {/* fin column 1 */}
+                
+
+                {/* columna 2 */}
+                <div className='column-form'>
                     <h2>Login</h2>
-                    <form id="search-form" role="search">
-                        {/* <label>Email</label> */}
-                        <input
-                            id="email"
-                            aria-label="Enter email"
-                            placeholder="example@example.com"
-                            type="email"
-                            name="emailq"
-                        />
-                        {/* <label>Password</label> */}
-                        <input
-                            id="password"
-                            aria-label="Enter password"
-                            placeholder="*********"
-                            type="password"
-                            name="password"
-                        />
+
+                    <form className="login-form">
+                        <div className='group'>
+                            <input className='inp'
+                                id="email"
+                                placeholder="example@example.com"
+                                type="email"
+                                name="emailq"
+                            />
+                            <p id='messageError'>mensaje</p>
+                        </div>
+                            
+                        <div className='group'>
+                            <input className='inp'
+                                id="password"
+                                placeholder="*********"
+                                type="password"
+                                name="password"
+                            />
+                            <p id='messageError'>mensaje</p>
+                        </div>
+                            
+                        <button type="submit" className='btn'>Sign in</button>   
                     </form>
-                    <button type="submit">Sign in</button>
                 </div>
-            <div id="detail"></div>
-        </>
+                {/* final columna 2 */}
+
+            </div>
+        </section>
     );
 }

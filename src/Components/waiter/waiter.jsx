@@ -1,3 +1,4 @@
+import './waiter.css'
 export default function Mesa() {
     return (
         <>

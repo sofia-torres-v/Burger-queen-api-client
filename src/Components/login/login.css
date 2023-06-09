@@ -1,29 +1,30 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     font-size: 62.5%;
 }
 
-body{
+body {
     background-color: brown;
 }
 
-.container{
+.container {
     width: 90%;
     margin: 0 auto;
-    max-width:1200px ;
+    max-width: 1200px;
 }
 
 
 /* ------------------------ section  -----------------  */
 
-.global-container{
-    /* background-image: url('../img/fondoVertical.png'); */
-    background-color:black;
+.global-container {
+    background-image: url('../../assets/fondoVertical.png');
+    background-size: cover;
+    /* background-color: black; */
 }
 
 
@@ -31,34 +32,35 @@ body{
 /* ----------------- columna 1 ----------------  */
 
 .container-columns {
-   height: 100vh;
-   display:flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
-.column-form, .column-header{
+.column-form,
+.column-header {
     width: 100%;
     max-width: 500px;
 }
 
-h1{
-    color:#fff;
+h1 {
+    color: #fff;
     font-size: 3.8rem;
     letter-spacing: 3px;
     text-align: center;
 }
 
-.content-logo{
+.content-logo {
     width: 200px;
     /* height: 230px; */
     margin: 0 auto;
     border-bottom: 3px solid #beb9b932;
 }
 
-.content-logo img{
+.content-logo img {
     width: 100%;
     /* height: 100%; */
 }
@@ -67,7 +69,7 @@ h1{
 
 /* ------------------------ columna 2 -------------------  */
 
-h2{
+h2 {
     text-align: center;
     font-size: 3rem;
     color: #fff;
@@ -78,16 +80,16 @@ h2{
 
 
 /* ------ form ------ */
-.column-form{
+.column-form {
     /* background-color:#696969; */
     background-color: #696969a5;
     max-width: 450px;
-    padding:0 20px 40px 20px;
+    padding: 0 20px 40px 20px;
     border-radius: 20px;
     box-shadow: -1px 2px 15px rgb(0 0 0 / 50%);
 }
 
-.login-form{
+.login-form {
     width: 100%;
     max-width: 350px;
     margin: 0 auto;
@@ -95,7 +97,8 @@ h2{
     gap: 15px;
 }
 
-.inp, .btn{
+.inp,
+.btn {
     width: 100%;
     padding: 12px;
     border-radius: 18px;
@@ -103,8 +106,8 @@ h2{
     border: none;
 }
 
-.btn{
-    margin-top:15px;
+.btn {
+    margin-top: 15px;
     background-color: #F8B504;
     font-weight: bold;
 }
@@ -113,25 +116,25 @@ h2{
 
 /* --------------------Estilos tablet --------------------  */
 
- @media ( min-width:750px){
+@media (min-width:750px) {
 
-    .container-columns{
+    .container-columns {
         flex-direction: row;
-        padding:0 20px;
+        padding: 0 20px;
     }
 
-    .column-header{
+    .column-header {
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    h1{
+    h1 {
         order: 2;
         color: white;
     }
 
-    .content-logo{
+    .content-logo {
         width: 300px;
     }
- }
+}

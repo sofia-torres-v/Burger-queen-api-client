@@ -1,9 +1,8 @@
-import './login.css'
+import Logo from '../../assets/12.png';
+export default function Administrator() {
 
-import Logo from '../assets/12.jpg'
-
-export default function Login() {
     return (
+        <>
         <section className="global-container">
 
             <div className='container-columns container'>
@@ -50,5 +49,6 @@ export default function Login() {
 
             </div>
         </section>
+        </>
     );
 }

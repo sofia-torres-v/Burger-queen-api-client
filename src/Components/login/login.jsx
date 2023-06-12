@@ -2,7 +2,7 @@ import '../login/login.css'
 import { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 import Logo from '../../assets/12.png';
-// import Route from '../../route.jsx';
+// import Route from '../route/route.jsx';
 
 
 export default function Login() {
@@ -27,18 +27,21 @@ export default function Login() {
                 const accessToken = data.accessToken;
                 // Guardar el token en el localStorage
                 localStorage.setItem('token', accessToken);
+                console.log(data);
                 console.log(accessToken)
                 // Actualizar el estado del token en el componente
                 setToken(accessToken);
-                // se esta probando la navegación 
-                // Route('/waiter');
+                // Navegación 
+                if(data.user.role === 'waiter'){
+                //  Route "/waiter"
+                }
             } else {
                 // Manejar el caso si el inicio de sesión es incorrecto
                 console.log('Inicio de sesión fallido');
             }
-        } catch (error) {
+        } catch (err) {
             // Manejar errores de conexión o solicitud
-            console.log('Error:', error);
+            // console.log('Error:', error);
         }
     };
 

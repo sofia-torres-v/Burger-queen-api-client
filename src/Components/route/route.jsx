@@ -1,6 +1,6 @@
-import Login from './Components/login/login.jsx';
-import Waiter from './Components/waiter/waiter.jsx';
-import Administrator from './Components/administrator/administrator.jsx';
+import Login from '../login/login.jsx';
+import Waiter from '../waiter/waiter.jsx';
+import Administrator from '../administrator/administrator.jsx';
 import { createBrowserRouter } from "react-router-dom";
 
 

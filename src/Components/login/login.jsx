@@ -49,15 +49,15 @@ export default function Login() {
 
                 <div className='container-columns container'>
 
-                    {/* columna 1 */}
-                    <div className='column-header'>
-                        <h1>Burger Queen</h1>
-                        <figure className='content-logo'>
-                            <img src={Logo} alt="logo" />
-                        </figure>
-                    </div>
-                    {/* fin column 1 */}
-
+                {/* columna 1 */}
+                <div className='column-header'>
+                    <h1>BURGER QUEEN</h1>
+                    <figure className='content-logo'>
+                        <img src={Logo} alt="logo" />
+                    </figure>
+                </div> 
+                {/* fin column 1 */}
+                
 
                     {/* columna 2 */}
                     <div className='column-form'>

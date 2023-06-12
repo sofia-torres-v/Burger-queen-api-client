@@ -1,12 +1,12 @@
 import '../login/login.css'
 import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Logo from '../../assets/12.png';
-// import Route from '../route/route.jsx';
+// import route from '../route/route.jsx';
 
 
 export default function Login() {
-    // const navigate = Routes;
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [setToken] = useState('');
@@ -24,18 +24,20 @@ export default function Login() {
 
             if (response.ok) {
                 const data = await response.json();
+                console.log(data);
+                if (data.user.role === 'waiter') {
+                    navigate('/waiter')
+                }
+                if (data.user.role === 'admin') {
+                    navigate('/admin')
+                }
                 const accessToken = data.accessToken;
                 // Guardar el token en el localStorage
                 localStorage.setItem('token', accessToken);
-                console.log(data);
-                console.log(accessToken)
                 // Actualizar el estado del token en el componente
                 setToken(accessToken);
-                // Navegación 
-                if(data.user.role === 'waiter'){
-                //  Route "/waiter"
-                }
-            } else {
+            }
+            else {
                 // Manejar el caso si el inicio de sesión es incorrecto
                 console.log('Inicio de sesión fallido');
             }
@@ -53,15 +55,15 @@ export default function Login() {
 
                 <div className='container-columns container'>
 
-                {/* columna 1 */}
-                <div className='column-header'>
-                    <h1>BURGER QUEEN</h1>
-                    <figure className='content-logo'>
-                        <img src={Logo} alt="logo" />
-                    </figure>
-                </div> 
-                {/* fin column 1 */}
-                
+                    {/* columna 1 */}
+                    <div className='column-header'>
+                        <h1>BURGER QUEEN</h1>
+                        <figure className='content-logo'>
+                            <img src={Logo} alt="logo" />
+                        </figure>
+                    </div>
+                    {/* fin column 1 */}
+
 
                     {/* columna 2 */}
                     <div className='column-form'>

@@ -21,7 +21,7 @@ export default function Administrator() {
 
                     {/* columna 1 */}
                     <div className='column-header'>
-                        <h1>Buguer Queen</h1>
+                        <h1>ADMINISTRATOR</h1>
                         <figure className='content-logo'>
                             <img src={Logo} alt="logo" />
                         </figure>

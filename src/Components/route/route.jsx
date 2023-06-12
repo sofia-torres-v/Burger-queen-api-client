@@ -1,14 +1,18 @@
 import Login from '../login/login.jsx';
 import Waiter from '../waiter/waiter.jsx';
 import Administrator from '../administrator/administrator.jsx';
-import { createBrowserRouter } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 
+export default function route() {
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/waiter" element={<Waiter />} />
+        <Route path="/admin" element={<Administrator />} />
+      </Routes>
+    </div>
+  )
+}
 
-const Route = createBrowserRouter([
-    { path: "/", element: <Login /> },
-    { path: "/waiter", element: <Waiter /> },
-    { path: "/admin", element: <Administrator /> },
-  ]);
-
-export default Route
 

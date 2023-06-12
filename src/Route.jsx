@@ -10,6 +10,5 @@ const Route = createBrowserRouter([
     { path: "/admin", element: <Administrator /> },
   ]);
 
-
-  export default Route
+export default Route
 

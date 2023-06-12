@@ -2,7 +2,8 @@ import '../login/login.css'
 import { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 import Logo from '../../assets/12.png';
-import Route from '../../route.jsx';
+// import Route from '../../route.jsx';
+
 
 export default function Login() {
     // const navigate = Routes;
@@ -29,8 +30,8 @@ export default function Login() {
                 console.log(accessToken)
                 // Actualizar el estado del token en el componente
                 setToken(accessToken);
-
-                Route('/waiter');
+                // se esta probando la navegación 
+                // Route('/waiter');
             } else {
                 // Manejar el caso si el inicio de sesión es incorrecto
                 console.log('Inicio de sesión fallido');

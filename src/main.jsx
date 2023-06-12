@@ -1,6 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import Route from './route.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Route from './route.jsx';
 import { RouterProvider } from "react-router-dom";
 
 

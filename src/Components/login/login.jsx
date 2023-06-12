@@ -14,7 +14,7 @@ export default function Login() {
 
                 {/* columna 1 */}
                 <div className='column-header'>
-                    <h1>Burger Queen</h1>
+                    <h1>BURGER QUEEN</h1>
                     <figure className='content-logo'>
                         <img src={Logo} alt="logo" />
                     </figure>

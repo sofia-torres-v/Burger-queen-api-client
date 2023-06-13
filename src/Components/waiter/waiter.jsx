@@ -3,7 +3,7 @@ import LogoMenu from '../../assets/logoBlanco.png';
 import out from '../../assets/out.png';
 
 
-export default function menu(){
+export default function Menu(){
 
 
 
@@ -70,6 +70,7 @@ export default function menu(){
                                     <button className='btn-card'>Add</button>
                                 </div>
                             </div>
+                            
                             
                         </div>
 

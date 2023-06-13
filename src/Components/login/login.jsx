@@ -14,8 +14,8 @@ export default function Login() {
     e.preventDefault();
 
     if (email.trim() === '' || password.trim() === '') {
-      // console.log('verificando')
-      setErrorMessage('*These fields are required');
+      console.log(errorMessage);
+      setErrorMessage(errorMessage);
       return;
     }
 
@@ -53,6 +53,7 @@ export default function Login() {
       }
 
     } catch (err) {
+      console.log(err);
       setErrorMessage('Oops!, something went wrong, please reload.');
     }
   };

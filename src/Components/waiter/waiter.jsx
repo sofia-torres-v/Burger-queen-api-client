@@ -1,5 +1,5 @@
 import '../waiter/waiter.css'
-import LogoMenu from '../../assets/logoBlanco.png';
+import LogoMenu from '../../assets/logoBurger.png';
 import out from '../../assets/out.png';
 
 

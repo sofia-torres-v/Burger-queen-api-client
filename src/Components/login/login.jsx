@@ -89,7 +89,7 @@ export default function Login() {
                                     name="password"
                                     onChange={(e) => setPassword(e.target.value)}
                                 />
-                                <p id='messageError'>mensaje</p>
+                                {/* <p id='messageError'>{err.email.message}</p> */}
                             </div>
 
                             <button onClick={handleLogin} type="submit" className='btn'>Sign in</button>

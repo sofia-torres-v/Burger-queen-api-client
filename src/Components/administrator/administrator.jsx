@@ -40,7 +40,7 @@ export default function Administrator() {
                                     type="email"
                                     name="emailq"
                                 />
-                                <p id='messageError'>mensaje</p>
+
                             </div>
 
                             <div className='group'>
@@ -50,7 +50,7 @@ export default function Administrator() {
                                     type="password"
                                     name="password"
                                 />
-                                <p id='messageError'>mensaje</p>
+
                             </div>
 
                             {/* <button onClick={handleLogout} type="submit" className='btn'>Cerrar sesión</button> */}

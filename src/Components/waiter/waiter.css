@@ -66,7 +66,6 @@ html {
 /* --------------------- estilos contenido column 1 --------------------------  */
 
 /* column hijo cliente  */
-
 .group-client{
     color: #fff;
     padding-bottom: 35px;
@@ -192,8 +191,7 @@ html {
 .ticket-footer p{
     font-size: 1.8rem;
     font-weight: bold;
-    margin-right: 10px;
-    
+    margin-right: 10px;  
 }
 
 .ticket-footer span{
@@ -232,7 +230,6 @@ html {
         width: 135px;
     }
 
-/* probando */      
     .container-columns1 {
         padding-top: 20px;
         align-items: center;

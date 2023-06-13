@@ -2,103 +2,115 @@ import '../login/login.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../../assets/12.png';
-// import route from '../route/route.jsx';
-
 
 export default function Login() {
-    const navigate = useNavigate();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [setToken] = useState('');
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [setToken] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-    const handleLogin = async (e) => {
-        e.preventDefault()
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    if (email.trim() === '' || password.trim() === '') {
+      // console.log('verificando')
+      setErrorMessage('*These fields are required');
+      return;
+    }
+
+    try {
+      // console.log(JSON.stringify({ email, password }));
+      const response = await fetch('http://localhost:8080/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      // console.log(response);
+
+      if (response.ok) {
+        const data = await response.json();
+        
+        if (data.user.role === 'waiter') {
+          navigate('/waiter');
+
+        } else if (data.user.role === 'admin') {
+          navigate('/admin');
+        } 
+
+        const accessToken = data.accessToken;
         try {
-            const response = await fetch('http://localhost:8080/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                console.log(data);
-                if (data.user.role === 'waiter') {
-                    navigate('/waiter')
-                }
-                if (data.user.role === 'admin') {
-                    navigate('/admin')
-                }
-                const accessToken = data.accessToken;
-                // Guardar el token en el localStorage
-                localStorage.setItem('token', accessToken);
-                // Actualizar el estado del token en el componente
-                setToken(accessToken);
-            }
-            else {
-                // Manejar el caso si el inicio de sesión es incorrecto
-                console.log('Inicio de sesión fallido');
-            }
-        } catch (err) {
-            // Manejar errores de conexión o solicitud
-            // console.log('Error:', error);
+          localStorage.setItem('token', accessToken);
+          setToken(accessToken);
+        } catch (error) {
+          // setErrorMessage('Error al guardar el token');
         }
-    };
+
+      } else {
+        setErrorMessage('Oops! That username and password combination is incorrect. Please try again.');
+      }
+
+    } catch (err) {
+      setErrorMessage('Oops!, something went wrong, please reload.');
+    }
+  };
 
 
 
-    return (
-        <>
-            <section className="global-container">
+  return (
+    <>
+      <section className="global-container">
+        <div className="container-columns container">
+          {/* columna 1 */}
+          <div className="column-header">
+            <h1>BURGER QUEEN</h1>
+            <figure className="content-logo">
+              <img src={Logo} alt="logo" />
+            </figure>
+          </div>
+          {/* fin column 1 */}
 
-                <div className='container-columns container'>
+          {/* columna 2 */}
+          <div className="column-form">
+            <h2>Login</h2>
 
-                    {/* columna 1 */}
-                    <div className='column-header'>
-                        <h1>BURGER QUEEN</h1>
-                        <figure className='content-logo'>
-                            <img src={Logo} alt="logo" />
-                        </figure>
-                    </div>
-                    {/* fin column 1 */}
+            <form className="login-form">
+              <div className="group">
+                <input
+                  className="inp"
+                  id="email"
+                  placeholder="example@example.com"
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                {/* {errorMessage && <p id="messageError">{errorMessage}</p>} */}
+              </div>
 
+              <div className="group">
+                <input
+                  className="inp"
+                  id="password"
+                  placeholder="*********"
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                {errorMessage && <p id="messageError">{errorMessage}</p>}
+              </div>
 
-                    {/* columna 2 */}
-                    <div className='column-form'>
-                        <h2>Login</h2>
-
-                        <form className="login-form">
-                            <div className='group'>
-                                <input className='inp'
-                                    id="email"
-                                    placeholder="example@example.com"
-                                    type="email"
-                                    name="email"
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                                <p id='messageError'>mensaje</p>
-                            </div>
-
-                            <div className='group'>
-                                <input className='inp'
-                                    id="password"
-                                    placeholder="*********"
-                                    type="password"
-                                    name="password"
-                                    onChange={(e) => setPassword(e.target.value)}
-                                />
-                                {/* <p id='messageError'>{err.email.message}</p> */}
-                            </div>
-
-                            <button onClick={handleLogin} type="submit" className='btn'>Sign in</button>
-                        </form>
-                    </div>
-                    {/* final columna 2 */}
-
-                </div>
-            </section>
-        </>
-    );
+              <button onClick={handleLogin} type="submit" className="btn">
+                Sign in
+              </button>
+            </form>
+          </div>
+          {/* final columna 2 */}
+        </div>
+      </section>
+    </>
+  );
 }

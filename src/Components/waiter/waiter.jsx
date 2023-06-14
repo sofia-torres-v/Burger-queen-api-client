@@ -9,7 +9,7 @@ export default function Menu() {
 
     return (
         <>
-            <section className='global-container'>
+            <section className='global-container section'>
 
                 <figure>
                     <img src={out} className='out' alt="logo" />
@@ -19,7 +19,7 @@ export default function Menu() {
                     <img src={LogoMenu} alt="logo" />
                 </figure>
 
-                <div className='container-columns1 flex container'>
+                <div className='container-columns1  container'>
 
                     {/* columna 1 */}
                     <div className='column-menu'>
@@ -40,7 +40,7 @@ export default function Menu() {
 
                             <div className='content-list-breakfast'>
                                 <div className='card-element'>
-                                    <p>Café americano</p>
+                                    <p>American Coffee</p>
                                     <div className='group-price'>
                                         <p>$ <span>5</span></p>
                                         <button className='btn-card'>Add</button>
@@ -48,7 +48,7 @@ export default function Menu() {
                                 </div>
 
                                 <div className='card-element'>
-                                    <p>Café con leche</p>
+                                    <p>Coffee with Milk</p>
                                     <div className='group-price'>
                                         <p>$ <span>7</span></p>
                                         <button className='btn-card'>Add</button>
@@ -56,7 +56,7 @@ export default function Menu() {
                                 </div>
 
                                 <div className='card-element'>
-                                    <p>Sandwich de jamón y queso</p>
+                                    <p>Ham and Cheese Sandwich</p>
                                     <div className='group-price'>
                                         <p>$ <span>5</span></p>
                                         <button className='btn-card'>Add</button>
@@ -64,7 +64,7 @@ export default function Menu() {
                                 </div>
 
                                 <div className='card-element'>
-                                    <p>Jugo de frutas natural</p>
+                                    <p>Natural fruit juice</p>
                                     <div className='group-price'>
                                         <p>$ <span>7</span></p>
                                         <button className='btn-card'>Add</button>
@@ -85,8 +85,8 @@ export default function Menu() {
                     {/* columna 2 */}
                     <div className='column-ticket'>
                         <div className='ticket-header'>
-                            <h2 className='ticket-subtitle'>Resume de pedido</h2>
-                            <p>Cliente:</p>
+                            <h2 className='ticket-subtitle'>Order List</h2>
+                            <p>Client:</p>
                         </div>
 
                         <div className='ticket-body'>
@@ -100,7 +100,7 @@ export default function Menu() {
                         </div>
 
                         <div className='ticket-btns'>
-                            <button className='ticket-enviar active'>Enviar</button>
+                            <button className='ticket-enviar active'>Send</button>
                             <button className='ticket-cancel '>Cancel</button>
                         </div>
                     </div>

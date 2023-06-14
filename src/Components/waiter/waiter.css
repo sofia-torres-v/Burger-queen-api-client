@@ -8,23 +8,17 @@ html {
     font-size: 62.5%;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
 
 /* ------------------------ section  -----------------  */
 
-/* .vh{
-    padding-bottom: 20px;
-} */
- /* probando */
+.section{
+    padding:20px 0 90px 0;
+}
+
 .content-logo1 {
-    width: 200px;
+    width: 50%;
     margin: 0 auto;
-    border-bottom: 3px solid #beb9b932;
+    border-bottom: 3px solid #beb9b949;
 }
 
 .content-logo1 img {
@@ -32,35 +26,33 @@ html {
 }
 
 .container-columns1 {
-    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
+    gap: 20px;
     padding-top: 20px;
-}
-
-
-.flex{
-    height: auto;
-    align-items:flex-start;
 }
 
 .out{
     position: absolute;
     top: 30px;
     right: 30px;
+    width: 70px;
 }
 
 .column-menu , .column-ticket{
-    width: 100%;
-    max-width: 400px;
+    /* width: 100%;
+    max-width: 400px; */
+    flex: 1 1 400px;
+}
+
+.column-ticket{
+    flex: 1 1 320px;
+    /* width: 330px; */
 }
 
 .waiter{
     padding-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 /* --------------------- estilos contenido column 1 --------------------------  */
@@ -75,23 +67,25 @@ html {
 }
 
 .group-client label{
-    font-size: 2.2rem;
+    font-size: 2.6rem;
     font-weight: bold;
 }
 
 .group-client input{
    width: 100%;
-   padding: 8px 0;
+   padding: 18px 0;
    border-radius: 7px;
    outline: none;
-   border: 1px solid #868686;
+   background-color: #fffffff1;
 }
 
 
 /* column hijo orden pedido */
 .content-order{
     background-color: #5D5D5D;
-    min-height: 425px;
+    min-height: 790px;
+    border-radius:0 0 20px 20px;
+    padding: 0 15px;
 }
 
 .content-buttons{
@@ -99,8 +93,8 @@ html {
 }
 
 .btn-break, .btn-lunch{
-    font-size: 1.8rem;
-    padding: 8px;
+    font-size: 2.3rem;
+    padding: 18px;
     width: 50%;
     border-radius: 0 0 20px 20px;
     background-color: transparent;
@@ -110,7 +104,7 @@ html {
 }
 
 .content-list-breakfast{
-    padding: 15px;
+    padding-top: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -118,11 +112,10 @@ html {
 }
 
 .card-element{
-    background-color: #fff;
+    background-color: #fffffff1;
     border-radius: 15px;
-    width: 100%;
-    /* max-width: 300px; */
-    min-height: 140px;
+    flex: 1 1 170px;
+    min-height: 210px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -131,7 +124,7 @@ html {
 }
 
 .card-element p{
-    font-size: 1.6rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
@@ -141,11 +134,16 @@ html {
     align-items: center;
 }
 
+.group-price p{
+    font-size: 2.8rem;
+}
+
 .btn-card{
-    width: 50px;
+    width: 70px;
     background-color: #F8B504;
-    padding: 2px ;
+    padding: 10px ;
     border-radius: 7px;
+    font-size: 2.3rem;
     outline: none;
     border: none;
 }
@@ -157,11 +155,11 @@ html {
 /* ---------------column ticket--------------------- */
 
 .ticket-header, .ticket-body, .ticket-footer{
-    background-color:#fff;
+    background-color:#fffffff1;
 }
 
 .ticket-subtitle{
-    font-size: 2rem;
+    font-size: 2.8rem;
 }
 
 .ticket-subtitle, .ticket-header p{
@@ -171,12 +169,12 @@ html {
 }
 
 .ticket-header p{
-    font-size: 1.8rem;
+    font-size: 2.6rem;
     font-weight: bold;
 }
 
 .ticket-body{
-    min-height: 250px;
+    min-height: 550px;
     padding: 10px;
 }
 
@@ -189,7 +187,7 @@ html {
 }
 
 .ticket-footer p{
-    font-size: 1.8rem;
+    font-size: 2.6rem;
     font-weight: bold;
     margin-right: 10px;  
 }
@@ -206,8 +204,10 @@ html {
 }
 
 .ticket-enviar, .ticket-cancel{
-    padding: 12px;
-    border-radius: 20px;
+    padding: 18px;
+    border-radius: 30px;
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .active{
@@ -216,29 +216,12 @@ html {
 
 
 /* --------------------Estilos tablet --------------------  */
-
-@media (min-width:750px) {
-    .flex{
-        flex-direction: row;
-    }
-
-    .waiter{
-        margin-bottom: 25px;
-    }
-
-    .card-element{
-        width: 135px;
-    }
-
+@media (max-width:770px){
     .container-columns1 {
-        padding-top: 20px;
-        align-items: center;
+        flex-wrap: wrap;
     }
 
-    .column-menu, .column-ticket{
-        height: 100vh;
-        display: flex;
-        flex-direction: column;   
+    .btn-lunch{
+        font-size: 1.9rem;
     }
-
 }

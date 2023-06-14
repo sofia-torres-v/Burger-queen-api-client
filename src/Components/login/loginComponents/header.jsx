@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 import Logo from '../../../assets/12.png';
 
 const Header = () => {

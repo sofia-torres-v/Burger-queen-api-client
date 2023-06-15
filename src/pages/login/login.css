@@ -51,7 +51,7 @@ h1 {
 }
 
 .content-logo {
-    width: 150px;
+    width: 330px;
     margin: 0 auto;
     border-bottom: 3px solid #beb9b934;
 }
@@ -142,10 +142,10 @@ label.active{
 
 /* --------------------Estilos tablet --------------------  */
 
-@media (min-width:750px) {
+@media (min-width:850px) {
 
     .container-columns {
-        flex-direction: column;
+        flex-direction: row;
         padding: 0 20px;
     }
 

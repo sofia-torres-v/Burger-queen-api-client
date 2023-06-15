@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom'
 import LoginForm from './loginForm';
 
@@ -14,6 +14,21 @@ describe('LoginForm ', () => {
 
         expect(emailInput).toBeInTheDocument();
         expect(passwordInput).toBeInTheDocument();
-
     });
+
+    // it('renders content', () => {
+    //     const user = {
+    //         email: 'example@example.com',
+    //         password: '*********',
+    //     };
+    //     const component = render(<LoginForm users={user} />);
+    //     component.getByPlaceholderText('example@example.com');
+    //     component.getByPlaceholderText('*********');
+
+    // });
+
 });
+
+
+
+

@@ -9,4 +9,10 @@ export default {
     },
     testEnvironment: 'jsdom',
     setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+    setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
+    testEnvironmentOptions: {
+        // Opcional: Si necesitas compatibilidad con la API fetch, descomenta la siguiente línea
+        pretendToBeVisual: true
+      },
 };
+

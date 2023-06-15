@@ -10,7 +10,6 @@ export default function Menu() {
     return (
         <>
             <section className='global-container section'>
-
                 <figure>
                     <img src={out} className='out' alt="logo" />
                 </figure>

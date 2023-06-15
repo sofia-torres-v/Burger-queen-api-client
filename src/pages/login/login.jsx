@@ -2,8 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
-import Header from './loginComponents/header';
-import LoginForm from './loginComponents/loginForm';
+import Header from '../../Components/header/header';
+import LoginForm from '../../Components/loginForm/loginForm';
 
 const Login = () => {
   const navigate = useNavigate();

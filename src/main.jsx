@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Login from './Components/login/login.jsx';
-import Menu from './Components/waiter/waiter.jsx';
-import Administrator from './Components/administrator/administrator.jsx';
+import Login from './pages/login/login';
+import Menu from './pages/waiter/waiter';
+import Administrator from './pages/administrator/administrator';
 
 const router = createBrowserRouter([
   {

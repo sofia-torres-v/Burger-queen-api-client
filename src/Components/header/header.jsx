@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../../assets/12.png';
+import Logo from '../../assets/12.png';
 
 const Header = () => {
   return (

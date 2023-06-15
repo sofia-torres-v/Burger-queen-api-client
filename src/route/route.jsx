@@ -1,6 +1,6 @@
-import Login from '../login/login.jsx';
-import Waiter from '../waiter/waiter.jsx';
-import Administrator from '../administrator/administrator.jsx';
+import Login from '../pages/login/login.jsx'
+import Waiter from '../pages/waiter/waiter.jsx';
+import Administrator from '../pages/administrator/administrator.jsx';
 import { Routes, Route } from 'react-router-dom';
 
 export default function route() {

@@ -15,7 +15,6 @@ describe('LoginForm ', () => {
         expect(emailInput).toBeInTheDocument();
         expect(passwordInput).toBeInTheDocument();
     });
-<<<<<<< HEAD:src/Components/login/loginComponents/loginForm.test.jsx
 });
 
 describe('Login', () => {
@@ -32,22 +31,4 @@ describe('Login', () => {
     });
   });
 
-=======
-});
-
-describe('Login', () => {
-    test('renders content', () => {
-        const user = {
-            email: 'example@example.com',
-            password: '*********',
-        };
-
-        const component = render(<LoginForm users={user} />);
-        // console.log(component);
-
-        expect(component.container).toBeInTheDocument()
-    });
-});
-
->>>>>>> e29bbc718d10c41f47d9fa6f379e5c8e8721baac:src/Components/loginForm/loginForm.test.jsx
 

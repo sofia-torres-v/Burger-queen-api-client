@@ -1,9 +1,9 @@
-import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom'
-import Login from './login';
+// import React from 'react';
+// import { render, fireEvent } from '@testing-library/react';
+// import { MemoryRouter } from 'react-router-dom'
+// import Login from './login';
 
-describe('Login', () => {
+// describe('Login', () => {
     //para probar -CLaudia consultar
 //     it('should display an error message for empty fields', async () => {
 //         const { getByText, getByTestId } = render(
@@ -29,4 +29,5 @@ describe('Login', () => {
 //     expect(mockHandler).toHaveBeenCalledTimes(1);
 // });
 
-});
+// });
+

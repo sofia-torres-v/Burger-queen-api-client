@@ -15,20 +15,20 @@ describe('LoginForm ', () => {
         expect(emailInput).toBeInTheDocument();
         expect(passwordInput).toBeInTheDocument();
     });
-
-    // it('renders content', () => {
-    //     const user = {
-    //         email: 'example@example.com',
-    //         password: '*********',
-    //     };
-    //     const component = render(<LoginForm users={user} />);
-    //     component.getByPlaceholderText('example@example.com');
-    //     component.getByPlaceholderText('*********');
-
-    // });
-
 });
 
-
+describe('Login', () => {
+    test('renders content', () => {
+      const user = {
+        email:'example@example.com',
+        password:'*********',
+      };
+  
+      const component = render(<LoginForm users={user}/>);
+      // console.log(component);
+  
+      expect(component.container).toBeInTheDocument()
+    });
+  });
 
 

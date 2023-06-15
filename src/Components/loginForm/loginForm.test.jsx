@@ -19,16 +19,16 @@ describe('LoginForm ', () => {
 
 describe('Login', () => {
     test('renders content', () => {
-        const user = {
-            email: 'example@example.com',
-            password: '*********',
-        };
-
-        const component = render(<LoginForm users={user} />);
-        // console.log(component);
-
-        expect(component.container).toBeInTheDocument()
+      const user = {
+        email:'example@example.com',
+        password:'*********',
+      };
+  
+      const component = render(<LoginForm users={user}/>);
+      // console.log(component);
+  
+      expect(component.container).toBeInTheDocument()
     });
-});
+  });
 
 

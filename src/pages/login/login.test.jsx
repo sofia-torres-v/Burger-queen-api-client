@@ -1,12 +1,18 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom'
+import { render, fireEvent, screen } from '@testing-library/react';
+
+// import { MemoryRouter } from 'react-router-dom'
 import Login from './login';
 
+jest.mock('react-router-dom', ()=>{
+    return {useNavigate: jest.fn()}
+})
+
 describe('Login', () => {
-    //para probar -CLaudia consultar
+    // para probar -CLaudia consultar
+
 //     it('should display an error message for empty fields', async () => {
-//         const { getByText, getByTestId } = render(
+// //         const { getByText, getByTestId } = render(
 //             <MemoryRouter>
 //                 <Login />
 //             </MemoryRouter>
@@ -21,12 +27,14 @@ describe('Login', () => {
 
 
 // para probar - Sofia consultar
-// test('Clicking the button calls event handler once', () => {
-//     const mockHandler = jest.fn();
-//     const component = render(<Login handleLogin={mockHandler} />);
-//     const button = component.getByText('Sign in');
-//     fireEvent.click(button);
-//     expect(mockHandler).toHaveBeenCalledTimes(1);
-// });
+test('Clicking the button calls event handler once', () => {
+    const mockHandler = jest.fn();
+    const component = render(<Login handleLogin={mockHandler} />);
+    screen.debug()
+    const button = component.getByText('Sign in');
+    fireEvent.click(button);
+    expect(mockHandler).toHaveBeenCalledTimes(1);
+});
 
 });
+

@@ -21,6 +21,7 @@
     "@babel/preset-react": "^7.22.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
@@ -36,5 +37,17 @@
     "jest-environment-jsdom": "^29.5.0",
     "jsdom": "^22.1.0",
     "vite": "^4.3.9"
-  }
+  },
+  "description": "* [1. Preámbulo](#1-preámbulo)\r * [2. Resumen del proyecto](#2-resumen-del-proyecto)\r * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)\r * [4. Consideraciones](#4-consideraciones)\r * [5. Criterios de aceptación del proyecto](#5-criterios-de-aceptación-del-proyecto)\r * [6. Despliegue](#6-despliegue)\r * [7. Pistas / tips](#7-pistas--tips)",
+  "main": "jest.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClauOrtiiz/Burger-queen-api-client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClauOrtiiz/Burger-queen-api-client/issues"
+  },
+  "homepage": "https://github.com/ClauOrtiiz/Burger-queen-api-client#readme"
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import CardElement from '../../Components/cardElement/cardElement';
 import '../waiter/waiter.css';
 import LogoMenu from '../../assets/logoBurger.png';
-import out from '../../assets/out.jpg';
+import out from '../../assets/out.png';
 
 
 
@@ -37,7 +37,7 @@ export default function Menu() {
         </figure>
 
         <figure className='content-logo1 waiter'>
-          <img src={LogoMenu} alt="logo" />
+          <img src={LogoMenu} alt="logo"  />
         </figure>
 
         <div className='container-columns1 container'>
@@ -101,5 +101,4 @@ export default function Menu() {
     </>
   );
 }
-
 

@@ -31,13 +31,32 @@ html {
     gap: 20px;
     padding-top: 20px;
 }
-
+/* 
 .out{
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 25px;
+    right: 40px;
+    color: #fff;
+    width: 70px;
+} */
+
+.box-out{
+    /* background-color: #F8B504; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 20px;
+}
+.out{
     width: 70px;
 }
+.text-out{
+    color: #fff;
+    font-size: 25px;
+    /* background-color: blue; */
+}
+
 
 .column-menu , .column-ticket{
     /* width: 100%;
@@ -73,10 +92,11 @@ html {
 
 .group-client input{
    width: 100%;
-   padding: 18px 0;
+   padding: 18px 14px;
    border-radius: 7px;
    outline: none;
    background-color: #fffffff1;
+   font-size: 2.6rem;
 }
 
 
@@ -86,6 +106,12 @@ html {
     min-height: 790px;
     border-radius:0 0 20px 20px;
     padding: 0 15px;
+}
+
+.sub-title{
+    /* background-color: aqua; */
+    border-bottom: 2px solid #f0eeee;
+
 }
 
 .content-buttons{
@@ -100,7 +126,8 @@ html {
     background-color: transparent;
     color: #fff;
     outline: none;
-    border: none;
+    border: 1px solid #f0eeee;
+
 }
 
 .content-list-breakfast{
@@ -114,13 +141,14 @@ html {
 .card-element{
     background-color: #fffffff1;
     border-radius: 15px;
-    flex: 1 1 170px;
+    flex: 1 1 167px;
     min-height: 210px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 50px;
     padding: 10px;
+    text-align: center;
 }
 
 .card-element p{
@@ -174,7 +202,7 @@ html {
 }
 
 .ticket-body{
-    min-height: 550px;
+    min-height: 570px;
     padding: 10px;
 }
 

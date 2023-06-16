@@ -5,6 +5,7 @@ import './login.css';
 import Header from '../../Components/header/header';
 import LoginForm from '../../Components/loginForm/loginForm';
 
+
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -27,6 +28,7 @@ const Login = () => {
         },
         body: JSON.stringify({ email, password }),
       });
+      console.log(response)
 
       if (response.ok) {
         const data = await response.json();
@@ -54,6 +56,7 @@ const Login = () => {
 
   return (
     <section className="global-container">
+      
       <div className="container-columns container">
         <Header />
         <LoginForm

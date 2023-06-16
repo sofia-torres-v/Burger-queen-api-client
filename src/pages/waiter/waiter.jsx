@@ -2,14 +2,38 @@ import React from 'react';
 import CardElement from '../../Components/cardElement/cardElement';
 import '../waiter/waiter.css';
 import LogoMenu from '../../assets/logoBurger.png';
-import out from '../../assets/out.png';
+import out from '../../assets/out.jpg';
+
+
+
+
+
 
 export default function Menu() {
+
+  // async function appGet(pathname) {
+  //   const token = localStorage.getItem("loginToken")
+  //   const response = await fetch(`http://localhost:8080/${pathname}`, {
+  //       method: 'GET',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'autorization': `Bearer${token}`
+  //       },
+  //     });
+
+  //     const ResData = await response.json()
+  //     return ResData;
+  // }
+
+
+
+
   return (
     <>
       <section className='global-container section'>
-        <figure>
+        <figure className='box-out'>
           <img src={out} className='out' alt="logo" />
+          <p className='text-out'>Logout</p>
         </figure>
 
         <figure className='content-logo1 waiter'>
@@ -17,19 +41,21 @@ export default function Menu() {
         </figure>
 
         <div className='container-columns1 container'>
-          {/* columna 1 */}
+
           <div className='column-menu'>
-            {/* contendedor del input del cliente */}
+
             <div className='group-client'>
-              <label htmlFor=""> Client:</label>
-              <input type="text" />
+              {/* <label htmlFor=""> Client:</label> */}
+              <input type="text" placeholder='Clients name' />
             </div>
 
             {/* contenedor de los pedidos en general*/}
             <div className='content-order'>
+
+              <h2 className='sub-title'>Menu option</h2>
               <div className='content-buttons'>
                 <button className='btn-break active'>Breakfast</button>
-                <button className='btn-lunch'>Lunches/Dinners</button>
+                <button className='btn-lunch'>Lunch/Dinner</button>
               </div>
 
               <div className='content-list-breakfast'>
@@ -52,7 +78,7 @@ export default function Menu() {
           {/* columna 2 */}
           <div className='column-ticket'>
             <div className='ticket-header'>
-              <h2 className='ticket-subtitle'>Order List</h2>
+              <h2 className='ticket-subtitle'>Orders to serve</h2>
               <p>Client:</p>
             </div>
 

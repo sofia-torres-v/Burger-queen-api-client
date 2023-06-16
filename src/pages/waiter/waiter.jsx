@@ -2,18 +2,25 @@ import React from 'react';
 import CardElement from '../../Components/cardElement/cardElement';
 import '../waiter/waiter.css';
 import LogoMenu from '../../assets/logoBurger.png';
-import out from '../../assets/out.png';
+import Logout from '../../Components/Logout/logout';
+import { useState } from 'react';
 
 export default function Menu() {
+//nombre del cliente
+  const [firstName, setFirstName] = useState('');
+  const [fullName, setFullName] = useState('');
+  function manageNameChange(e) {
+    setFirstName(e.target.value);
+    setFullName(firstName);
+  }
+
+  
   return (
     <>
       <section className='global-container section'>
-        <figure>
-          <img src={out} className='out' alt="logo" />
-        </figure>
-
+        <Logout />
         <figure className='content-logo1 waiter'>
-          <img src={LogoMenu} alt="logo" />
+          <img src={LogoMenu} alt="logo"  />
         </figure>
 
         <div className='container-columns1 container'>
@@ -22,7 +29,13 @@ export default function Menu() {
             {/* contendedor del input del cliente */}
             <div className='group-client'>
               <label htmlFor=""> Client:</label>
-              <input type="text" />
+              <input
+              type="text"
+              id="inpClient"
+              placeholder="Client's name: example Ana"
+              name="client"
+              value={firstName}
+              onChange={manageNameChange} />
             </div>
 
             {/* contenedor de los pedidos en general*/}
@@ -53,7 +66,7 @@ export default function Menu() {
           <div className='column-ticket'>
             <div className='ticket-header'>
               <h2 className='ticket-subtitle'>Order List</h2>
-              <p>Client:</p>
+              <p>Client:{fullName}</p>
             </div>
 
             <div className='ticket-body'>

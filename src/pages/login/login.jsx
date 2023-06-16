@@ -30,7 +30,6 @@ const Login = () => {
 
       if (response.ok) {
         const data = await response.json();
-
         if (data.user.role === 'waiter') {
           navigate('/waiter');
         } else if (data.user.role === 'admin') {

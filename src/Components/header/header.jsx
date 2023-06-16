@@ -6,8 +6,7 @@ const Header = () => {
     <div className="column-header">
       {/* <h1>BURGER QUEEN</h1> */}
       <figure className="content-logo">
-        <img src={Logo} alt="logo" />
-        <h1>BURGER QUEEN</h1>
+        {/* <img src={Logo} alt="logo" /> */}
       </figure>
     </div>
   );

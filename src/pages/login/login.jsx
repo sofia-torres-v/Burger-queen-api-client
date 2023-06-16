@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import './login.css';
 import Header from '../../Components/header/header';
 import LoginForm from '../../Components/loginForm/loginForm';
+import Logo from '../../Components/logo/logo';
+
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -27,6 +30,7 @@ const Login = () => {
         },
         body: JSON.stringify({ email, password }),
       });
+      console.log(response)
 
       if (response.ok) {
         const data = await response.json();
@@ -53,6 +57,7 @@ const Login = () => {
 
   return (
     <section className="global-container">
+      <Logo />  
       <div className="container-columns container">
         <Header />
         <LoginForm

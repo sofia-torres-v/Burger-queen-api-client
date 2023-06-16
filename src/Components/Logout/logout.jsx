@@ -12,12 +12,10 @@ const Logout = () => {
 
     return (
         <div className='btn-logout-container'onClick={logout}>
-            <figure>
+            <figure className='box-out'>
                 <img src={out} className='out' alt="logo"/>
+                {/* <p className='text-out'>Logout</p> */}
             </figure>
-            {/* <button className="btn-logout" >
-                Logout
-            </button> */}
         </div>
     );
 };

@@ -20,13 +20,19 @@ html {
 /* ------------------------ section  -----------------  */
 
 .global-container {
-    background-image: url('../../assets/fondoVertical.png');
+    background-image: url('../../assets/fondoV.png');
     background-size: cover;  
+    position: relative;
 }
 
 
 /* ----------------- columna 1 ----------------  */
-
+.logoBq{
+    /* background-color: #F8B504; */
+   position: absolute;
+   top: 140px;
+   right: 130px;
+}
 .container-columns {
     height: 100vh;
     display: flex;
@@ -41,6 +47,7 @@ html {
 .column-header {
     width: 100%;
     max-width: 500px;
+    /* text-align: center; */
 }
 
 h1 {
@@ -53,7 +60,7 @@ h1 {
 .content-logo {
     width: 150px;
     margin: 0 auto;
-    border-bottom: 3px solid #beb9b934;
+    /* border-bottom: 3px solid #beb9b934; */
 }
 
 .content-logo img {
@@ -77,9 +84,9 @@ h2 {
     background-color: #696969a5;
     max-width: 480px;
     padding: 10px 20px 12px 20px;
+    
     border-radius: 20px;
     box-shadow: -1px 2px 15px rgb(0 0 0 / 50%);
-    /* margin-top: 15px; */
 }
 
 .login-form {
@@ -96,56 +103,78 @@ h2 {
     width: 100%;
     padding: 16px;
     border-radius: 18px;
+    font-size: 2rem;
     outline: none;
     border: none;
 }
 
 .inp::placeholder {
     color: rgb(130, 126, 126);
-    font-style:normal;
-    font-size: 1.8rem;
   }
 
 .btn {
-    margin-top: 15px;
     background-color: #F8B504;
     font-weight: bold;
     font-size: 1.8rem;
 }
 
-/* .group{
-   background-color: aqua;
-   position: relative;
-}
 
-.group label{
-    font-size: 1.7rem;
-    color: #024634;
-    position: absolute;
-    top: 20%;
-    left: 10px;
-}
-
-label.active{
-    top: -30px;
-} */
 
 #messageError{
     color: rgb(74, 16, 16);
     font-size: 2.3rem;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 16px;
     background-color: rgba(255, 0, 0, 0.085);
     padding: 12px;
+    /* opacity: 0;
+    visibility: hidden; */
 }
+
+/* .error #messageError{
+    opacity: 1;
+    visibility: visible;
+} */
 
 
 /* --------------------Estilos tablet --------------------  */
 
-@media (min-width:750px) {
+@media (min-width:750px){
+
+    
+    .column-form{
+        max-width: 570px;
+        padding: 15px 20px 65px 20px;
+    }
+
+    .column-header h1{
+        font-size: 4.5rem;
+    }
+
+    .content-logo{
+        width: 330px;
+    }
+
+    .login-form{
+        max-width: 450px;
+        gap: 35px;
+    }
+
+    .inp,
+    .btn { 
+    padding: 25px;
+   }
+
+}
+
+
+
+
+
+@media (min-width:850px) {
 
     .container-columns {
-        flex-direction: column;
+        flex-direction: row;
         padding: 0 20px;
     }
 
@@ -160,7 +189,7 @@ label.active{
     }
 
     .content-logo {
-        width: 300px;
+        width: 440px;
     }
 
     .column-form{

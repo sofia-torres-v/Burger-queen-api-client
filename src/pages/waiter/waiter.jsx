@@ -5,8 +5,25 @@ import LogoMenu from '../../assets/logoBurger.png';
 import Logout from '../../Components/Logout/logout';
 import { useState } from 'react';
 
+
+
+
+
 export default function Menu() {
-//nombre del cliente
+  // async function appGet(pathname) {
+  //   const token = localStorage.getItem("loginToken")
+  //   const response = await fetch(`http://localhost:8080/${pathname}`, {
+  //       method: 'GET',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'autorization': `Bearer${token}`
+  //       },
+  //     });
+  //     const ResData = await response.json()
+  //     return ResData;
+  // }
+
+  //nombre del cliente
   const [firstName, setFirstName] = useState('');
   const [fullName, setFullName] = useState('');
   function manageNameChange(e) {
@@ -14,25 +31,23 @@ export default function Menu() {
     setFullName(firstName);
   }
 
-  
+
   return (
     <>
       <section className='global-container section'>
-        <Logout />
+           <Logout/> 
         <figure className='content-logo1 waiter'>
           <img src={LogoMenu} alt="logo"  />
         </figure>
 
         <div className='container-columns1 container'>
-          {/* columna 1 */}
+
           <div className='column-menu'>
-            {/* contendedor del input del cliente */}
+
             <div className='group-client'>
-              <label htmlFor=""> Client:</label>
-              <input
-              type="text"
+              {/* <label htmlFor=""> Client:</label> */}
+              <input type="text" placeholder="Client's name" 
               id="inpClient"
-              placeholder="Client's name: example Ana"
               name="client"
               value={firstName}
               onChange={manageNameChange} />
@@ -40,9 +55,11 @@ export default function Menu() {
 
             {/* contenedor de los pedidos en general*/}
             <div className='content-order'>
+
+              <h2 className='sub-title'>Menu option</h2>
               <div className='content-buttons'>
                 <button className='btn-break active'>Breakfast</button>
-                <button className='btn-lunch'>Lunches/Dinners</button>
+                <button className='btn-lunch'>Lunch/Dinner</button>
               </div>
 
               <div className='content-list-breakfast'>

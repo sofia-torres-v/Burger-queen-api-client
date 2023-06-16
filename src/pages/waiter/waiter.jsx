@@ -2,15 +2,14 @@ import React from 'react';
 import CardElement from '../../Components/cardElement/cardElement';
 import '../waiter/waiter.css';
 import LogoMenu from '../../assets/logoBurger.png';
-import out from '../../assets/out.png';
-
+import Logout from '../../Components/Logout/logout';
+import { useState } from 'react';
 
 
 
 
 
 export default function Menu() {
-
   // async function appGet(pathname) {
   //   const token = localStorage.getItem("loginToken")
   //   const response = await fetch(`http://localhost:8080/${pathname}`, {
@@ -20,22 +19,23 @@ export default function Menu() {
   //         'autorization': `Bearer${token}`
   //       },
   //     });
-
   //     const ResData = await response.json()
   //     return ResData;
   // }
 
-
+  //nombre del cliente
+  const [firstName, setFirstName] = useState('');
+  const [fullName, setFullName] = useState('');
+  function manageNameChange(e) {
+    setFirstName(e.target.value);
+    setFullName(firstName);
+  }
 
 
   return (
     <>
       <section className='global-container section'>
-        <figure className='box-out'>
-          <img src={out} className='out' alt="logo" />
-          <p className='text-out'>Logout</p>
-        </figure>
-
+           <Logout/> 
         <figure className='content-logo1 waiter'>
           <img src={LogoMenu} alt="logo"  />
         </figure>
@@ -46,7 +46,11 @@ export default function Menu() {
 
             <div className='group-client'>
               {/* <label htmlFor=""> Client:</label> */}
-              <input type="text" placeholder='Clients name' />
+              <input type="text" placeholder="Client's name" 
+              id="inpClient"
+              name="client"
+              value={firstName}
+              onChange={manageNameChange} />
             </div>
 
             {/* contenedor de los pedidos en general*/}
@@ -78,8 +82,8 @@ export default function Menu() {
           {/* columna 2 */}
           <div className='column-ticket'>
             <div className='ticket-header'>
-              <h2 className='ticket-subtitle'>Orders to serve</h2>
-              <p>Client:</p>
+              <h2 className='ticket-subtitle'>Order List</h2>
+              <p>Client:{fullName}</p>
             </div>
 
             <div className='ticket-body'>

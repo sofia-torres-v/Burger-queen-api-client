@@ -20,13 +20,19 @@ html {
 /* ------------------------ section  -----------------  */
 
 .global-container {
-    background-image: url('../../assets/ham.png');
+    background-image: url('../../assets/fondoV.png');
     background-size: cover;  
+    position: relative;
 }
 
 
 /* ----------------- columna 1 ----------------  */
-
+.logoBq{
+    /* background-color: #F8B504; */
+   position: absolute;
+   top: 140px;
+   right: 130px;
+}
 .container-columns {
     height: 100vh;
     display: flex;
@@ -54,7 +60,7 @@ h1 {
 .content-logo {
     width: 150px;
     margin: 0 auto;
-    border-bottom: 3px solid #beb9b934;
+    /* border-bottom: 3px solid #beb9b934; */
 }
 
 .content-logo img {

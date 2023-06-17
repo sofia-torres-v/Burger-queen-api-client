@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import './login.css';
 import Header from '../../Components/header/header';
 import LoginForm from '../../Components/loginForm/loginForm';
-import Logo from '../../Components/logo/logo';
-
 
 
 const Login = () => {
@@ -55,10 +53,24 @@ const Login = () => {
     }
   };
 
-  return (
+  // return (
+  //   <section className="global-container">
+  //     <div className="container-columns container">
+  //       <Header />
+  //       <LoginForm
+  //         email={email}
+  //         password={password}
+  //         setEmail={setEmail}
+  //         setPassword={setPassword}
+  //         errorMessage={errorMessage}
+  //         handleLogin={handleLogin}
+  //       />
+  //     </div>
+  //   </section>
+  // );
+
+    return (
     <section className="global-container">
-      <Logo />  
-      <div className="container-columns container">
         <Header />
         <LoginForm
           email={email}
@@ -68,8 +80,8 @@ const Login = () => {
           errorMessage={errorMessage}
           handleLogin={handleLogin}
         />
-      </div>
     </section>
   );
+
 };
 export default Login;

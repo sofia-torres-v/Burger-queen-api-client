@@ -84,14 +84,6 @@
     outline: none;
 }
 
-.content-list-breakfast{
-    padding-top: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
 .content-list-lunch{
     display: none;
 }

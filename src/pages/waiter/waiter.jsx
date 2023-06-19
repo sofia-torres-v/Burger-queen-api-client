@@ -2,9 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import Logout from '../../Components/Logout/logout';
 import LogoBurger from '../../Components/logo/logo';
-import CardElement from '../../Components/cardElement/cardElement';
+import ProductsBreakfast from '../../Components/productsForWaiters/productsBreakfast';
+import ProductsLunch from '../../Components/productsForWaiters/productsLunch'
 import './waiter.css';
-
 
 
 
@@ -18,13 +18,14 @@ export default function Menu() {
   //       method: 'GET',
   //       headers: {
   //         'Content-Type': 'application/json',
-  //       },
   //         'autorization': `Bearer${token}`
+  //       },
+         
   //     });
   //     const ResData = await response.json()
   //     return ResData;
   // }
-
+  
   //nombre del cliente
   const [firstName, setFirstName] = useState('');
   const [fullName, setFullName] = useState('');
@@ -33,6 +34,11 @@ export default function Menu() {
     setFullName(firstName);
   }
 
+
+  const [mostrarProductsLunch, setMostrarProductsLunch] = useState(false);
+  const handleClick = () => {
+    setMostrarProductsLunch(!mostrarProductsLunch);
+  };
 
   return (
     <>
@@ -58,21 +64,11 @@ export default function Menu() {
 
               <h2 className='sub-title'>Menu option</h2>
               <div className='content-buttons'>
-                <button className='btn-break active'>Breakfast</button>
-                <button  className='btn-lunch'>Lunch/Dinner</button>
+                <button onClick={handleClick} className='btn-break active'>Breakfast</button>
+                <button onClick={handleClick} className='btn-lunch'>Lunch/Dinner</button>
               </div>
-
-              <div className='content-list-breakfast'>
-                {/* CardElement 1 */}
-                <CardElement title="American Coffee" price="5" />
-                {/* CardElement 2 */}
-                <CardElement title="Coffee with Milk" price="7" />
-                {/* CardElement 3 */}
-                <CardElement title="Ham and Cheese Sandwich" price="5" />
-                {/* CardElement 4 */}
-                <CardElement title="Natural fruit juice" price="7" />
-              </div>
-
+             
+              { mostrarProductsLunch ? < ProductsLunch /> :<ProductsBreakfast/> }
               <div className='content-list-lunch'>
                 {/* Contenido para el almuerzo/cena */}
               </div>

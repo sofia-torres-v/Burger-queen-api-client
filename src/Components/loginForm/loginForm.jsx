@@ -7,8 +7,6 @@ const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handl
     return (
  
       <form className="login-form">
- 
-      <form className="login-form">
         <h2>Login</h2>
           <div className="group">
             <input

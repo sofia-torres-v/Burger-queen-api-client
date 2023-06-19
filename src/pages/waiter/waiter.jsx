@@ -35,9 +35,9 @@ export default function Menu() {
   return (
     <>
       <section className='global-container section'>
-           <Logout/> 
+        <Logout />
         <figure className='content-logo1 waiter'>
-          <img src={LogoMenu} alt="logo"  />
+          <img src={LogoMenu} alt="logo" />
         </figure>
 
         <div className='container-columns1 container'>
@@ -46,11 +46,11 @@ export default function Menu() {
 
             <div className='group-client'>
               {/* <label htmlFor=""> Client:</label> */}
-              <input type="text" placeholder="Client's name" 
-              id="inpClient"
-              name="client"
-              value={firstName}
-              onChange={manageNameChange} />
+              <input type="text" placeholder="Client's name"
+                id="inpClient"
+                name="client"
+                value={firstName}
+                onChange={manageNameChange} />
             </div>
 
             {/* contenedor de los pedidos en general*/}

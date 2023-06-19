@@ -12,7 +12,7 @@ export default function Administrator() {
             <section className="global-container">
                 <Logout />
                 <AdminUser />
-
+                
             </section>
         </>
     );

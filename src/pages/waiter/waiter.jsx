@@ -1,11 +1,17 @@
 import React from 'react';
 import { useState } from 'react';
-
+import Logout from '../../Components/Logout/logout';
+import LogoBurger from '../../Components/logo/logo';
+import CardElement from '../../Components/cardElement/cardElement';
+import './waiter.css';
 
 
 
 
 export default function Menu() {
+
+
+
   // async function appGet(pathname) {
   //   const token = localStorage.getItem("loginToken")
   //   const response = await fetch(`http://localhost:8080/${pathname}`, {
@@ -31,8 +37,8 @@ export default function Menu() {
   return (
     <>
       <section className='global-container-waiter'>
-           <Logout/> 
-           <LogoBurger />
+        <Logout />
+        <LogoBurger />
 
         <div className='container-columns1 container'>
 
@@ -53,7 +59,7 @@ export default function Menu() {
               <h2 className='sub-title'>Menu option</h2>
               <div className='content-buttons'>
                 <button className='btn-break active'>Breakfast</button>
-                <button className='btn-lunch'>Lunch/Dinner</button>
+                <button  className='btn-lunch'>Lunch/Dinner</button>
               </div>
 
               <div className='content-list-breakfast'>

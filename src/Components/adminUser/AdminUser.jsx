@@ -1,35 +1,33 @@
 import React from "react";
-import CardToAdmin from "../userButtons/cardToAdmin";
+import { useState } from 'react';
+import CardToProduct from "../userButtons/cardToProduct";
+import CardToStaff from "../userButtons/cardToStaff";
+import Logout from "../Logout/logout";
+import LogoBurger from "../logo/logo";
 
 export default function AdminUser() {
 
     const user = localStorage.getItem('token')
 
+    const [mostrarStaff, setMostrarStaff] = useState(false);
+    const handleClick = () => {
+        setMostrarStaff(!mostrarStaff);
+    };
 
     return (
         <>
+            <Logout />
+            <LogoBurger />
             <div className='cardAdd'>
                 <div>
-                    <button>Product </button>
-                    <button>Staff</button>
+                    <button onClick={handleClick}>Product </button>
+                    <button onClick={handleClick}>Staff</button>
                 </div>
 
                 <section className="btnContainerCreate" >
                     <button type="button" className="btnCreate" >Crear usuario </button>
                 </section>
-                
-                <div>
-                    <h3>Waiter</h3>
-                    <CardToAdmin
-                        Name='Ana' />
-                    <h3>Cheff</h3>
-                    <CardToAdmin
-                        Name='Sofia' />
-                    <h3>Admin</h3>
-                    <CardToAdmin
-                        Name='Clau' />
-                </div>
-
+                {mostrarStaff ? < CardToStaff /> : <CardToProduct />}
             </div>
         </>
     );

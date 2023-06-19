@@ -9,28 +9,31 @@ import './waiter.css';
 
 
 export default function Menu() {
-  // async function appGet(pathname) {
-  //   const token = localStorage.getItem("loginToken")
-  //   const response = await fetch(`http://localhost:8080/${pathname}`, {
-  //       method: 'GET',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         'autorization': `Bearer${token}`
-  //       },
-         
-  //     });
-  //     const ResData = await response.json()
-  //     return ResData;
-  // }
 
-  
+  const token = localStorage.getItem('token');
+  console.log(token);
+  // const showProducts = (data) => {
+  fetch('http://localhost:8080/products', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'authorization': `Bearer ${token}`,
+    }
+  })
+    .then((resp) => resp.json())
+    .then((data) => {
+      console.log('La data es:', data);
+    })
+
+
+
   //nombre del cliente
   const [firstName, setFirstName] = useState('');
   const [fullName, setFullName] = useState('');
   function manageNameChange(e) {
     setFirstName(e.target.value);
     setFullName(firstName);
-  }
+  };
 
 
   const [mostrarProductsLunch, setMostrarProductsLunch] = useState(false);
@@ -41,8 +44,8 @@ export default function Menu() {
   return (
     <>
       <section className='global-container-waiter'>
-           <Logout/> 
-           <LogoBurger />
+        <Logout />
+        <LogoBurger />
 
         <div className='container-columns1 container'>
 
@@ -50,11 +53,11 @@ export default function Menu() {
 
             <div className='group-client'>
               {/* <label htmlFor=""> Client:</label> */}
-              <input type="text" placeholder="Client's name" 
-              id="inpClient"
-              name="client"
-              value={firstName}
-              onChange={manageNameChange} />
+              <input type="text" placeholder="Client's name"
+                id="inpClient"
+                name="client"
+                value={firstName}
+                onChange={manageNameChange} />
             </div>
 
             {/* contenedor de los pedidos en general*/}
@@ -65,8 +68,8 @@ export default function Menu() {
                 <button onClick={handleClick} className='btn-break active'>Breakfast</button>
                 <button onClick={handleClick} className='btn-lunch'>Lunch/Dinner</button>
               </div>
-             
-              { mostrarProductsLunch ? < ProductsLunch /> :<ProductsBreakfast/> }
+
+              {mostrarProductsLunch ? < ProductsLunch /> : <ProductsBreakfast />}
               <div className='content-list-lunch'>
                 {/* Contenido para el almuerzo/cena */}
               </div>

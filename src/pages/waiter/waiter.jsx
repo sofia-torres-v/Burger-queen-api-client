@@ -2,8 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Logout from '../../Components/Logout/logout';
 import LogoBurger from '../../Components/logo/logo';
-// import ProductsBreakfast from '../../Components/productsForWaiters/productsBreakfast';
-import ProductsLunch from '../../Components/productsForWaiters/productsLunch'
+import Products from '../../Components/productsForWaiters/products'
 import './waiter.css';
 
 
@@ -43,9 +42,9 @@ export default function Menu() {
   };
 
 
-  const [mostrarProductsLunch, setMostrarProductsLunch] = useState(false);
+  const [mostrarProducts, setMostrarProducts] = useState(false);
   const handleClick = () => {
-    setMostrarProductsLunch(!mostrarProductsLunch);
+    setMostrarProducts(!mostrarProducts);
   };
 
   return (
@@ -76,7 +75,7 @@ export default function Menu() {
                 <button onClick={handleClick} className='btn-lunch'>Lunch/Dinner</button>
               </div>
 
-              {mostrarProductsLunch ? < ProductsLunch products={lunches} /> : <ProductsLunch products={breakfasts} />}
+              {mostrarProducts ? < Products products={lunches} /> : <Products products={breakfasts} />}
               <div className='content-list-lunch'>
                 
                 {/* Contenido para el almuerzo/cena */}

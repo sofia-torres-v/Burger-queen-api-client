@@ -9,19 +9,19 @@ import './waiter.css';
 
 
 export default function Menu() {
-  // async function appGet(pathname) {
-  //   const token = localStorage.getItem("loginToken")
-  //   const response = await fetch(`http://localhost:8080/${pathname}`, {
-  //       method: 'GET',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         'autorization': `Bearer${token}`
-  //       },
+  async function appGet(pathname) {
+    const token = localStorage.getItem("loginToken")
+    const response = await fetch(`http://localhost:8080/${pathname}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'autorization': `Bearer${token}`
+        },
          
-  //     });
-  //     const ResData = await response.json()
-  //     return ResData;
-  // }
+      });
+      const ResData = await response.json()
+      return ResData;
+  }
 
   
   //nombre del cliente

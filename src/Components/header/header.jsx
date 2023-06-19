@@ -1,12 +1,11 @@
 import React from 'react';
-import Logo from '../../assets/12.png';
+import Logo from '../../assets/logoBbqfinal.png';
 
 const Header = () => {
   return (
     <div className="column-header">
-      {/* <h1>BURGER QUEEN</h1> */}
       <figure className="content-logo">
-        {/* <img src={Logo} alt="logo" /> */}
+        <img src={Logo} alt="logo" />
       </figure>
     </div>
   );

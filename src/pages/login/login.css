@@ -1,198 +1,153 @@
-* {
+*{
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
 }
 
 html {
     font-size: 62.5%;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-
-/* ------------------------ section  -----------------  */
+/* ------------------------------------ section  ----------------------------  */
 
 .global-container {
-    background-image: url('../../assets/fondoV.png');
+    background-image: url('../../assets/lgVertical.png');
     background-size: cover;  
-    position: relative;
-}
-
-
-/* ----------------- columna 1 ----------------  */
-.logoBq{
-    /* background-color: #F8B504; */
-   position: absolute;
-   top: 140px;
-   right: 130px;
-}
-.container-columns {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    /* padding-top: 20px;} */
 }
 
-.column-form,
-.column-header {
-    width: 100%;
-    max-width: 500px;
-    /* text-align: center; */
-}
+/* ----------------- logo ----------------  */
 
-h1 {
-    color: #fff;
-    font-size: 3.8rem;
-    letter-spacing: 3px;
-    text-align: center;
-}
-
-.content-logo {
-    width: 150px;
+.content-logo{
+    width: 250px;
     margin: 0 auto;
-    /* border-bottom: 3px solid #beb9b934; */
+    margin-bottom: 25px;
 }
 
-.content-logo img {
+.content-logo img{
     width: 100%;
+    max-width: 450px;
 }
 
-
-/* ------------------------ columna 2 -------------------  */
-
-h2 {
-    text-align: center;
-    font-size: 3.4rem;
-    color: #fff;
-    font-weight: bold;
-    padding: 18px 0;
-}
-
-
-/* ------ form ------ */
-.column-form {
+/* -------------------formulario----------- */
+.login-form{
     background-color: #696969a5;
-    max-width: 480px;
-    padding: 10px 20px 12px 20px;
-    
-    border-radius: 20px;
-    box-shadow: -1px 2px 15px rgb(0 0 0 / 50%);
-}
-
-.login-form {
-    width: 100%;
-    max-width: 380px;
-    margin: 0 auto;
+    width: 80%;
     display: grid;
-    gap: 15px;
-    padding: 10px 0;
+    gap: 20px;
+    max-width: 450px;
+    padding: 30px 12px 20px ;
+    border-radius: 20px;
 }
 
-.inp,
-.btn {
-    width: 100%;
-    padding: 16px;
-    border-radius: 18px;
+.login-form h2 {
+    text-align: center;
     font-size: 2rem;
+}
+
+.group{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inp, .btn{
+    width: 100%;
+    padding: 10px;
+    border-radius: 18px;
+    font-size: 1.5rem;
+    margin-top:20px;
     outline: none;
     border: none;
 }
 
-.inp::placeholder {
-    color: rgb(130, 126, 126);
-  }
+.btn{
+    margin: 0 auto;
+}
 
 .btn {
     background-color: #F8B504;
     font-weight: bold;
-    font-size: 1.8rem;
+} 
+
+.inp::placeholder {
+    color: rgb(130, 126, 126);
 }
-
-
 
 #messageError{
     color: rgb(74, 16, 16);
-    font-size: 2.3rem;
+    font-size: 1rem;
     font-weight: bold;
-    margin-top: 16px;
     background-color: rgba(255, 0, 0, 0.085);
-    padding: 12px;
+    padding: 10px;
     /* opacity: 0;
     visibility: hidden; */
 }
-
-/* .error #messageError{
+ /* #messageError{
     opacity: 1;
     visibility: visible;
 } */
 
 
-/* --------------------Estilos tablet --------------------  */
+/* --------------------Estilos tablet --vertical----------------  */
 
 @media (min-width:750px){
-
-    
-    .column-form{
-        max-width: 570px;
-        padding: 15px 20px 65px 20px;
-    }
-
-    .column-header h1{
-        font-size: 4.5rem;
-    }
-
-    .content-logo{
-        width: 330px;
+    .global-container{
+        background-image: url('../../assets/lgVertical.png');
+        gap: 30px;
     }
 
     .login-form{
-        max-width: 450px;
-        gap: 35px;
+        padding: 45px 20px 60px 20px;
+        max-width: 570px;
+        gap: 18px;
     }
 
     .inp,
     .btn { 
-    padding: 25px;
+        padding: 25px;
+        font-size: 2.5rem;
+        margin-top:20px;
    }
 
+   .content-logo{
+        width: 590px;
+    }
+
+    .content-logo img{
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 550px;
+    }   
+
+    .login-form h2{
+        font-size: 3.5rem;
+    }
+
+    #messageError{
+        font-size: 2.3rem;
+        padding: 12px;
+    }
+
 }
 
+/* --------------------Estilos tablet--horizontal----------------  */
 
-
-
-
-@media (min-width:850px) {
-
-    .container-columns {
-        flex-direction: row;
-        padding: 0 20px;
+@media (min-width:1000px){
+    .global-container{
+        background-image: url('../../assets/ham.png');
+        gap: 30px;
     }
 
-    .column-header {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    h1 {
-        color: white;
-    }
-
-    .content-logo {
-        width: 440px;
-    }
-
-    .column-form{
-        padding-bottom: 15px;
+    .login-form{
+        margin-left: 400px;
     }
 }
+  

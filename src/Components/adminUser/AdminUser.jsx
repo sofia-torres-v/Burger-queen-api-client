@@ -1,5 +1,5 @@
 import React from "react";
-import CardToAdmin from "./cardToAdmin";
+import CardToAdmin from "../userButtons/cardToAdmin";
 
 export default function AdminUser() {
 
@@ -29,7 +29,6 @@ export default function AdminUser() {
                     <CardToAdmin
                         Name='Clau' />
                 </div>
-
 
             </div>
         </>

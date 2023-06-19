@@ -1,9 +1,9 @@
 import React from 'react';
-import CardElement from '../../Components/cardElement/cardElement';
-import '../waiter/waiter.css';
-import Logo from '../../assets/logoBbqfinal.png';
-import Logout from '../../Components/Logout/logout';
 import { useState } from 'react';
+
+
+
+
 
 export default function Menu() {
   // async function appGet(pathname) {
@@ -12,8 +12,8 @@ export default function Menu() {
   //       method: 'GET',
   //       headers: {
   //         'Content-Type': 'application/json',
-  //         'autorization': `Bearer${token}`
   //       },
+  //         'autorization': `Bearer${token}`
   //     });
   //     const ResData = await response.json()
   //     return ResData;
@@ -32,9 +32,7 @@ export default function Menu() {
     <>
       <section className='global-container-waiter'>
            <Logout/> 
-        <figure className='content-logo waiter'>
-          <img src={Logo} alt="logo"  />
-        </figure>
+           <LogoBurger />
 
         <div className='container-columns1 container'>
 
@@ -101,4 +99,3 @@ export default function Menu() {
     </>
   );
 }
-

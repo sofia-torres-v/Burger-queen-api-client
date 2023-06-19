@@ -1,31 +1,38 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Logout from '../../Components/Logout/logout';
 import LogoBurger from '../../Components/logo/logo';
-import ProductsBreakfast from '../../Components/productsForWaiters/productsBreakfast';
+// import ProductsBreakfast from '../../Components/productsForWaiters/productsBreakfast';
 import ProductsLunch from '../../Components/productsForWaiters/productsLunch'
 import './waiter.css';
 
 
 
 export default function Menu() {
+  const [breakfasts, setBreakfasts] = useState([]);
+  const [lunches, setLunches] = useState([]);
 
   const token = localStorage.getItem('token');
-  console.log(token);
-  // const showProducts = (data) => {
-  fetch('http://localhost:8080/products', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'authorization': `Bearer ${token}`,
+  // console.log(token);
+
+
+  useEffect(() => {
+    async function fetchProducts() {
+        const response = await fetch('http://localhost:8080/products', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${token}`,
+            }
+        })
+
+        const products = await response.json();
+        setBreakfasts(products.filter(item => item.type === 'Desayuno'))
+        setLunches(products.filter(item => item.type === 'Almuerzo'))
     }
-  })
-    .then((resp) => resp.json())
-    .then((data) => {
-      console.log('La data es:', data);
-    })
 
-
+    fetchProducts()
+}, [])
 
   //nombre del cliente
   const [firstName, setFirstName] = useState('');
@@ -52,7 +59,7 @@ export default function Menu() {
           <div className='column-menu'>
 
             <div className='group-client'>
-              {/* <label htmlFor=""> Client:</label> */}
+  
               <input type="text" placeholder="Client's name"
                 id="inpClient"
                 name="client"
@@ -69,8 +76,9 @@ export default function Menu() {
                 <button onClick={handleClick} className='btn-lunch'>Lunch/Dinner</button>
               </div>
 
-              {mostrarProductsLunch ? < ProductsLunch /> : <ProductsBreakfast />}
+              {mostrarProductsLunch ? < ProductsLunch products={lunches} /> : <ProductsLunch products={breakfasts} />}
               <div className='content-list-lunch'>
+                
                 {/* Contenido para el almuerzo/cena */}
               </div>
             </div>

@@ -1,0 +1,22 @@
+/* ----------botón icono de salir---------- */
+
+.out{
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: #fff;
+    width: 70px;
+}
+
+/* .box-out{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 20px;
+}
+
+.text-out{
+    color: #fff;
+    font-size: 25px;
+} */

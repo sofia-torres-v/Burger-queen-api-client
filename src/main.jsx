@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Route from './route/route.jsx';
 import {BrowserRouter} from 'react-router-dom';
-
-
+import Route from './route.jsx';
+import './index.css'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -1,13 +1,13 @@
 import React from 'react';
+import './loginForm.css';
 
 
 const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handleLogin} ) => {
 
     return (
-      <div className="column-form">
+ 
+      <form className="login-form">
         <h2>Login</h2>
-  
-        <form className="login-form">
           <div className="group">
             <input
               className="inp"
@@ -18,9 +18,7 @@ const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handl
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-          </div>
-  
-          <div className="group">
+          
             <input
               className="inp"
               id="password"
@@ -30,15 +28,15 @@ const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handl
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+          </div>
+
             {/* <p id="messageError" data-testid="message-Error">{errorMessage}</p> */}
             {errorMessage && <p id="messageError" data-testid="message-Error">{errorMessage}</p>}
-          </div>
-  
+
           <button onClick={handleLogin} type="submit" className="btn">
             Sign in
-          </button>
-        </form>
-      </div>
+          </button> 
+      </form>
     );
   };
   

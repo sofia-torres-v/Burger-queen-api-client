@@ -6,8 +6,8 @@ export default function cardToAdmin({ Name}){
         <section>
                 <h1> {Name} </h1>
                 <div>
-                <button> Edit </button>
-                <button> Delete </button>
+                    <button> Edit </button>
+                    <button> Delete </button>
                 </div>
         </section>
 

@@ -1,14 +1,14 @@
 import React from 'react';
-import LogoBq from '../../assets/logoBbqfinal.png'
+import Logo from '../../assets/logoBbqfinal.png';
+import './logo.css';
 
 
+const LogoBurger = () => {
+  return (
+      <figure className="content-logo">
+        <img src={Logo} alt="logo" />
+      </figure>
+  );
+};
 
-const Logo = () => {
-    return (
-<div>
-<img className= 'logoBq'src={LogoBq} alt="Logo" />
-</div>
-    )
-}
-
-export default Logo;
+export default LogoBurger;

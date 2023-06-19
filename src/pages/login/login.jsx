@@ -1,12 +1,17 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import LogoBurger from '../../Components/logo/logo.jsx';
+import '../../Components/logo/logo.css'
+import LoginForm from '../../Components/loginForm/loginForm.jsx';
+import '../../Components/loginForm/loginForm.css'
 import './login.css';
-import Header from '../../Components/header/header';
-import LoginForm from '../../Components/loginForm/loginForm';
+
 
 
 const Login = () => {
+
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -45,33 +50,19 @@ const Login = () => {
         } catch (error) {
           // setErrorMessage('Error al guardar el token');
         }
+
       } else {
         setErrorMessage('Oops! That username and password combination is incorrect. Please try again.');
       }
+      
     } catch (err) {
       setErrorMessage('Oops!, something went wrong, please reload.');
     }
   };
 
-  // return (
-  //   <section className="global-container">
-  //     <div className="container-columns container">
-  //       <Header />
-  //       <LoginForm
-  //         email={email}
-  //         password={password}
-  //         setEmail={setEmail}
-  //         setPassword={setPassword}
-  //         errorMessage={errorMessage}
-  //         handleLogin={handleLogin}
-  //       />
-  //     </div>
-  //   </section>
-  // );
-
-    return (
+  return (
     <section className="global-container">
-        <Header />
+        <LogoBurger />
         <LoginForm
           email={email}
           password={password}
@@ -84,4 +75,5 @@ const Login = () => {
   );
 
 };
+
 export default Login;

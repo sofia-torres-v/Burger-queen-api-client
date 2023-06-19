@@ -1,9 +1,12 @@
 import React from 'react';
+import './loginForm.css';
 
 
 const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handleLogin} ) => {
 
     return (
+ 
+      <form className="login-form">
  
       <form className="login-form">
         <h2>Login</h2>
@@ -34,8 +37,7 @@ const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handl
 
           <button onClick={handleLogin} type="submit" className="btn">
             Sign in
-          </button>
-          
+          </button> 
       </form>
     );
   };

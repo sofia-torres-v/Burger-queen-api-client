@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import out from '../../assets/out.png';
 import './logout.css'

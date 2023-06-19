@@ -1,3 +1,4 @@
+import React from 'react';
 import Logout from '../../Components/Logout/logout';
 import AdminUser from '../../Components/adminUser/AdminUser';
 
@@ -12,7 +13,7 @@ export default function Administrator() {
             <section className="global-container">
                 <Logout />
                 <AdminUser />
-
+                
             </section>
         </>
     );

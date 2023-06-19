@@ -1,13 +1,9 @@
 import React from 'react';
 import CardElement from '../../Components/cardElement/cardElement';
 import '../waiter/waiter.css';
-import LogoMenu from '../../assets/logoBurger.png';
+import Logo from '../../assets/logoBbqfinal.png';
 import Logout from '../../Components/Logout/logout';
 import { useState } from 'react';
-
-
-
-
 
 export default function Menu() {
   // async function appGet(pathname) {
@@ -34,10 +30,10 @@ export default function Menu() {
 
   return (
     <>
-      <section className='global-container section'>
-        <Logout />
-        <figure className='content-logo1 waiter'>
-          <img src={LogoMenu} alt="logo" />
+      <section className='global-container-waiter'>
+           <Logout/> 
+        <figure className='content-logo waiter'>
+          <img src={Logo} alt="logo"  />
         </figure>
 
         <div className='container-columns1 container'>

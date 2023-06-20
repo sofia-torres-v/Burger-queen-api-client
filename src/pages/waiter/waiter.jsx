@@ -17,28 +17,28 @@ export default function Menu() {
 
   useEffect(() => {
     async function fetchProducts() {
-        const response = await fetch('http://localhost:8080/products', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'authorization': `Bearer ${token}`,
-            }
-        })
+      const response = await fetch('http://localhost:8080/products', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'authorization': `Bearer ${token}`,
+        }
+      })
 
-        const products = await response.json();
-        setBreakfasts(products.filter(item => item.type === 'Desayuno'))
-        setLunches(products.filter(item => item.type === 'Almuerzo'))
+      const products = await response.json();
+      setBreakfasts(products.filter(item => item.type === 'Desayuno'))
+      setLunches(products.filter(item => item.type === 'Almuerzo'))
     }
 
     fetchProducts()
-}, [])
+  }, [])
 
   //nombre del cliente
   const [firstName, setFirstName] = useState('');
   const [fullName, setFullName] = useState('');
   function manageNameChange(e) {
     setFirstName(e.target.value);
-    setFullName(firstName);
+    setFullName(e.target.value);
   };
 
 
@@ -58,7 +58,7 @@ export default function Menu() {
           <div className='column-menu'>
 
             <div className='group-client'>
-  
+
               <input type="text" placeholder="Client's name"
                 id="inpClient"
                 name="client"
@@ -77,7 +77,7 @@ export default function Menu() {
 
               {mostrarProducts ? < Products products={lunches} /> : <Products products={breakfasts} />}
               <div className='content-list-lunch'>
-                
+
                 {/* Contenido para el almuerzo/cena */}
               </div>
             </div>

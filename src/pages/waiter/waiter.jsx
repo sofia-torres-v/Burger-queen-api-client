@@ -31,7 +31,6 @@ export default function Menu() {
         setBreakfasts(products.filter(item => item.type === 'Desayuno'))
         setLunches(products.filter(item => item.type === 'Almuerzo'))
     }
-
     fetchProducts()
 }, [])
 

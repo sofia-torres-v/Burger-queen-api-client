@@ -1,0 +1,32 @@
+/* .header-admi{
+    background-color: #c67171;
+} */
+
+
+/* lista de productos y sus botones editar y eliminar */
+
+.list-content{
+    font-size: 3rem;
+    color: #fff;
+    display: flex;
+    justify-content:space-between ;
+}
+
+.list-subtitle{
+    color: #000;
+    font-weight: bold;
+}
+
+.list-content-btn{
+    padding: 10px 0;
+}
+
+.list-btn-edit,
+.list-btn-delete{
+    padding: 10px 30px 10px 30px;
+    font-size: 2rem;
+    border-radius:15px;
+    margin-left: 25px;
+    font-weight: bold;
+}
+

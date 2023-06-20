@@ -1,4 +1,4 @@
-/* ------------------------fondo waiter  -----------------  */
+/* ---------------------fondo vista waiter----------------  */
 
 .global-container-waiter{
     padding:20px 0 90px 0;
@@ -142,7 +142,7 @@
 
 .ticket-enviar, .ticket-cancel{
     padding: 18px;
-    border-radius: 30px;
+    border-radius: 25px;
     font-size: 2.5rem;
     font-weight: bold;
 }

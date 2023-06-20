@@ -10,7 +10,7 @@ html {
 }
 
 
-/* Esta etiqueta crea márgenes a los lados de todas las vistas, evitando que ocupen toda la pantalla. */
+/* Márgenes a los lados de todas las vistas, evitando que ocupen toda la pantalla. */
 
 .container {
     width: 90%;

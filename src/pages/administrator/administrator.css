@@ -1,0 +1,40 @@
+/* ---------------------fondo vista administrator----------------  */
+
+.global-container-Admi{
+    background-image: url('../../assets/fondoVertical.png');    
+    background-size: cover;
+    padding: 120px 0 40px;
+    min-height: 100vh;
+}
+
+/* .box-text-logout{
+  
+} */
+
+.box-text-logout span{
+    border-bottom: solid 3px #F8B504;
+    font-size: 3rem;
+    color: #fff;
+    position: absolute;
+    top: 53px;
+    left: 0;
+    color: #fff;
+    padding-left: 35px;
+}
+
+.content-general-products{
+    background-color: #5D5D5D;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+}
+
+.rolTitle{
+    color: #F8B504;
+    font-size: 3rem;
+    padding-bottom: 5px;
+}
+
+.content-cards-products{
+    border-top: solid 4px #F8B504;
+    padding: 25px;
+}

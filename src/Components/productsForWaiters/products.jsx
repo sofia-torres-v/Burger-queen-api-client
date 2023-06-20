@@ -1,9 +1,8 @@
 import React from "react"
 import CardElement from '../cardElement/cardElement';
+import './products.css'
 
 export default function products({ products }) {
-
-
     return (
         <div className='content-list-breakfast'>
             {products.map((product) => {

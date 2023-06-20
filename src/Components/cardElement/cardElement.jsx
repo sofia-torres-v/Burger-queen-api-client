@@ -4,8 +4,6 @@ import './cardElement.css'
 
 export default function CardElement({ title, price, image }) {
 
-  
-
   return (
     <section className='card-element'>
       <p>{title}</p>

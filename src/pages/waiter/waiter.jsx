@@ -1,13 +1,14 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Logout from '../../Components/Logout/logout';
-import LogoBurger from '../../Components/logo/logo';
+import LogoBurger from '../../Components/Logo/logo';
 import Products from '../../Components/productsForWaiters/products'
 import './waiter.css';
 
 
 
 export default function Menu() {
+
   const [breakfasts, setBreakfasts] = useState([]);
   const [lunches, setLunches] = useState([]);
 
@@ -25,11 +26,11 @@ export default function Menu() {
         }
       })
 
-      const products = await response.json();
-      setBreakfasts(products.filter(item => item.type === 'Desayuno'))
-      setLunches(products.filter(item => item.type === 'Almuerzo'))
+        const products = await response.json();
+        console.log(products);
+        setBreakfasts(products.filter(item => item.type === 'Desayuno'))
+        setLunches(products.filter(item => item.type === 'Almuerzo'))
     }
-
     fetchProducts()
   }, [])
 
@@ -56,9 +57,7 @@ export default function Menu() {
         <div className='container-columns1 container'>
 
           <div className='column-menu'>
-
             <div className='group-client'>
-
               <input type="text" placeholder="Client's name"
                 id="inpClient"
                 name="client"
@@ -76,15 +75,14 @@ export default function Menu() {
               </div>
 
               {mostrarProducts ? < Products products={lunches} /> : <Products products={breakfasts} />}
-              <div className='content-list-lunch'>
 
-                {/* Contenido para el almuerzo/cena */}
-              </div>
             </div>
+
           </div>
 
-          {/* columna 2 */}
+
           <div className='column-ticket'>
+
             <div className='ticket-header'>
               <h2 className='ticket-subtitle'>Order List</h2>
               <p>Client:{fullName}</p>
@@ -103,8 +101,11 @@ export default function Menu() {
               <button className='ticket-enviar active'>Send</button>
               <button className='ticket-cancel'>Cancel</button>
             </div>
+
           </div>
+
         </div>
+
       </section>
     </>
   );

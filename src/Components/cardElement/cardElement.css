@@ -8,9 +8,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 50px;
+    gap: 30px;
     padding: 10px;
     text-align: center;
+}
+  
+.card-element img{
+    width: 120px;
+    margin: 0 auto;
 }
 
 .card-element p{

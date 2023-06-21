@@ -2,7 +2,10 @@ import React from 'react';
 import './cardElement.css'
 
 
-export default function CardElement({ title, price, image }) {
+export default function CardElement({ title, image, price }) {
+
+
+
 
   return (
     <section className='card-element'>
@@ -10,7 +13,7 @@ export default function CardElement({ title, price, image }) {
       <img src={image} />
       <div className='group-price'>
         <p>$ <span>{price}</span></p>
-        <button className='btn-card'>Add</button>
+        <button className='btn-card' >Add</button>
       </div>
     </section>
   );

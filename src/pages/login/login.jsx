@@ -1,8 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-import LogoBurger from '../../Components/logo/logo.jsx';
+import LogoBurger from '../../Components/Logo/logo';
 import '../../Components/logo/logo.css'
 import LoginForm from '../../Components/loginForm/loginForm.jsx';
 import '../../Components/loginForm/loginForm.css'
@@ -54,7 +53,7 @@ const Login = () => {
       } else {
         setErrorMessage('Oops! That username and password combination is incorrect. Please try again.');
       }
-      
+
     } catch (err) {
       setErrorMessage('Oops!, something went wrong, please reload.');
     }
@@ -62,15 +61,15 @@ const Login = () => {
 
   return (
     <section className="global-container">
-        <LogoBurger />
-        <LoginForm
-          email={email}
-          password={password}
-          setEmail={setEmail}
-          setPassword={setPassword}
-          errorMessage={errorMessage}
-          handleLogin={handleLogin}
-        />
+      <LogoBurger />
+      <LoginForm
+        email={email}
+        password={password}
+        setEmail={setEmail}
+        setPassword={setPassword}
+        errorMessage={errorMessage}
+        handleLogin={handleLogin}
+      />
     </section>
   );
 

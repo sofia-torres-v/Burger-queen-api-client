@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import LogoBurger from '../../Components/logo/logo.jsx';
+import LogoBurger from '../../Components/Logo/logo';
 import '../../Components/logo/logo.css'
 import LoginForm from '../../Components/loginForm/loginForm.jsx';
 import '../../Components/loginForm/loginForm.css'
@@ -47,6 +47,7 @@ const Login = () => {
 
         try {
           localStorage.setItem('token', accessToken);
+          
         } catch (error) {
           // setErrorMessage('Error al guardar el token');
         }

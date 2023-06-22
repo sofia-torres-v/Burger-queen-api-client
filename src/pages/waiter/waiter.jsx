@@ -6,7 +6,6 @@ import Products from '../../Components/productsForWaiters/products'
 import './waiter.css';
 
 
-
 export default function Menu() {
 
   const [breakfasts, setBreakfasts] = useState([]);
@@ -27,7 +26,7 @@ export default function Menu() {
         })
 
         const products = await response.json();
-        console.log(products);
+        // console.log(products);
         setBreakfasts(products.filter(item => item.type === 'Desayuno'))
         setLunches(products.filter(item => item.type === 'Almuerzo'))
     }
@@ -51,9 +50,10 @@ export default function Menu() {
   return (
     <>
       <section className='global-container-waiter'>
+        <div className='fondo'>
         <Logout />
         <LogoBurger />
-
+        </div>
         <div className='container-columns1 container'>
 
           <div className='column-menu'>

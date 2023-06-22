@@ -4,13 +4,23 @@ import Logout from '../../Components/Logout/logout';
 import LogoBurger from '../../Components/Logo/logo';
 import Products from '../../Components/productsForWaiters/products'
 import './waiter.css';
-import productFetcher from '../../api_client/api'
+import api from '../../api_client/api'
 
 
 export default function Menu() {
 
   const token = localStorage.getItem('token');
-  const { breakfasts, lunches } = productFetcher({ token });
+  const [breakfasts, setBreakfasts] = useState([])
+  const [lunches, setLunches] = useState([])
+
+  useEffect(() => {
+    async function fetchProducts() {
+      const result = await api().fetchProducts({ token });
+      setBreakfasts(result.breakfasts);
+      setLunches(result.lunches);
+    }
+    fetchProducts();
+  }, [])
 
   //nombre del cliente
   const [firstName, setFirstName] = useState('');
@@ -19,19 +29,21 @@ export default function Menu() {
     setFirstName(e.target.value);
     setFullName(e.target.value);
   };
-  const [mostrarProducts, setMostrarProducts] = useState(false);
-  const handleClick = () => {
-    setMostrarProducts(!mostrarProducts);
+  const [mostrarProducts, setMostrarProducts] = useState("breakfast");
+  const handleClick = (value) => {
+    console.log(value);
+    setMostrarProducts(value);
   };
 
   //productos seleccionados
   const [productosSeleccionados, setProductsSelecionados] = useState([]);
   const handleClickProduct = (productoSeleccionado) => {
+    console.log(productoSeleccionado);
     setProductsSelecionados([
       ...productosSeleccionados,
       productoSeleccionado
     ])
-    console.log('agregando producto' , productosSeleccionados)
+    console.log('agregando producto', productoSeleccionado)
   }
 
 
@@ -57,11 +69,11 @@ export default function Menu() {
 
               <h2 className='sub-title'>Menu option</h2>
               <div className='content-buttons'>
-                <button onClick={handleClick} className='btn-break active'>Breakfast</button>
-                <button onClick={handleClick} className='btn-lunch'>Lunch/Dinner</button>
+                <button onClick={() => handleClick('breakfast')} className='btn-break'>Breakfast</button>
+                <button onClick={() => handleClick('lunch')} className='btn-lunch'>Lunch/Dinner</button>
               </div>
 
-              {mostrarProducts ? < Products products={lunches} handleClickProduct={handleClickProduct}  /> : <Products products={breakfasts} handleClickProduct={handleClickProduct} />}
+              {mostrarProducts === "lunch" ? < Products products={lunches} handleClickProduct={handleClickProduct} /> : <Products products={breakfasts} handleClickProduct={handleClickProduct} />}
 
             </div>
 
@@ -77,7 +89,7 @@ export default function Menu() {
 
             <div className='ticket-body'>
               {/* Contenido de la lista de pedidos */}
-              <p productos={productosSeleccionados}>  </p>
+              <Products products={productosSeleccionados}>  </Products>
             </div>
 
             <div className='ticket-footer'>

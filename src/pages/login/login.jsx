@@ -6,6 +6,7 @@ import '../../Components/logo/logo.css'
 import LoginForm from '../../Components/loginForm/loginForm.jsx';
 import '../../Components/loginForm/loginForm.css'
 import './login.css';
+import api from '../../api_client/api';
 
 
 
@@ -24,38 +25,27 @@ const Login = () => {
       return;
     }
 
+  
+
     try {
-      const response = await fetch('http://localhost:8080/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
-      console.log(response)
+      const data = await api().login(email, password);
+      if (data.user.role === 'waiter') {
+        navigate('/waiter');
+      } else if (data.user.role === 'admin') {
+        navigate('/admin');
+      }
 
-      if (response.ok) {
-        const data = await response.json();
-        if (data.user.role === 'waiter') {
-          navigate('/waiter');
-        } else if (data.user.role === 'admin') {
-          navigate('/admin');
-        }
+      const accessToken = data.accessToken;
 
-        const accessToken = data.accessToken;
-
-        try {
-          localStorage.setItem('token', accessToken);
-        } catch (error) {
-          // setErrorMessage('Error al guardar el token');
-        }
-
-      } else {
-        setErrorMessage('Oops! That username and password combination is incorrect. Please try again.');
+      try {
+        localStorage.setItem('token', accessToken);
+      } catch (error) {
+        // setErrorMessage('Error al guardar el token');
       }
 
     } catch (err) {
-      setErrorMessage('Oops!, something went wrong, please reload.');
+      console.log(err);
+      setErrorMessage(err.message);
     }
   };
 

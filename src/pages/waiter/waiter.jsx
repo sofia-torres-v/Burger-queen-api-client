@@ -2,9 +2,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Logout from '../../Components/Logout/logout';
 import LogoBurger from '../../Components/Logo/logo';
-import Products from '../../Components/productsForWaiters/products'
+import Products from '../../Components/productsForWaiters/products';
 import './waiter.css';
-import api from '../../api_client/api'
+import api from '../../api_client/api';
+import CardOrder from '../../Components/productsForWaiters/cardOrder';
 
 
 export default function Menu() {
@@ -73,11 +74,8 @@ export default function Menu() {
                 <button onClick={() => handleClick('breakfast')} className='btn-break'>Breakfast</button>
                 <button onClick={() => handleClick('lunch')} className='btn-lunch'>Lunch/Dinner</button>
               </div>
-
               {mostrarProducts === "lunch" ? < Products products={lunches} handleClickProduct={handleClickProduct} /> : <Products products={breakfasts} handleClickProduct={handleClickProduct} />}
-
             </div>
-
           </div>
 
           <div className='column-ticket'>
@@ -89,7 +87,7 @@ export default function Menu() {
 
             <div className='ticket-body'>
               {/* Contenido de la lista de pedidos */}
-              <Products products={productosSeleccionados}>  </Products>
+              <CardOrder products={productosSeleccionados}>  </CardOrder>
             </div>
 
             <div className='ticket-footer'>

@@ -1,5 +1,5 @@
 
-//trae productos de la Mock
+//Login
 const api = () => {
 
     const login = async (email, password) => {
@@ -26,7 +26,7 @@ const api = () => {
 
 
 
-
+//trae productos de la Mock
     const fetchProducts = async ({ token }) => {
         try {
             const response = await fetch('http://localhost:8080/products', {

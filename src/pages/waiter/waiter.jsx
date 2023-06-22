@@ -80,7 +80,6 @@ export default function Menu() {
 
           </div>
 
-
           <div className='column-ticket'>
 
             <div className='ticket-header'>

@@ -1,7 +1,7 @@
 
-//trae productos de la Mock
-const api = () => {
 
+const api = () => {
+    // Valida el correo y contraseña del usuario
     const login = async (email, password) => {
         try {
             const response = await fetch('http://localhost:8080/login', {
@@ -11,7 +11,7 @@ const api = () => {
                 },
                 body: JSON.stringify({ email, password }),
             });
-            console.log(response)
+            // console.log(response)
 
             if (response.ok) {
                 return await response.json();
@@ -20,13 +20,13 @@ const api = () => {
             }
 
         } catch (err) {
-            throw new Error(err.message);
+            // throw new Error(err.message);
         }
     };
 
 
 
-
+    //trae productos de la Mock
     const fetchProducts = async ({ token }) => {
         try {
             const response = await fetch('http://localhost:8080/products', {

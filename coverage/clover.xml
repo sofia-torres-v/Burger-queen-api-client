@@ -1,9 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686713703845" clover="3.2.0">
-  <project timestamp="1686713703846" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="1" files="1" classes="1"/>
-    <file name="route.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\Components\route\route.jsx">
-      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-    </file>
+<coverage generated="1687539613808" clover="3.2.0">
+  <project timestamp="1687539613809" name="All files">
+    <metrics statements="47" coveredstatements="29" conditionals="14" coveredconditionals="5" methods="11" coveredmethods="8" elements="72" coveredelements="42" complexity="0" loc="47" ncloc="47" packages="4" files="4" classes="4"/>
+    <package name="Components.loginForm">
+      <metrics statements="4" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="1"/>
+      <file name="loginForm.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\Components\loginForm\loginForm.jsx">
+        <metrics statements="4" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="Components.logo">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="logo.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\Components\logo\logo.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="api_client">
+      <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
+      <file name="api.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\api_client\api.jsx">
+        <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="15" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="38" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="54" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.login">
+      <metrics statements="23" coveredstatements="7" conditionals="8" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="login.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\pages\login\login.jsx">
+        <metrics statements="23" coveredstatements="7" conditionals="8" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

@@ -1,5 +1,5 @@
 
-//Login
+//
 const api = () => {
     // Valida el correo y contraseña del usuario
     const login = async (email, password) => {
@@ -11,7 +11,6 @@ const api = () => {
                 },
                 body: JSON.stringify({ email, password }),
             });
-            // console.log(response)
 
             if (response.ok) {
                 return await response.json();
@@ -44,7 +43,7 @@ const api = () => {
                 };
 
             } else {
-                throw Error('adasd');
+                throw Error('ERROR: token invalido');
             }
             
         } catch (error) {

@@ -57,6 +57,15 @@ export default function Menu() {
   }
   
 
+  const contarTotalProductos = (selectedProducts) => {
+    let total = 0;
+    selectedProducts.forEach((product) => {
+      total += product.price;
+    });
+    console.log(total);
+    return total;
+  }
+
 
   return (
     <>
@@ -118,7 +127,7 @@ export default function Menu() {
 
             <div className='ticket-footer'>
               <p>Item:<span>01</span></p>
-              <p>Total:<span>$300</span></p>
+              <p><span>Total:{contarTotalProductos(selectedProducts)}</span> </p>
             </div>
 
             <div className='ticket-btns'>

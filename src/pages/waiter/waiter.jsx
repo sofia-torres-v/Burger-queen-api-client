@@ -5,15 +5,17 @@ import LogoBurger from '../../Components/Logo/logo';
 import Products from '../../Components/productsForWaiters/products';
 import './waiter.css';
 import api from '../../api_client/api';
-import CardOrder from '../../Components/productsForWaiters/cardOrder';
+import ProductList from '../../Components/productList/productList';
+import './waiter.css'
 
 
 export default function Menu() {
 
   const token = localStorage.getItem('token');
+
+//  parametros: Valor actual y  función que actualiza el valor 
   const [breakfasts, setBreakfasts] = useState([])
   const [lunches, setLunches] = useState([])
-
   useEffect(() => {
     async function fetchProducts() {
       const result = await api().fetchProducts({ token });
@@ -23,28 +25,28 @@ export default function Menu() {
     fetchProducts();
   }, [])
 
-  //nombre del cliente
+
+  //nombre del cliente con evento onChange
   const [firstName, setFirstName] = useState('');
   const [fullName, setFullName] = useState('');
   function manageNameChange(e) {
     setFirstName(e.target.value);
     setFullName(e.target.value);
   };
+
+  //muestra desayuno o almuerzo
   const [mostrarProducts, setMostrarProducts] = useState("breakfast");
   const handleClick = (value) => {
-    console.log(value);
     setMostrarProducts(value);
   };
 
-  //productos seleccionados
-  const [productosSeleccionados, setProductsSelecionados] = useState([]);
-  const handleClickProduct = (productoSeleccionado) => {
-    console.log(productoSeleccionado);
-    setProductsSelecionados([
-      ...productosSeleccionados,
-      productoSeleccionado
+  //productos seleccionados que se muestran en OrderList
+  const [selectedProducts, setSelectedProducts] = useState([]);
+  const handleClickProduct = (chosenProduct) => {
+    setSelectedProducts([
+      ...selectedProducts,
+      chosenProduct
     ])
-    console.log('agregando producto', productoSeleccionado)
   }
 
 
@@ -78,6 +80,8 @@ export default function Menu() {
             </div>
           </div>
 
+
+
           <div className='column-ticket'>
 
             <div className='ticket-header'>
@@ -86,8 +90,13 @@ export default function Menu() {
             </div>
 
             <div className='ticket-body'>
+                <div className='subtitle-list'>
+                  <p className='subtitle-product'>Item</p>
+                  <p className='subtitle-product'>Product</p>
+                  <p className='subtitle-product'>Price</p>
+                </div>
               {/* Contenido de la lista de pedidos */}
-              <CardOrder products={productosSeleccionados}>  </CardOrder>
+              <ProductList products={selectedProducts}>  </ProductList>
             </div>
 
             <div className='ticket-footer'>

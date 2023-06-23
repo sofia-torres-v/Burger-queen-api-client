@@ -42,13 +42,16 @@ const api = () => {
                     breakfasts: products.filter(item => item.type === 'Desayuno'),
                     lunches: products.filter(item => item.type === 'Almuerzo'),
                 };
+
             } else {
                 throw Error('adasd');
             }
+            
         } catch (error) {
             throw error
         }
     };
+
     return {
         fetchProducts,
         login

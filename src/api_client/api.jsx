@@ -43,7 +43,7 @@ const api = () => {
                 };
 
             } else {
-                throw Error('adasd');
+                throw Error('ERROR: token invalido');
             }
             
         } catch (error) {

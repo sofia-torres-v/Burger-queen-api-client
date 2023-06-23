@@ -84,7 +84,7 @@ describe('API', () => {
                 })
             );
 
-            await expect(Api().fetchProducts({ token })).rejects.toThrowError('adasd');
+            await expect(Api().fetchProducts({ token })).rejects.toThrowError('ERROR: token invalido');
         });
     });
 });

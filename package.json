@@ -8,8 +8,10 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
+  
   "dependencies": {
     "jest-transform-stub": "^2.0.0",
     "react": "^18.2.0",

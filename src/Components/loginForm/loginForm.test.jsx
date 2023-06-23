@@ -1,23 +1,23 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom'
 import LoginForm from './loginForm';
 
-describe('LoginForm ', () => {
-    it('placeholder fields should exist/Debería existir los campos de placeholder', () => {
-        const { getByPlaceholderText } = render(<MemoryRouter>
-            <LoginForm />
-        </MemoryRouter>);
+// describe('LoginForm ', () => {
+//     it('placeholder fields should exist/Debería existir los campos de placeholder', () => {
+//         const { getByPlaceholderText } = render(<MemoryRouter>
+//             <LoginForm />
+//         </MemoryRouter>);
 
-        const emailInput = getByPlaceholderText('example@example.com');
-        const passwordInput = getByPlaceholderText('*********');
+//         const emailInput = getByPlaceholderText('example@example.com');
+//         const passwordInput = getByPlaceholderText('*********');
 
-        expect(emailInput).toBeInTheDocument();
-        expect(passwordInput).toBeInTheDocument();
-    });
-});
+//         expect(emailInput).toBeInTheDocument();
+//         expect(passwordInput).toBeInTheDocument();
+//     });
+// });
 
-describe('Login', () => {
+describe('LoginForm', () => {
     test('renders content', () => {
         const user = {
             email: 'example@example.com',

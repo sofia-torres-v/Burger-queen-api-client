@@ -1,5 +1,5 @@
 
-//Login
+//
 const api = () => {
 
     const login = async (email, password) => {
@@ -11,7 +11,6 @@ const api = () => {
                 },
                 body: JSON.stringify({ email, password }),
             });
-            console.log(response)
 
             if (response.ok) {
                 return await response.json();

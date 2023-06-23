@@ -42,12 +42,20 @@ export default function Menu() {
 
   //productos seleccionados que se muestran en OrderList
   const [selectedProducts, setSelectedProducts] = useState([]);
+  const [isActive, setIsActive] = useState(true);
   const handleClickProduct = (chosenProduct) => {
-    setSelectedProducts([
+            setSelectedProducts([
       ...selectedProducts,
       chosenProduct
     ])
+
+    if (chosenProduct === 'breakfast') {
+      setIsActive(true);
+    } else if (chosenProduct === 'lunch'){
+      setIsActive(false);
+    }
   }
+  
 
 
   return (
@@ -73,8 +81,17 @@ export default function Menu() {
 
               <h2 className='sub-title'>Menu option</h2>
               <div className='content-buttons'>
-                <button onClick={() => handleClick('breakfast')} className='btn-break'>Breakfast</button>
-                <button onClick={() => handleClick('lunch')} className='btn-lunch'>Lunch/Dinner</button>
+
+                <button 
+                id='break' 
+                onClick={() => handleClick('breakfast')} 
+                className={`btn-break ${isActive && 'active'}`}>Breakfast</button>
+
+                <button 
+                id='lunch'  
+                onClick={() => handleClick('lunch')} 
+                className={`btn-lunch ${!isActive && 'active'}`}>Lunch/Dinner</button>
+
               </div>
               {mostrarProducts === "lunch" ? < Products products={lunches} handleClickProduct={handleClickProduct} /> : <Products products={breakfasts} handleClickProduct={handleClickProduct} />}
             </div>

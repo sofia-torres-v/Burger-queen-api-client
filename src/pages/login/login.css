@@ -1,4 +1,4 @@
-/* contenedor principal para pantallas chicas   */
+/* ---------------------fondo vista Administrator----------------  */
 
  .global-container {
     background-image: url('../../assets/lgVertical.png');
@@ -19,7 +19,7 @@
 }
 
 
-/* contenedor principal para pantallas grandes  */
+/* estilos tablet   */
 
 @media (min-width:750px){
     .global-container{
@@ -39,7 +39,7 @@
         max-width: 550px;
     }   
 
-/* contenedor principal para pantallas aún más grandes */
+/*  pantallas aún más grandes */
 
 @media (min-width:1000px){
     .global-container{

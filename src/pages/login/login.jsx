@@ -25,10 +25,9 @@ const Login = () => {
       return;
     }
 
-  
-
     try {
       const data = await api().login(email, password);
+      console.log(data);
       if (data.user.role === 'waiter') {
         navigate('/waiter');
       } else if (data.user.role === 'admin') {

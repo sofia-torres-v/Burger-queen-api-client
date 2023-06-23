@@ -1,0 +1,27 @@
+
+
+
+.product-order-list{
+    /* background-color: blue; */
+    margin: 0 10px 0 20px;
+    font-size: 2rem;
+    display: flex;
+    gap:20px
+}
+.item-product{
+    display: flex;
+    gap: 30px;
+}
+ .price-delete{
+    /* background-color: #F8B504; */
+    display: flex;
+    gap: 10px;
+    margin-left:60px;
+   
+ }
+
+ .product-order-list .product{
+    text-align: start;
+    /* background-color: red; */
+   
+ }

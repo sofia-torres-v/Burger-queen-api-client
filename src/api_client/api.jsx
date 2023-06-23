@@ -1,7 +1,7 @@
 
 //
 const api = () => {
-
+    // Valida el correo y contraseña del usuario
     const login = async (email, password) => {
         try {
             const response = await fetch('http://localhost:8080/login', {
@@ -19,13 +19,13 @@ const api = () => {
             }
 
         } catch (err) {
-            throw new Error(err.message);
+            // throw new Error(err.message);
         }
     };
 
 
 
-//trae productos de la Mock
+
     const fetchProducts = async ({ token }) => {
         try {
             const response = await fetch('http://localhost:8080/products', {
@@ -41,13 +41,16 @@ const api = () => {
                     breakfasts: products.filter(item => item.type === 'Desayuno'),
                     lunches: products.filter(item => item.type === 'Almuerzo'),
                 };
+
             } else {
                 throw Error('adasd');
             }
+            
         } catch (error) {
             throw error
         }
     };
+
     return {
         fetchProducts,
         login

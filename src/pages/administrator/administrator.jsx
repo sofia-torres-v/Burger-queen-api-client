@@ -20,7 +20,6 @@ export default function Administrator() {
                     <Logout />
                 </div>
                     <LogoBurger />
-                    {/* <AdminUser />    */}
             </header>
 
             <main >

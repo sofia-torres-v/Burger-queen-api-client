@@ -14,7 +14,7 @@ export default function CardOrder({ product, price, item ,onClick}) {
         </div>
         
         <div className='price-delete'  >
-          <p><span>{price}</span></p>
+          <p><span className='symbol'>$</span> <span className='price'>{price}</span></p>
           <figure onClick={onClick}>
             <img src={Delete} alt="delete"  />
           </figure>    

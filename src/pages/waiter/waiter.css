@@ -33,7 +33,7 @@
     margin-bottom: 25px;
 }
 
- 
+
 /* estilos input de nombre de cliente */
 .group-client{
     color: #fff;
@@ -140,7 +140,7 @@
     margin-right: 10px;  
 }
 
-.ticket-footer span{
+.ticket-footer span {
     font-weight: lighter;
     margin-left: 10px;
 }

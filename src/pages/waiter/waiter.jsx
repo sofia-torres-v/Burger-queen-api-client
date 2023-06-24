@@ -136,7 +136,7 @@ export default function Menu() {
 
             <div className='ticket-footer'>
               <p>Item:<span> {contarTotalItems(selectedProducts)}</span></p>
-              <p><span>Total:{contarTotalProductos(selectedProducts)} </span> </p>
+              <p>Total $:<span>{`${contarTotalProductos(selectedProducts)}`} </span> </p>
             </div>
 
             <div className='ticket-btns'>

@@ -1,10 +1,5 @@
 /* ---------------------fondo vista waiter----------------  */
-/* .fondo{
-    width: 100%;
-    height: 200px;
-    background-image: url('../../assets/3.jpg');
-    background-size: cover;
-} */
+
 .global-container-waiter{
     padding:20px 0 90px 0;
     background-image: url('../../assets/fondoVertical.png');
@@ -12,7 +7,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* padding: 120px 0 20px; */
     min-height: 100vh;
 }
 
@@ -39,9 +33,8 @@
     margin-bottom: 25px;
 }
 
-/* --------------------- estilos contenido column 1 --------------------------  */
-
-/* column hijo cliente  */
+ 
+/* estilos input de nombre de cliente */
 .group-client{
     color: #fff;
     padding-bottom: 35px;
@@ -65,7 +58,7 @@
 }
 
 
-/* column hijo orden pedido */
+/* columna productos*/
 .content-order{
     background-color: #5D5D5D;
     min-height: 790px;
@@ -94,51 +87,26 @@
     outline: none;
 }
 
-.content-list-lunch{
-    display: none;
-}
 
-/* ---------------column ticket--------------------- */
-
-/* probando */
+/* columna ticket orderList */
 
 .subtitle-list{
-    /* background-color: #f804d3; */
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 12px;
 }
-
 
 .subtitle-product{
-    color: #000;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-/* probando */
-
-
-
-
-
 
 .ticket-header, .ticket-body, .ticket-footer{
     background-color:#fffffff1;
 }
 
 .ticket-subtitle{
-    font-size: 2.8rem;
+    font-size: 3.4rem;
     text-align: center;
 }
 

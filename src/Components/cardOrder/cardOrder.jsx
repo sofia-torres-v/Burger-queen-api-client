@@ -9,12 +9,12 @@ export default function CardOrder({ product, price, item }) {
       <div className='product-order-list'>
 
         <div className='item-product'>
-          <p>{item}</p>
+          <p className='item'>{item}</p>
           <p className='product'>{product}</p>
         </div>
         
         <div className='price-delete'>
-          <p><span>{price}</span></p>
+          <p className='soles'>{`$ ${price}`}</p>
           <figure>
             <img src={Delete} alt="delete" />
           </figure>    

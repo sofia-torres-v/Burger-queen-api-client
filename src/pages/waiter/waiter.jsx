@@ -13,7 +13,7 @@ export default function Menu() {
 
   const token = localStorage.getItem('token');
 
-//  parametros: Valor actual y  función que actualiza el valor 
+  //  parametros: Valor actual y  función que actualiza el valor 
   const [breakfasts, setBreakfasts] = useState([])
   const [lunches, setLunches] = useState([])
   useEffect(() => {
@@ -36,43 +36,52 @@ export default function Menu() {
 
   //muestra desayuno o almuerzo
   const [mostrarProducts, setMostrarProducts] = useState("breakfast");
+  const [isActive, setIsActive] = useState(true);
   const handleClick = (value) => {
     setMostrarProducts(value);
+    //activa el color del botton 
+    if (value === 'breakfast') {
+      setIsActive(true);
+    } else  {
+      setIsActive(false);
+    }
   };
 
   //productos seleccionados que se muestran en OrderList
   const [selectedProducts, setSelectedProducts] = useState([]);
-  const [isActive, setIsActive] = useState(true);
   const handleClickProduct = (chosenProduct) => {
-            setSelectedProducts([
+    setSelectedProducts([
       ...selectedProducts,
       chosenProduct
     ])
-
-    if (chosenProduct === 'breakfast') {
-      setIsActive(true);
-    } else if (chosenProduct === 'lunch'){
-      setIsActive(false);
-    }
   }
-  
 
+  // suma el precio total de productos
   const contarTotalProductos = (selectedProducts) => {
     let total = 0;
     selectedProducts.forEach((product) => {
-      total += product.price;
+      total += parseFloat(product.price);
     });
     console.log(total);
     return total;
   }
+  // suma los Items
+  const contarTotalItems = (selectedProducts) => {
+  return  selectedProducts.length
+  }
 
+  // Borrar producto de orderList
+  const handleClickRemover = (productIndex) => {
+    setSelectedProducts(prevSelectedProducts =>
+      prevSelectedProducts.filter((product, index) => index !== productIndex));
+  }
 
   return (
     <>
       <section className='global-container-waiter'>
         <div className='fondo'>
-        <Logout />
-        <LogoBurger />
+          <Logout />
+          <LogoBurger />
         </div>
         <div className='container-columns1 container'>
 
@@ -91,15 +100,15 @@ export default function Menu() {
               <h2 className='sub-title'>Menu option</h2>
               <div className='content-buttons'>
 
-                <button 
-                id='break' 
-                onClick={() => handleClick('breakfast')} 
-                className={`btn-break ${isActive && 'active'}`}>Breakfast</button>
+                <button
+                  id='break'
+                  onClick={() => handleClick('breakfast')}
+                  className={`btn-break ${isActive && 'active'}`}>Breakfast</button>
 
-                <button 
-                id='lunch'  
-                onClick={() => handleClick('lunch')} 
-                className={`btn-lunch ${!isActive && 'active'}`}>Lunch/Dinner</button>
+                <button
+                  id='lunch'
+                  onClick={() => handleClick('lunch')}
+                  className={`btn-lunch ${!isActive && 'active'}`}>Lunch/Dinner</button>
 
               </div>
               {mostrarProducts === "lunch" ? < Products products={lunches} handleClickProduct={handleClickProduct} /> : <Products products={breakfasts} handleClickProduct={handleClickProduct} />}
@@ -116,18 +125,18 @@ export default function Menu() {
             </div>
 
             <div className='ticket-body'>
-                <div className='subtitle-list'>
-                  <p className='subtitle-product'>Item</p>
-                  <p className='subtitle-product'>Product</p>
-                  <p className='subtitle-product'>Price</p>
-                </div>
+              <div className='subtitle-list'>
+                <p className='subtitle-product'>Item</p>
+                <p className='subtitle-product'>Product</p>
+                <p className='subtitle-product'>Price</p>
+              </div>
               {/* Contenido de la lista de pedidos */}
-              <ProductList products={selectedProducts}>  </ProductList>
+              <ProductList products={selectedProducts} handleClickRemover={handleClickRemover} >  </ProductList>
             </div>
 
             <div className='ticket-footer'>
-              <p>Item:<span>01</span></p>
-              <p><span>Total:{contarTotalProductos(selectedProducts)}</span> </p>
+              <p>Item:<span> {contarTotalItems(selectedProducts)}</span></p>
+              <p><span>Total:{contarTotalProductos(selectedProducts)} </span> </p>
             </div>
 
             <div className='ticket-btns'>

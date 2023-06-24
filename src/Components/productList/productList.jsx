@@ -2,7 +2,7 @@ import React from 'react';
 import CardOrder from '../../Components/cardOrder/cardOrder'
 
 
-export default function ProductList({ products }) {
+export default function ProductList({ products ,handleClickRemover }) {
 
 
     return (
@@ -12,10 +12,11 @@ export default function ProductList({ products }) {
                 return <CardOrder 
                 product={product.name}
                 key={index}
-                item={index}
+                item={index + 1}
                 price={product.price}
+                onClick={() => handleClickRemover(index)}
                 />
-                // se retiro  onClick={() => handleClickProduct(products)}
+                
             })}
         </div>
     )

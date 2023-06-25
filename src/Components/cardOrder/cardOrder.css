@@ -1,24 +1,45 @@
+/* estilos para el texto producto, precio y total */
+
 .product-order-list{
-    /* background-color: blue; */
-    margin: 0 10px 0 20px;
-    font-size: 2rem;
+    font-size: 2.2rem;
     display: flex;
-    gap:20px
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 10px 0;
 }
+
+.item{
+   font-size:19px ;
+}
+
 .item-product{
     display: flex;
-    gap: 30px;
+    gap: 23px;
+    align-items: center;
 }
+
  .price-delete{
-    /* background-color: #F8B504; */
     display: flex;
-    gap: 10px;
-    margin-left:60px;
-   
+    align-items: center;
+    gap: 10px;   
  }
 
- .product-order-list .product{
-    text-align: start;
-    /* background-color: red; */
-   
+ .price-delete img{
+    width: 23px;
  }
+
+.price-delete .symbol{
+    font-size: 19px;
+}
+
+.price-delete .price{
+    font-size: 20px;
+}
+
+
+ @media (min-width:750px){
+    .product-order-list{
+        margin: 23px 5px 23px 15px;
+    }
+ }
+

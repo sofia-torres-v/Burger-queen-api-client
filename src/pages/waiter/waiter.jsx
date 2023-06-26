@@ -84,17 +84,16 @@ export default function Menu() {
     setSelectedProducts([]);
   }
 
-
-
   // enviar lista de pedidos a cocina
   const [orderSent, setOrderSent] = useState([]);
-  const sendOrderToKitchen = async ()  => {
-       await api().fetchSendOrder(selectedProducts, token);
-       setOrderSent(selectedProducts);   
+  const sendOrderToKitchen = async () => {
+    await api().fetchSendOrder(selectedProducts, token);
+    setOrderSent(selectedProducts);
+    setFullName('');
+    setFirstName('');
+    setSelectedProducts([]);
   };
   // console.log(orderSent);
-  
-
 
   return (
     <>

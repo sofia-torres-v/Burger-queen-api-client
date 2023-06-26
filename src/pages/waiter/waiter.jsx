@@ -43,7 +43,7 @@ export default function Menu() {
     //activa el color del botton 
     if (value === 'breakfast') {
       setIsActive(true);
-    } else  {
+    } else {
       setIsActive(false);
     }
   };
@@ -68,7 +68,7 @@ export default function Menu() {
   }
   // suma los Items
   const contarTotalItems = (selectedProducts) => {
-  return  selectedProducts.length
+    return selectedProducts.length
   }
 
   // Borrar producto de orderList
@@ -77,16 +77,23 @@ export default function Menu() {
       prevSelectedProducts.filter((product, index) => index !== productIndex));
   }
 
+  // Borrar producto de orderList
+  const handleClickCancel = () => {
+    setFullName('');
+    setFirstName('');
+    setSelectedProducts([]);
+  }
 
   // enviar lista de pedidos a cocina
   const [orderSent, setOrderSent] = useState([]);
-  const sendOrderToKitchen = async ()  => {
-       await api().fetchSendOrder(selectedProducts, token);
-       setOrderSent(selectedProducts);   
+  const sendOrderToKitchen = async () => {
+    await api().fetchSendOrder(selectedProducts, token);
+    setOrderSent(selectedProducts);
+    setFullName('');
+    setFirstName('');
+    setSelectedProducts([]);
   };
   // console.log(orderSent);
-  
-
 
   return (
     <>
@@ -150,7 +157,7 @@ export default function Menu() {
             <div className='ticket-btns'>
               <button className='ticket-enviar active' onClick={sendOrderToKitchen}>Send to kitchen</button>
               {orderSent && <p>Order sent to the kitchen!</p>}
-              <button className='ticket-cancel'>Cancel</button>
+              <button onClick={handleClickCancel} className='ticket-cancel'>Cancel</button>
             </div>
           </div>
 

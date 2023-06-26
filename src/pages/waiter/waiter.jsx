@@ -42,7 +42,7 @@ export default function Menu() {
     //activa el color del botton 
     if (value === 'breakfast') {
       setIsActive(true);
-    } else  {
+    } else {
       setIsActive(false);
     }
   };
@@ -67,7 +67,7 @@ export default function Menu() {
   }
   // suma los Items
   const contarTotalItems = (selectedProducts) => {
-  return  selectedProducts.length
+    return selectedProducts.length
   }
 
   // Borrar producto de orderList
@@ -75,6 +75,14 @@ export default function Menu() {
     setSelectedProducts(prevSelectedProducts =>
       prevSelectedProducts.filter((product, index) => index !== productIndex));
   }
+
+  // Borrar producto de orderList
+  const handleClickCancel = () => {
+    setFullName('');
+    setFirstName('');
+    setSelectedProducts([]);
+  }
+
 
   return (
     <>
@@ -141,7 +149,7 @@ export default function Menu() {
 
             <div className='ticket-btns'>
               <button className='ticket-enviar active'>Send to kitchen</button>
-              <button className='ticket-cancel'>Cancel</button>
+              <button onClick={handleClickCancel} className='ticket-cancel'>Cancel</button>
             </div>
 
           </div>

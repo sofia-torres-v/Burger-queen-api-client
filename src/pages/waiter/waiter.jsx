@@ -13,6 +13,7 @@ export default function Menu() {
 
   const token = localStorage.getItem('token');
 
+
   //  parametros: Valor actual y  función que actualiza el valor 
   const [breakfasts, setBreakfasts] = useState([])
   const [lunches, setLunches] = useState([])
@@ -62,7 +63,7 @@ export default function Menu() {
     selectedProducts.forEach((product) => {
       total += parseFloat(product.price);
     });
-    console.log(total);
+    // console.log(total);
     return total;
   }
   // suma los Items
@@ -76,6 +77,17 @@ export default function Menu() {
       prevSelectedProducts.filter((product, index) => index !== productIndex));
   }
 
+
+  // enviar lista de pedidos a cocina
+  const [orderSent, setOrderSent] = useState([]);
+  const sendOrderToKitchen = async ()  => {
+       await api().fetchSendOrder(selectedProducts, token);
+       setOrderSent(selectedProducts);   
+  };
+  // console.log(orderSent);
+  
+
+
   return (
     <>
       <section className='global-container-waiter'>
@@ -83,6 +95,7 @@ export default function Menu() {
           <Logout />
           <LogoBurger />
         </div>
+
         <div className='container-columns1 container'>
 
           <div className='column-menu'>
@@ -96,20 +109,16 @@ export default function Menu() {
 
             {/* contenedor de los pedidos en general*/}
             <div className='content-order'>
-
               <h2 className='sub-title'>Menu option</h2>
               <div className='content-buttons'>
-
                 <button
                   id='break'
                   onClick={() => handleClick('breakfast')}
                   className={`btn-break ${isActive && 'active'}`}>Breakfast</button>
-
                 <button
                   id='lunch'
                   onClick={() => handleClick('lunch')}
                   className={`btn-lunch ${!isActive && 'active'}`}>Lunch/Dinner</button>
-
               </div>
               {mostrarProducts === "lunch" ? < Products products={lunches} handleClickProduct={handleClickProduct} /> : <Products products={breakfasts} handleClickProduct={handleClickProduct} />}
             </div>
@@ -118,7 +127,6 @@ export default function Menu() {
 
 
           <div className='column-ticket'>
-
             <div className='ticket-header'>
               <h2 className='ticket-subtitle'>Order List</h2>
               <p>Client:{fullName}</p>
@@ -140,10 +148,10 @@ export default function Menu() {
             </div>
 
             <div className='ticket-btns'>
-              <button className='ticket-enviar active'>Send to kitchen</button>
+              <button className='ticket-enviar active' onClick={sendOrderToKitchen}>Send to kitchen</button>
+              {orderSent && <p>Order sent to the kitchen!</p>}
               <button className='ticket-cancel'>Cancel</button>
             </div>
-
           </div>
 
         </div>

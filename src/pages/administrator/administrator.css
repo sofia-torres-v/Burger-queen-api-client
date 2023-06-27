@@ -1,25 +1,11 @@
 /* ---------------------fondo vista administrator----------------  */
 
 .global-container-Admi{
-    background-image: url('../../assets/fondoVertical.png');    
-    background-size: cover;
-    padding: 120px 0 40px;
+    /* background-image: url('../../assets/fondoVertical.png');     */
+    /* background-size: cover; */
+    background-color: #000;
+    padding:20px 0 90px 0;
     min-height: 100vh;
-}
-
-/* .box-text-logout{
-  
-} */
-
-.box-text-logout span{
-    border-bottom: solid 3px #F8B504;
-    font-size: 3rem;
-    color: #fff;
-    position: absolute;
-    top: 53px;
-    left: 0;
-    color: #fff;
-    padding-left: 35px;
 }
 
 .content-general-products{

@@ -6,6 +6,8 @@ import Products from '../../Components/productsForWaiters/products';
 import './waiter.css';
 import api from '../../api_client/api';
 import ProductList from '../../Components/productList/productList';
+import Modal from '../../Components/modal/modal';
+import Icon from '../../assets/iconWaiter.png';
 import './waiter.css'
 
 
@@ -92,14 +94,23 @@ export default function Menu() {
     setFullName('');
     setFirstName('');
     setSelectedProducts([]);
+    // Muestra el modal al enviar el pedido
+    setShowModal(true);
   };
-  // console.log(orderSent);
 
+
+  const [showModal, setShowModal] = useState(false);
+  const closeModal = () => {
+    // Oculta el modal al hacer clic en "OK"
+    setShowModal(false);
+  };
+ 
+  
   return (
     <>
       <section className='global-container-waiter'>
-        <div className='fondo'>
-          <Logout />
+        <div>
+          <Logout text='Waiter' icon={Icon} />
           <LogoBurger />
         </div>
 
@@ -131,8 +142,6 @@ export default function Menu() {
             </div>
           </div>
 
-
-
           <div className='column-ticket'>
             <div className='ticket-header'>
               <h2 className='ticket-subtitle'>Order List</h2>
@@ -157,6 +166,7 @@ export default function Menu() {
             <div className='ticket-btns'>
               <button className='ticket-enviar active' onClick={sendOrderToKitchen}>Send to kitchen</button>
               {orderSent && <p>Order sent to the kitchen!</p>}
+              {showModal && <Modal close={closeModal} />}
               <button onClick={handleClickCancel} className='ticket-cancel'>Cancel</button>
             </div>
           </div>

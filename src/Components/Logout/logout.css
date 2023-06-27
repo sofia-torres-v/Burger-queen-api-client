@@ -1,22 +1,38 @@
 /* ----------botón icono de salir---------- */
 
-.out{
-    position: absolute;
-    top: 25px;
-    right: 40px;
-    color: #fff;
-    width: 70px;
+.box-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
 }
 
-/* .box-out{
+.text-waiter{
+    color: #fff;
+    font-size: 3rem;
+}
+
+.box-icon{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    padding-right: 20px;
+    align-items:end;
+    border-bottom: solid 3px  #F8B504;
+    gap: 8px;
+    padding-left: 10px;
+}
+
+.icon-waiter{
+    width: 45px;
+    height: 45px;
+    margin-bottom: 5px;
+}
+
+.out{
+    width: 60px;
+    height: 60px;
+    margin-right:20px;
 }
 
 .text-out{
     color: #fff;
-    font-size: 25px;
-} */
+    font-size: 2rem;
+}

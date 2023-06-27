@@ -14,7 +14,7 @@ export default function Menu() {
   const token = localStorage.getItem('token');
 
 
-  //  parametros: Valor actual y  función que actualiza el valor 
+  //parametros: Valor actual y  función que actualiza el valor 
   const [breakfasts, setBreakfasts] = useState([])
   const [lunches, setLunches] = useState([])
   useEffect(() => {
@@ -130,8 +130,6 @@ export default function Menu() {
               {mostrarProducts === "lunch" ? < Products products={lunches} handleClickProduct={handleClickProduct} /> : <Products products={breakfasts} handleClickProduct={handleClickProduct} />}
             </div>
           </div>
-
-
 
           <div className='column-ticket'>
             <div className='ticket-header'>

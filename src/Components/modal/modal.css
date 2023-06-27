@@ -1,6 +1,5 @@
-/* modal que confirma envio de lista de pedidos a la cocina  */
+/* modal para confirmar y cancelar lista de pedidos a la cocina  */
 .modal{
-    /* background-color: rgba(163, 156, 156, 0.71); */
     background-color: rgba(0, 0, 0, 0.577);
     width: 100%;
     height: 100%;
@@ -13,14 +12,11 @@
 }
 
 .modal-content{
-    /* background-color: #fff; */
     background-color: #000;
     font-weight: bold;
     padding: 60px 100px;
     border-radius: 15px;
     display: flex;
-    /* display: grid; */
-    /* align-self: center; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -30,7 +26,6 @@
 
 .check{
     width: 80px;
-    /* background-color: aqua; */
 }
 
 .modal-text{
@@ -40,11 +35,32 @@
 
 .btn-modal{
     background-color: #F8B504;
-    /* padding: 15px 30px; */
     padding: 10px 20px;
     border-radius: 15px;
     color: #fff;
     border: none;
     font-size: 2.5rem;
     font-weight: bold;
+}
+
+.box-close{
+    background-color:#F8B504;
+    border-radius: 50px;
+    padding: 10px;
+    width: 50px;
+    position: absolute;
+    top: 450px;
+    right: 15px;
+}
+
+.close{
+     width: 100%;
+}
+
+
+@media (min-width:1000px){
+    .box-close{
+        top: 268px;
+        right:190px; 
+    }
 }

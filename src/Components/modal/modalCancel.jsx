@@ -5,10 +5,13 @@ import './modal.css'
 const ModalCancel = ({ handleClickCancel, cancel }) => {
     return (
         <div className="modal">
-            <figure onClick={cancel} >
-                <img src={close} className='close' alt="close" />
-            </figure>
+
             <div className="modal-content">
+                
+                <figure className= 'box-close'onClick={cancel} >
+                    <img src={close} className='close' alt="close" />
+                </figure>
+
                 <p className="modal-text">Do you wish to delete the entire order?</p>
                 <button onClick={handleClickCancel} className="btn-modal"> Continue </button>
 

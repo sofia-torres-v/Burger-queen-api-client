@@ -1,12 +1,12 @@
 /* -------------------------formulario-----------*/
 /* pantalla chicas */
-.login-form{
+.login-form {
     background-color: #696969a5;
     width: 80%;
     display: grid;
     gap: 20px;
     max-width: 450px;
-    padding: 30px 12px 20px ;
+    padding: 30px 12px 20px;
     border-radius: 20px;
 }
 
@@ -15,31 +15,41 @@
     font-size: 2rem;
 }
 
-.group{
+.group {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
-.inp, .btn{
+#messageError {
+    color: rgb(35 1 1);
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: rgb(255 0 0 / 30%);
+    padding: 7px;
+    height: 72px;
+}
+
+.inp,
+.btn {
     width: 100%;
     padding: 10px;
     border-radius: 18px;
     font-size: 1.5rem;
-    margin-top:20px;
+    margin-top: 20px;
     outline: none;
     border: none;
 }
 
-.btn{
+.btn {
     margin: 0 auto;
 }
 
 .btn {
     background-color: #F8B504;
     font-weight: bold;
-} 
+}
 
 .inp::placeholder {
     color: rgb(130, 126, 126);
@@ -49,35 +59,34 @@
 
 /* pantalla grande*/
 
-@media (min-width:750px){
-    .global-container{
+@media (min-width:750px) {
+    .global-container {
         background-image: url('../../assets/lgVertical.png');
         gap: 30px;
     }
 
-    .login-form{
+    .login-form {
         padding: 45px 20px 60px 20px;
         max-width: 570px;
         gap: 18px;
     }
 
     .inp,
-    .btn { 
+    .btn {
         padding: 25px;
         font-size: 2.5rem;
-        margin-top:20px;
+        margin-top: 20px;
     }
 
-    .login-form h2{
+    .login-form h2 {
         font-size: 3.5rem;
     }
 }
 
 /*  pantalla aun mas grande  */
 
-@media (min-width:1000px){
-    .login-form{
+@media (min-width:1000px) {
+    .login-form {
         margin-left: 400px;
     }
 }
-  

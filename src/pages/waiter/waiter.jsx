@@ -173,9 +173,9 @@ export default function Menu() {
             </div>
 
             <div className='ticket-btns'>
-              <button className='ticket-enviar active' onClick={sendOrderToKitchen}>Send to kitchen</button>
+              <button className='ticket-enviar active' disabled={!firstName || selectedProducts.length === 0} onClick={sendOrderToKitchen}>Send to kitchen</button>
               {showModal && <Modal close={closeModal} />}
-              <button onClick={handleClickCancelModal} className='ticket-cancel'>Cancel</button>
+              <button onClick={handleClickCancelModal} disabled={!firstName} className='ticket-cancel'>Cancel</button>
               {showModalCancel && <ModalCancel cancel={cancel} handleClickCancel={handleClickCancel} />}
             </div>
           </div>

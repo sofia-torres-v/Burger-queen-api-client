@@ -6,7 +6,8 @@ import Products from '../../Components/productsForWaiters/products';
 import './waiter.css';
 import api from '../../api_client/api';
 import ProductList from '../../Components/productList/productList';
-import Modal from '../../Components/modal/modal';
+import Modal from '../../Components/modal/modalConfirmation';
+import ModalCancel from '../../Components/modal/modalCancel';
 import Icon from '../../assets/iconWaiter.png';
 import './waiter.css'
 
@@ -73,17 +74,10 @@ export default function Menu() {
     return selectedProducts.length
   }
 
-  // Borrar producto de orderList
+  // Borrar producto de orderList (1x1)
   const handleClickRemover = (productIndex) => {
     setSelectedProducts(prevSelectedProducts =>
       prevSelectedProducts.filter((product, index) => index !== productIndex));
-  }
-
-  // Borrar producto de orderList
-  const handleClickCancel = () => {
-    setFullName('');
-    setFirstName('');
-    setSelectedProducts([]);
   }
 
   // enviar lista de pedidos a cocina
@@ -97,15 +91,30 @@ export default function Menu() {
     // Muestra el modal al enviar el pedido
     setShowModal(true);
   };
-
-
   const [showModal, setShowModal] = useState(false);
   const closeModal = () => {
     // Oculta el modal al hacer clic en "OK"
     setShowModal(false);
   };
- 
-  
+
+
+  // Borrar datos en general (cancelar)
+  const [showModalCancel, setShowModalCancel] = useState(false);
+  const handleClickCancelModal = () => {
+    setShowModalCancel(true);
+  }
+  const handleClickCancel = () => {
+    setFullName('');
+    setFirstName('');
+    setSelectedProducts([]);
+    setShowModalCancel(false);
+  }
+  const cancel = () => {
+    setShowModalCancel(false);
+  }
+
+
+
   return (
     <>
       <section className='global-container-waiter'>
@@ -165,9 +174,9 @@ export default function Menu() {
 
             <div className='ticket-btns'>
               <button className='ticket-enviar active' onClick={sendOrderToKitchen}>Send to kitchen</button>
-              {orderSent && <p>Order sent to the kitchen!</p>}
               {showModal && <Modal close={closeModal} />}
-              <button onClick={handleClickCancel} className='ticket-cancel'>Cancel</button>
+              <button onClick={handleClickCancelModal} className='ticket-cancel'>Cancel</button>
+              {showModalCancel && <ModalCancel cancel={cancel} handleClickCancel={handleClickCancel} />}
             </div>
           </div>
 

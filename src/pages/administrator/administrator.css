@@ -1,8 +1,7 @@
 /* ---------------------fondo vista administrator----------------  */
 
 .global-container-Admi{
-    /* background-image: url('../../assets/fondoVertical.png');     */
-    /* background-size: cover; */
+    background-image: url('../../assets/fondoGeneral.jpg');
     background-color: #000;
     padding:20px 0 90px 0;
     min-height: 100vh;

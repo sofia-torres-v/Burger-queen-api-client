@@ -2,7 +2,7 @@
 
 .global-container-waiter{
     padding:0px 0 90px 0;
-    background-image: url('../../assets/011.jpg');
+    background-image: url('../../assets/fondoGeneral.jpg');
     background-size: cover;
     background-color: #000;
     min-height: 100vh;

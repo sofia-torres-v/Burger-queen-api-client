@@ -2,6 +2,7 @@ import React from 'react';
 import Logout from '../../Components/Logout/logout';
 import LogoBurger from '../../Components/Logo/logo';
 // import AdminUser from '../../Components/adminUser/AdminUser';
+import Icon from '../../assets/iconAdmin.png';
 import EditAndDelete from '../../Components/userButtons/EditAndDelete';
 import './administrator.css'
 
@@ -14,10 +15,9 @@ export default function Administrator() {
         <>
         <div className='global-container-Admi'>
 
-            <header className="header-admi container">
+            <header>
                 <div className='box-text-logout'> 
-                    <span>Administrator</span>
-                    <Logout />
+                    <Logout text='Administrator' icon={Icon}/>
                 </div>
                     <LogoBurger />
             </header>

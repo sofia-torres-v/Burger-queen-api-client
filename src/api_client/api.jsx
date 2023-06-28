@@ -68,7 +68,7 @@ const api = () => {
     };
 
 
-    //Cambiando el estado de la orden de pending a delivery
+    //Cambiando el estado de la orden 
     const changeStatus = async (order, token) => {
         try {
             const response = await fetch(`http://localhost:8080/orders/${order.id}`, {
@@ -81,7 +81,7 @@ const api = () => {
             })
             if (response.ok) {
                 const products = await response.json();
-                return updatedOrder.id, updatedOrder.status
+                return products.id, products.status
             } else {
                 console.log('algo salio mal')
             }

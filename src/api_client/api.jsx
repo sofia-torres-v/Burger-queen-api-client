@@ -39,39 +39,64 @@ const api = () => {
             } else {
                 throw Error('ERROR: token invalido');
             }
-            } catch (error) {
+        } catch (error) {
             throw error
         }
     };
 
 
     // Enviar lista de pedidos  a la Api
-    const fetchSendOrder = async ( selectedProducts, token ) => {
+    const fetchSendOrder = async (selectedProducts, token) => {
         try {
-        const response = await fetch('http://localhost:8080/orders', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify(selectedProducts)
-         })
-          if (response.ok) {
-            console.log('La orden se envió correctamente')
-           return true
-          } else {
-            console.log('Hubo un error al enviar la orden')
-          }
-        } catch(error) {
+            const response = await fetch('http://localhost:8080/orders', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(selectedProducts)
+            })
+            if (response.ok) {
+                console.log('La orden se envió correctamente')
+                return selectedProducts
+            } else {
+                console.log('Hubo un error al enviar la orden')
+            }
+        } catch (error) {
             // console.log(error,'Error de la solicitud HTTP')
-        }     
+        }
     };
-        
+
+
+    //Cambiando el estado de la orden de pending a delivery
+    const changeStatus = async (order, token) => {
+        try {
+            const response = await fetch(`http://localhost:8080/orders/${order.id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': `Bearer ${token}`,
+                },
+                body: JSON.stringify({ status: 'delivery' })
+            })
+            if (response.ok) {
+                const products = await response.json();
+                return updatedOrder.id, updatedOrder.status
+            } else {
+                console.log('algo salio mal')
+            }
+        } catch (err) {
+            console.log(err, 'Error de la solicitud HTTP')
+        }
+
+    }
+
 
     return {
         fetchProducts,
         login,
         fetchSendOrder,
+        changeStatus,
     }
 }
 

@@ -13,7 +13,7 @@ html {
 /* Márgenes a los lados de todas las vistas, evitando que ocupen toda la pantalla. */
 
 .container {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
     max-width: 1200px;
 }

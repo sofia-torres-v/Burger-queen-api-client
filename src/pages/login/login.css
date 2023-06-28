@@ -1,50 +1,43 @@
 /* ---------------------fondo vista Administrator----------------  */
 
- .global-container {
+.global-container {
     background-image: url('../../assets/lgVertical.png');
-    background-size: cover;  
+    background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-} 
-
-#messageError{
-    color: rgb(74, 16, 16);
-    font-size: 1rem;
-    font-weight: bold;
-    background-color: rgba(255, 0, 0, 0.085);
-    padding: 10px;
 }
+
+
 
 
 /* estilos tablet   */
 
-@media (min-width:750px){
-    .global-container{
+@media (min-width:750px) {
+    .global-container {
         gap: 30px;
     }
 
-    #messageError{
+    #messageError {
         font-size: 2.3rem;
         padding: 12px;
     }
 }
 
-    .content-logo img{
-        display: block;
-        width: 100%;
-        margin: 0 auto;
-        max-width: 550px;
-    }   
+.content-logo img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 550px;
+}
 
 /*  pantallas aún más grandes */
 
-@media (min-width:1000px){
-    .global-container{
+@media (min-width:1000px) {
+    .global-container {
         background-image: url('../../assets/ham.png');
         gap: 30px;
     }
 }
-  

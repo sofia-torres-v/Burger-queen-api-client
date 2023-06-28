@@ -1,4 +1,5 @@
 import React from 'react';
+import './cardOrderCheff.css'
 
 export default function CardOrderCheff({ name, item, product, time,text}) {
 

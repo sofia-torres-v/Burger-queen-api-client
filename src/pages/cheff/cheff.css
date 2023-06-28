@@ -1,4 +1,5 @@
 
 .global-container-cheff{
     background-image: url('../../assets/fondoGeneral.jpg');
+    height: 100vh;
 }

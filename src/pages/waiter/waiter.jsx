@@ -16,7 +16,6 @@ export default function Menu() {
 
   const token = localStorage.getItem('token');
 
-
   //parametros: Valor actual y  función que actualiza el valor 
   const [breakfasts, setBreakfasts] = useState([])
   const [lunches, setLunches] = useState([])

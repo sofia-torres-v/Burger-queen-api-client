@@ -11,6 +11,29 @@ import ModalCancel from '../../Components/modal/modalCancel';
 import Icon from '../../assets/iconWaiter.png';
 import './waiter.css'
 
+//agrupar los productos por su ID y devolver un array de productos agrupados.
+function groupProductsById(products) {
+  const groupedProducts = Object.values(products.reduce((grouped, product) => {
+    const { id } = product;
+    if (grouped[id]) {
+      grouped[id].qty += 1;
+    } else {
+      grouped[id] = {
+        qty: 1,
+        product: {
+          "id": product.id,
+          "name": product.name,
+          "price": product.price,
+          "image": product.image,
+          "type": product.type,
+          "dateEntry": product.dateEntry
+        }
+      };
+    }
+    return grouped;
+  }, {}));
+  return groupedProducts;
+}
 
 export default function Menu() {
 
@@ -79,11 +102,22 @@ export default function Menu() {
       prevSelectedProducts.filter((product, index) => index !== productIndex));
   }
 
-  // enviar lista de pedidos a cocina
+  // enviar lista de pedidos a cocina segun la estructura
   const [orderSent, setOrderSent] = useState([]);
   const sendOrderToKitchen = async () => {
-    await api().fetchSendOrder(selectedProducts, token);
-    setOrderSent(selectedProducts);
+    const orderDate = {
+      "client": fullName,
+      "userId": 1,
+      "products": [],
+      "status": "pending",
+      "dataEntry": "2022-03-05 15:00",
+
+    }
+//guarda en OrderDate.products los productos agrupados por id
+    orderDate.products.push(...groupProductsById(selectedProducts))
+
+    await api().fetchSendOrder(orderDate, token);
+    setOrderSent(orderDate);
     setFullName('');
     setFirstName('');
     setSelectedProducts([]);
@@ -95,7 +129,7 @@ export default function Menu() {
     // Oculta el modal al hacer clic en "OK"
     setShowModal(false);
   };
-
+  // console.log(orderSent)
 
   // Borrar datos en general (cancelar)
   const [showModalCancel, setShowModalCancel] = useState(false);

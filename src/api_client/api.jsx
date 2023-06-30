@@ -45,6 +45,7 @@ const api = () => {
     };
 
 
+
     // Enviar lista de pedidos  a la Api
     const fetchSendOrder = async (selectedProducts, token) => {
         try {
@@ -67,6 +68,27 @@ const api = () => {
         }
     };
 
+    // trae lista de pedidos  a la Api
+    const fetchGetOrder = async ({ token }) => {
+        try {
+            const response = await fetch('http://localhost:8080/orders', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            if (response.ok) {
+                const listProducts = await response.json();
+                console.log('la lista se trajo correctamente')
+                return listProducts
+            } else {
+                console.log('Hubo un error al traer la orden')
+            }
+        } catch (error) {
+            console.log(error,'Error de la solicitud HTTP')
+        }
+    };
 
     //Cambiando el estado de la orden 
     const changeStatus = async (order, token) => {
@@ -96,6 +118,7 @@ const api = () => {
         fetchProducts,
         login,
         fetchSendOrder,
+        fetchGetOrder,
         changeStatus,
     }
 }

@@ -1,0 +1,11 @@
+
+.card-order-cheff{
+    margin: 21px 0px 0px 98px;
+    background-color: rgb(221 221 221);
+    border-radius: 26px;
+    min-height: 163px;
+    display: flex;
+    gap: 21px;
+    padding: 13px;
+    width: 389px;
+}

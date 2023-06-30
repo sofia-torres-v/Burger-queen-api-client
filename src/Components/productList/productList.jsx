@@ -4,7 +4,6 @@ import CardOrder from '../../Components/cardOrder/cardOrder'
 
 export default function ProductList({ products ,handleClickRemover }) {
 
-
     return (
 
         <div className='content-product-list' >

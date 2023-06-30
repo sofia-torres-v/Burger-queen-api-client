@@ -10,6 +10,7 @@ const api = () => {
                 body: JSON.stringify({ email, password }),
             });
             if (response.ok) {
+                
                 return await response.json();
             } else {
                 throw new Error('Oops! That username and password combination is incorrect. Please try again.');
@@ -32,13 +33,18 @@ const api = () => {
             })
             if (response.ok) {
                 const products = await response.json();
+                // console.log(products);
+              
                 return {
                     breakfasts: products.filter(item => item.type === 'Desayuno'),
                     lunches: products.filter(item => item.type === 'Almuerzo'),
                 };
+
             } else {
                 throw Error('ERROR: token invalido');
             }
+
+            
         } catch (error) {
             throw error
         }

@@ -15,8 +15,7 @@ import './waiter.css'
 export default function Menu() {
 
   const token = localStorage.getItem('token');
-
-  //parametros: Valor actual y  función que actualiza el valor 
+ 
   const [breakfasts, setBreakfasts] = useState([])
   const [lunches, setLunches] = useState([])
   useEffect(() => {
@@ -24,10 +23,12 @@ export default function Menu() {
       const result = await api().fetchProducts({ token });
       setBreakfasts(result.breakfasts);
       setLunches(result.lunches);
+      console.log(result);  
     }
     fetchProducts();
-  }, [])
 
+  }, [])
+  
 
   //nombre del cliente con evento onChange
   const [firstName, setFirstName] = useState('');
@@ -36,6 +37,7 @@ export default function Menu() {
     setFirstName(e.target.value);
     setFullName(e.target.value);
   };
+
 
   //muestra desayuno o almuerzo
   const [mostrarProducts, setMostrarProducts] = useState("breakfast");
@@ -50,6 +52,7 @@ export default function Menu() {
     }
   };
 
+
   //productos seleccionados que se muestran en OrderList
   const [selectedProducts, setSelectedProducts] = useState([]);
   const handleClickProduct = (chosenProduct) => {
@@ -58,6 +61,7 @@ export default function Menu() {
       chosenProduct
     ])
   }
+
 
   // suma el precio total de productos
   const contarTotalProductos = (selectedProducts) => {
@@ -68,16 +72,20 @@ export default function Menu() {
     // console.log(total);
     return total;
   }
+
+
   // suma los Items
   const contarTotalItems = (selectedProducts) => {
     return selectedProducts.length
   }
+
 
   // Borrar producto de orderList (1x1)
   const handleClickRemover = (productIndex) => {
     setSelectedProducts(prevSelectedProducts =>
       prevSelectedProducts.filter((product, index) => index !== productIndex));
   }
+
 
   // enviar lista de pedidos a cocina
   const [orderSent, setOrderSent] = useState([]);
@@ -111,7 +119,6 @@ export default function Menu() {
   const cancel = () => {
     setShowModalCancel(false);
   }
-
 
 
   return (
@@ -151,6 +158,7 @@ export default function Menu() {
           </div>
 
           <div className='column-ticket'>
+            
             <div className='ticket-header'>
               <h2 className='ticket-subtitle'>Order List</h2>
               <p>Client:{fullName}</p>
@@ -166,6 +174,7 @@ export default function Menu() {
               <ProductList products={selectedProducts} handleClickRemover={handleClickRemover} >  </ProductList>
             </div>
 
+
             <div className='ticket-footer'>
               <p>Item:<span> {contarTotalItems(selectedProducts)}</span></p>
               <p>Total $:<span>{`${contarTotalProductos(selectedProducts)}`} </span> </p>
@@ -173,12 +182,15 @@ export default function Menu() {
 
             <div className='ticket-btns'>
               <button className='ticket-enviar active' disabled={!firstName || selectedProducts.length === 0} onClick={sendOrderToKitchen}>Send to kitchen</button>
+
               {showModal && <Modal close={closeModal} />}
+
               <button onClick={handleClickCancelModal} disabled={!firstName} className='ticket-cancel'>Cancel</button>
+
               {showModalCancel && <ModalCancel cancel={cancel} handleClickCancel={handleClickCancel} />}
             </div>
           </div>
-
+3e4
         </div>
 
       </section>

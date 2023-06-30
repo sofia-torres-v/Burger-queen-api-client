@@ -4,7 +4,6 @@ import './cardElement.css'
 
 export default function CardElement({ title, image, price, onClick }) {
 
-
   return (
     <section className='card-element'>
       <p>{title}</p>

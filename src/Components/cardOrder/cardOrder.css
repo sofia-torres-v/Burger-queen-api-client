@@ -28,13 +28,10 @@
     width: 23px;
  }
 
-.price-delete .symbol{
+.price-delete .symbol, .price-delete .price{
     font-size: 19px;
 }
 
-.price-delete .price{
-    font-size: 20px;
-}
 
 
  @media (min-width:750px){
@@ -43,3 +40,11 @@
     }
  }
 
+ @media (min-width:1000px){
+    .product-order-list{
+        font-size: 2rem;
+        margin: 2px 0 4px 0;
+    }
+
+ 
+}

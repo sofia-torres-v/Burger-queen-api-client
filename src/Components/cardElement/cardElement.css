@@ -3,23 +3,23 @@
 .card-element {
     background-color: #fffffff1;
     border-radius: 15px;
-    flex: 1 1 167px;
-    min-height: 210px;
+    flex: 1 1 150px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 30px;
-    padding: 10px;
+    gap: 35px;
+    padding: 10px 3px;
     text-align: center;
 }
 
 .card-element img {
-    width: 120px;
+    width: 90px;
     margin: 0 auto;
 }
 
 .card-element p {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: bold;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .group-price p {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
 }
 
 .btn-card {
@@ -41,4 +41,16 @@
     font-size: 2.3rem;
     outline: none;
     border: none;
+}
+
+@media (min-width:750px){
+   .card-element{
+    min-height: 150px;
+   }
+}
+
+@media (min-width:1024px){
+    .card-element p {
+        font-size: 2.2rem;
+    }
 }

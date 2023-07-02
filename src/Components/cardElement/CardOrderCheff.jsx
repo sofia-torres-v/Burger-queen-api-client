@@ -7,25 +7,33 @@ export default function CardOrderCheff({ status, client, items, time, text }) {
 
         <div className='card-order-cheff'>
             <p className='item'>{status}</p>
-            <h2 className='name'>{client}</h2>
+            <p className='text-cards-name'>Client: <span>{client}</span></p>
 
-            <div className='item-product'>
+            <div>
                 {items?.map((item, index) => {
                     return <div key={index}>
 
-                        <p>{item.qty}</p>
-                        <p className='product'>{item?.product?.name}</p>
-                        <img src={item?.product?.image} />
-                        <p> {item?.product?.type}</p>
+                      <div className='box-card'>
+                        <div className='info-card'>
+                            <p className='item-card' >Product: <span className='span-card'>{item?.product?.name}</span></p>
+                            <p className='item-card' >Quantity: <span className='span-card'>{item.qty}</span></p>
+                            <p className='item-card' >Type: <span className='span-card'>{item?.product?.type}</span></p>
+                        </div>
+                        <div className='img-card'>
+                            <img src={item?.product?.image} />
+                        </div>
+                      </div>
+
+                        <div className='time-attended'  >
+                            <p>Time: <span>{time}</span></p>
+                            <button className='btn-attended'>{text}</button>
+                        </div>
+
                     </div>
 
                 })}
             </div>
 
-            <div className='time-attended'  >
-                <p className='time'>{time}</p>
-                <button className='btn-attended'>{text}</button>
-            </div>
 
         </div >
     )

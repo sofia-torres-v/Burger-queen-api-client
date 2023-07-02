@@ -78,11 +78,8 @@ export default function Menu() {
 
   //productos seleccionados que se muestran en OrderList
   const [selectedProducts, setSelectedProducts] = useState([]);
-  const handleClickProduct = (chosenProduct) => {
-    setSelectedProducts([
-      ...selectedProducts,
-      chosenProduct
-    ])
+  const handleClickProduct = (product) => {
+  setSelectedProducts([...selectedProducts,product]);  
   }
 
 
@@ -157,75 +154,80 @@ export default function Menu() {
   return (
     <>
       <section className='global-container-waiter'>
-        <div>
-          <Logout text='Waiter' icon={Icon} />
-          <LogoBurger />
-        </div>
-
-        <div className='container-columns1 container'>
-
-          <div className='column-menu'>
-            <div className='group-client'>
-              <input type="text" placeholder="Client's name"
-                id="inpClient"
-                name="client"
-                value={firstName}
-                onChange={manageNameChange} />
-            </div>
-
-            {/* contenedor de los pedidos en general*/}
-            <div className='content-order'>
-              <h2 className='sub-title'>Menu option</h2>
-              <div className='content-buttons'>
-                <button
-                  id='break'
-                  onClick={() => handleClick('breakfast')}
-                  className={`btn-break ${isActive && 'active'}`}>Breakfast</button>
-                <button
-                  id='lunch'
-                  onClick={() => handleClick('lunch')}
-                  className={`btn-lunch ${!isActive && 'active'}`}>Lunch/Dinner</button>
-              </div>
-              {mostrarProducts === "lunch" ? < Products products={lunches} handleClickProduct={handleClickProduct} /> : <Products products={breakfasts} handleClickProduct={handleClickProduct} />}
-            </div>
+        <header>
+          <div>
+            <Logout text='Waiter' icon={Icon} />
+            <LogoBurger />
           </div>
+        </header>
 
-          <div className='column-ticket'>
-            
-            <div className='ticket-header'>
-              <h2 className='ticket-subtitle'>Order List</h2>
-              <p>Client:{fullName}</p>
-            </div>
+        <main>
+          <div className='container-columns1 container'>
 
-            <div className='ticket-body'>
-              <div className='subtitle-list'>
-                <p className='subtitle-product'>Item</p>
-                <p className='subtitle-product'>Product</p>
-                <p className='subtitle-product'>Price</p>
+            <div className='column-menu'>
+
+              <div className='group-client'>
+                <input type="text" placeholder="Client's name"
+                  id="inpClient"
+                  name="client"
+                  value={firstName}
+                  onChange={manageNameChange} />
               </div>
-              {/* Contenido de la lista de pedidos */}
-              <ProductList products={selectedProducts} handleClickRemover={handleClickRemover} >  </ProductList>
+
+              {/* contenedor de los pedidos en general*/}
+              <div className='content-order'>
+                <h2 className='sub-title'>Menu option</h2>
+                <div className='content-buttons'>
+                  <button
+                    id='break'
+                    onClick={() => handleClick('breakfast')}
+                    className={`btn-break ${isActive && 'active'}`}>Breakfast</button>
+                  <button
+                    id='lunch'
+                    onClick={() => handleClick('lunch')}
+                    className={`btn-lunch ${!isActive && 'active'}`}>Lunch/Dinner</button>
+                </div>
+                {mostrarProducts === "lunch" ? < Products products={lunches} handleClickProduct={handleClickProduct} /> : <Products products={breakfasts} handleClickProduct={handleClickProduct} />}
+              </div>
+              
             </div>
 
+            <div className='column-ticket'>
+              
+              <div className='ticket-header'>
+                <h2 className='ticket-subtitle'>Order List</h2>
+                <p>Client:{fullName}</p>
+              </div>
 
-            <div className='ticket-footer'>
-              <p>Item:<span> {contarTotalItems(selectedProducts)}</span></p>
-              <p>Total $:<span>{`${contarTotalProductos(selectedProducts)}`} </span> </p>
+              <div className='ticket-body'>
+                <div className='subtitle-list'>
+                  <p className='subtitle-product'>Item</p>
+                  <p className='subtitle-product'>Product</p>
+                  <p className='subtitle-product'>Price</p>
+                </div>
+                {/* Contenido de la lista de pedidos */}
+                <ProductList products={selectedProducts} handleClickRemover={handleClickRemover} >  </ProductList>
+              </div>
+
+
+              <div className='ticket-footer'>
+                <p>Item:<span> {contarTotalItems(selectedProducts)}</span></p>
+                <p>Total $:<span>{`${contarTotalProductos(selectedProducts)}`} </span> </p>
+              </div>
+
+              <div className='ticket-btns'>
+                <button className='ticket-enviar active' disabled={!firstName || selectedProducts.length === 0} onClick={sendOrderToKitchen}>Send to kitchen</button>
+
+                {showModal && <Modal close={closeModal} />}
+
+                <button onClick={handleClickCancelModal} disabled={!firstName} className='ticket-cancel'>Cancel</button>
+
+                {showModalCancel && <ModalCancel cancel={cancel} handleClickCancel={handleClickCancel} />}
+              </div>
             </div>
 
-            <div className='ticket-btns'>
-              <button className='ticket-enviar active' disabled={!firstName || selectedProducts.length === 0} onClick={sendOrderToKitchen}>Send to kitchen</button>
-
-              {showModal && <Modal close={closeModal} />}
-
-              <button onClick={handleClickCancelModal} disabled={!firstName} className='ticket-cancel'>Cancel</button>
-
-              {showModalCancel && <ModalCancel cancel={cancel} handleClickCancel={handleClickCancel} />}
-            </div>
           </div>
-3e4
-        </div>
-
+        </main>
       </section>
     </>
   );

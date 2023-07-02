@@ -1,11 +1,10 @@
 /* ---------------------fondo vista waiter----------------  */
 
 .global-container-waiter{
-    padding:0px 0 90px 0;
     background-image: url('../../assets/fondoGeneral.jpg');
     background-size: cover;
     background-color: #000;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .container-columns1 {
@@ -16,26 +15,16 @@
 }
 
 .column-menu , .column-ticket{
-    /* width: 100%;
-    max-width: 400px; */
     flex: 1 1 400px;
 }
 
 .column-ticket{
     flex: 1 1 320px;
-    /* width: 330px; */
 }
 
-.waiter{
-    padding-top: 20px;
-    margin-bottom: 25px;
-}
-
-
-/* estilos input de nombre de cliente */
 .group-client{
     color: #fff;
-    padding-bottom: 35px;
+    padding-bottom: 25px;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -48,7 +37,7 @@
 
 .group-client input{
    width: 100%;
-   padding: 18px 14px;
+   padding: 16px 14px;
    border-radius: 7px;
    outline: none;
    background-color: #fffffff1;
@@ -60,7 +49,7 @@
 /* columna productos*/
 .content-order{
     background-color: #5D5D5D;
-    min-height: 790px;
+    min-height: 660px;
     border-radius:0 0 20px 20px;
     padding: 0 15px;
 }
@@ -73,7 +62,7 @@
 }
 
 .content-buttons{
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .btn-break, .btn-lunch{
@@ -88,7 +77,6 @@
 
 
 /* columna ticket orderList */
-
 .subtitle-list{
     display: flex;
     justify-content: space-between;
@@ -124,7 +112,7 @@
 }
 
 .ticket-body{
-    min-height: 570px;
+    min-height: 420px;
     padding: 10px;
 }
 
@@ -165,13 +153,84 @@
 }
 
 
-/*  Estilos tablet  */
-@media (max-width:750px){
+
+@media (min-width:820px){ 
+    .ticket-body{
+        min-height: 550px;
+        padding: 10px; 
+    }
+    .content-order{
+        min-height: 790px;
+        padding: 0 15px;
+    }
+  }
+
+
+@media (min-width:1000px){
+    .ticket-body{
+        min-height: 300px;
+        padding: 10px;
+    }
+    .content-order{
+        min-height: 492px;
+        border-radius:0 0 20px 20px;
+        padding: 0 15px;
+    }
+    .ticket-enviar, .ticket-cancel{
+        padding: 8px;
+    }
+    .ticket-subtitle{
+        font-size: 2.7rem;
+    }
+    .subtitle-product{
+        font-size: 2rem;
+    }
+    .ticket-footer p{
+        font-size: 2.3rem;
+        font-weight: bold;
+        margin-right: 10px;  
+    }
+    .sub-title{
+        font-size: 2.6rem;
+    }
+    .btn-break, .btn-lunch{
+     padding: 15px;
+   }
+  }
+
+
+
+
+  @media (min-width:1024px){
+
     .container-columns1 {
-        flex-wrap: wrap;
+        padding-top: 0px;
     }
 
-    .btn-lunch{
-        font-size: 1.9rem;
+    .group-client input{
+        padding: 10px 14px;
+     }
+     .group-client{
+        padding-bottom: 15px;
     }
-}
+    .ticket-subtitle{
+        font-size: 2.4rem;
+    }
+
+    .btn-break, .btn-lunch{
+        padding: 10px;
+      }
+    .ticket-header p{
+        font-size: 2.4rem;
+    }
+    .ticket-btns{
+        display: grid;
+        gap: 7px;
+        margin: 10px 0 15px 0;
+    }
+  }
+
+
+
+
+

@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 20px;
+    padding-top: 13px;
 }
 
 .text-waiter{
@@ -35,4 +35,26 @@
 .text-out{
     color: #fff;
     font-size: 2rem;
+}
+
+
+@media (min-width:1000px){
+    .box-content{
+        padding-top: 8px;
+    }
+}
+
+
+@media (min-width:1024px){
+    .out{
+        width: 52px;
+        height: 52px;
+    }
+
+    .text-out{
+        font-size: 1.7rem;
+    }
+    .text-waiter{
+        font-size: 2.5rem;
+    }
 }

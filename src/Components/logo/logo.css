@@ -2,7 +2,7 @@
 /* pantallas chicas */
 
 .content-logo{
-    width: 250px;
+    width: 200px;
     margin: 0 auto;
     margin-bottom: 25px;
 }
@@ -17,13 +17,23 @@
 
 @media (min-width:750px){
     .content-logo{
-        width: 590px;
+        width: 450px;
     }
 
     .content-logo img{
         display: block;
         width: 100%;
         margin: 0 auto;
-        max-width: 550px;
+        max-width: 400px;
+    }
+}
+
+@media (min-width:1000px){
+
+    .content-logo{
+        width: 375px;
+    }
+    .content-logo img{
+        max-width: 250px;
     }
 }

@@ -1,4 +1,34 @@
 .global-container-cheff {
     background-image: url('../../assets/fondoGeneral.jpg');
-   
+    background-size: cover;
+    height: 100vh;
+}
+
+.container-column-cheff{
+    background-color: rgba(128, 128, 128, 0.459);
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    border-radius: 15px;
+    border-radius: 15px 15px ;
+}
+
+.title-columns-cheff{
+    text-align: center;
+    font-size: 3rem;
+    padding: 20px;
+    color: white; 
+}
+
+.first-column{
+    border-right: solid 2px #F8B504;
+    /* flex: 1 1 400px; */
+    width: 50%;
+    border-radius: 15px 0 0 15px; 
+}
+
+.second-column{
+    border-left: solid 2px #F8B504;
+    width: 50%;
+    border-radius: 0px 15px 15px 0;
 }

@@ -3,7 +3,7 @@ import Delete from '../../assets/delete.png';
 import './cardOrder.css'
 
 
-export default function CardOrder({ product, price, item ,onClick}) {
+export default function CardOrder({ product, price, item, onClick}) {
 
   return (
       <div className='product-order-list'>
@@ -11,6 +11,7 @@ export default function CardOrder({ product, price, item ,onClick}) {
         <div className='item-product'>
           <p className='item'>{item}</p>
           <p className='product'>{product}</p>
+          {/* <p className='quantity'>{quantity}</p> */}
         </div>
         
         <div className='price-delete'  >

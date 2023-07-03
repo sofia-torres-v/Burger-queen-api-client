@@ -1,9 +1,9 @@
 import React from 'react';
 import CardOrder from '../../Components/cardOrder/cardOrder'
+import './productList.css'
 
 
 export default function ProductList({ products ,handleClickRemover }) {
-
 
     return (
 
@@ -14,6 +14,7 @@ export default function ProductList({ products ,handleClickRemover }) {
                 key={index}
                 item={index + 1}
                 price={product.price}
+                // quantity={1}
                 onClick={() => handleClickRemover(index)}
                 />
                 

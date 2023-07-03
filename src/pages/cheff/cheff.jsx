@@ -37,22 +37,31 @@ export default function Cheff() {
 
     return (
         <>
-            <div className='global-container-cheff'>
+            <section className='global-container-cheff '>
                 <header>
                     <div className='box-text-logout'>
                         <Logout text='Cheff' icon={Icon} />
+                        <LogoBurger />
                     </div>
-                    <LogoBurger />
                 </header>
 
                 <main>
-                    <CardListProductCheff orders={orders} />
+                    <div className='container-column-cheff container'>
 
+                        <div className='first-column'>
+                            <h2 className='title-columns-cheff'>Orders for kitchen</h2>
+                                <CardListProductCheff orders={orders} />
+                        </div>
+
+                        <div className='second-column'>
+                            <h2 className='title-columns-cheff'>Order served</h2>
+                                <CardListProductCheff orders={orders} />
+                        </div>
+
+                    </div>
                 </main>
 
-
-
-            </div>
+            </section>
 
         </>
     )

@@ -9,7 +9,6 @@ import './login.css';
 import api from '../../api_client/api';
 
 
-
 const Login = () => {
 
   const navigate = useNavigate();
@@ -27,13 +26,13 @@ const Login = () => {
 
     try {
       const data = await api().login(email, password);
-      // console.log(data);
+      console.log(data);
       if (data.user.role === 'waiter') {
         navigate('/waiter');
       } else if (data.user.role === 'admin') {
         navigate('/admin');
       }
-
+      
       const accessToken = data.accessToken;
 
       try {
@@ -43,8 +42,9 @@ const Login = () => {
       }
 
     } catch (err) {
-      console.log(err);
-      setErrorMessage(err.message);
+      // console.log(err)
+      setErrorMessage('Oops! That username and password combination is incorrect. Please try again.');
+      
     }
   };
 
@@ -65,3 +65,10 @@ const Login = () => {
 };
 
 export default Login;
+
+
+
+
+
+
+

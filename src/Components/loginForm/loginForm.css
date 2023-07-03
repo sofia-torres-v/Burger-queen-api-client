@@ -26,7 +26,8 @@
     color: rgb(35 1 1);
     font-size: 1rem;
     font-weight: bold;
-    background-color: rgb(255 0 0 / 30%);
+    background-color: rgba(255, 0, 0, 0.123);
+    /* background-color: rgba(204, 62, 62, 0.349); */
     padding: 7px;
     height: 72px;
 }

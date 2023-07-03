@@ -10,29 +10,28 @@ import api from '../../api_client/api';
 
 export default function Cheff() {
     const token = localStorage.getItem('token');
-    const [orders, setOrders] = useState([]);
-    //llamar a la api con los productos
+    //llamar a la api para traer las ordenes
     useEffect(() => {
         async function fetchGetOrder() {
             const result = await api().fetchGetOrder({ token });
-            setOrders(result);
+            setOrderPending(result.pending);
+            setOrderDelivery(result.delivery);
         }
         fetchGetOrder();
     }, [])
-    console.log('lista de productos***', orders)
 
-    // const [orderId, setOrdeId] = useState([])
-    // const [orderStatus, setOrderStatus] = useState([])
-    // //llamar a la api para editar los productos que ya tienes en la - Const order -
-    // const changeStatus = async () => {
-    //     const result = await api().changeStatus(order);
-    //     setOrdeId(result.id);
-    //     setOrderStatus(result.id);
-    // }
-    // console.log('--Id--', orderId, '--Status--', orderStatus)
-
-
-
+    //llamar a la api para editar los productos
+    const [orderPending, setOrderPending] = useState([]);
+    const [orderDelivery, setOrderDelivery] = useState([]);
+    const changeStatus = async (order) => {
+        const result = await api().changeStatus(order, "delivery", token);
+        async function fetchGetOrder() {
+            const result = await api().fetchGetOrder({ token });
+            setOrderPending(result.pending);
+            setOrderDelivery(result.delivery);
+        }
+        fetchGetOrder();
+    }
 
 
     return (
@@ -49,13 +48,15 @@ export default function Cheff() {
                     <div className='container-column-cheff container'>
 
                         <div className='first-column'>
-                            <h2 className='title-columns-cheff'>Orders for kitchen</h2>
-                                <CardListProductCheff orders={orders} />
+                            <h2 className='title-columns-cheff'>Cooking orders</h2>
+                            <CardListProductCheff orders={orderPending} changeStatus={changeStatus} />
                         </div>
 
                         <div className='second-column'>
-                            <h2 className='title-columns-cheff'>Order served</h2>
-                                <CardListProductCheff orders={orders} />
+                            <h2 className='title-columns-cheff'>Completed order</h2>
+
+                            < CardListProductCheff orders={orderDelivery} />
+
                         </div>
 
                     </div>

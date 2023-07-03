@@ -1,7 +1,7 @@
 /* lista de productos y sus botones editar y eliminar */
 
 .list-content{
-    font-size: 3rem;
+    font-size: 2.2rem;
     color: #fff;
     display: flex;
     justify-content:space-between ;

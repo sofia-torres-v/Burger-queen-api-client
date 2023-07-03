@@ -10,7 +10,7 @@ const api = () => {
                 body: JSON.stringify({ email, password }),
             });
             if (response.ok) {
-                
+
                 return await response.json();
             } else {
                 throw new Error('Oops! That username and password combination is incorrect. Please try again.');
@@ -34,7 +34,7 @@ const api = () => {
             if (response.ok) {
                 const products = await response.json();
                 // console.log(products);
-              
+
                 return {
                     breakfasts: products.filter(item => item.type === 'Desayuno'),
                     lunches: products.filter(item => item.type === 'Almuerzo'),
@@ -44,7 +44,7 @@ const api = () => {
                 throw Error('ERROR: token invalido');
             }
 
-            
+
         } catch (error) {
             throw error
         }
@@ -53,7 +53,7 @@ const api = () => {
 
 
     // Enviar lista de pedidos  a la Api
-    const fetchSendOrder = async (selectedProducts, token) => {
+    const fetchSendOrder = async (order, token) => {
         try {
             const response = await fetch('http://localhost:8080/orders', {
                 method: 'POST',
@@ -61,11 +61,11 @@ const api = () => {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
                 },
-                body: JSON.stringify(selectedProducts)
+                body: JSON.stringify(order)
             })
             if (response.ok) {
                 console.log('La orden se envió correctamente')
-                return selectedProducts
+                return order
             } else {
                 console.log('Hubo un error al enviar la orden')
             }
@@ -87,17 +87,20 @@ const api = () => {
             if (response.ok) {
                 const listProducts = await response.json();
                 console.log('la lista se trajo correctamente')
-                return listProducts
+                return {
+                    pending: listProducts.filter(item => item.status === 'pending'),
+                    delivery: listProducts.filter(item => item.status === 'delivery'),
+                }
             } else {
                 console.log('Hubo un error al traer la orden')
             }
         } catch (error) {
-            console.log(error,'Error de la solicitud HTTP')
+            console.log(error, 'Error de la solicitud HTTP')
         }
     };
 
     //Cambiando el estado de la orden 
-    const changeStatus = async (order, token) => {
+    const changeStatus = async (order, status, token) => {
         try {
             const response = await fetch(`http://localhost:8080/orders/${order.id}`, {
                 method: 'PATCH',
@@ -105,11 +108,14 @@ const api = () => {
                     'Content-Type': 'application/json',
                     'authorization': `Bearer ${token}`,
                 },
-                body: JSON.stringify({ status: 'delivery' })
+                body: JSON.stringify({
+                    status: status,
+                    dateProcessed: new Date(),
+                })
             })
             if (response.ok) {
-                const products = await response.json();
-                return products.id, products.status
+                const orders = await response.json();
+                return orders
             } else {
                 console.log('algo salio mal')
             }

@@ -16,13 +16,12 @@
 .title-columns-cheff{
     text-align: center;
     font-size: 3rem;
-    padding: 20px;
+    padding: 15px;
     color: white; 
 }
 
 .first-column{
     border-right: solid 2px #F8B504;
-    /* flex: 1 1 400px; */
     width: 50%;
     border-radius: 15px 0 0 15px; 
 }

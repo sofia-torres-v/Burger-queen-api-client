@@ -43,13 +43,13 @@
     border: none;
 }
 
-@media (min-width:750px){
-   .card-element{
-    min-height: 150px;
-   }
+@media (min-width:750px) {
+    .card-element {
+        min-height: 150px;
+    }
 }
 
-@media (min-width:1024px){
+@media (min-width:1024px) {
     .card-element p {
         font-size: 2.2rem;
     }

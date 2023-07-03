@@ -9,8 +9,8 @@ export default function EditAndDelete({ Name }) {
 
             <span className="list-subtitle">{Name}</span>
             <div className="list-content-btn">
-                 <button className="list-btn-edit"> Edit </button>
-                 <button className="list-btn-delete"> Delete </button>
+                <button className="list-btn-edit"> Edit </button>
+                <button className="list-btn-delete"> Delete </button>
             </div>
 
         </li>

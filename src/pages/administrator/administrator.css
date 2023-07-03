@@ -1,25 +1,64 @@
 /* ---------------------fondo vista administrator----------------  */
 
-.global-container-Admi{
+.global-container-Admi {
     background-image: url('../../assets/fondoGeneral.jpg');
     background-color: #000;
-    padding:20px 0 90px 0;
+    padding: 20px 0 90px 0;
     min-height: 100vh;
 }
 
-.content-general-products{
+.content-general-products {
     background-color: #5D5D5D;
     padding: 20px;
     border-radius: 0 0 20px 20px;
 }
 
-.rolTitle{
+.rolTitle {
     color: #F8B504;
     font-size: 3rem;
     padding-bottom: 5px;
 }
 
-.content-cards-products{
+.content-cards-products {
     border-top: solid 4px #F8B504;
     padding: 25px;
+}
+
+.btn-product,
+.btn-staff {
+    font-size: 2.3rem;
+    padding: 18px;
+    width: 50%;
+    border-radius: 0 0 20px 20px;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+}
+
+.active {
+    background-color: #F8B504;
+}
+
+@media (min-width:1024px) {
+
+    .btn-product,
+    .btn-staff {
+        margin: -20px 0px 0px -1px;
+
+    }
+}
+
+
+
+@media (min-width:820px) {
+
+    .btn-product,
+    .btn-staff {
+        margin: -20px 0px 0px -1px;
+
+    }
+
+    .btn-product, .btn-staff {
+        padding: 11px;
+    }
 }

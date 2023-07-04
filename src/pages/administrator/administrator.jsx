@@ -5,13 +5,12 @@ import LogoBurger from '../../Components/Logo/logo';
 import Icon from '../../assets/iconAdmin.png';
 import EditAndDelete from '../../Components/userButtons/EditAndDelete';
 import './administrator.css'
+import ModalAddProduct from '../../Components/modal/modalAddProduct';
 
 
 
 export default function Administrator() {
     const user = localStorage.getItem('token')
-
-
 
     //muestra desayuno o almuerzo
     const [mostrarProducts, setMostrarProducts] = useState("Product");
@@ -25,7 +24,11 @@ export default function Administrator() {
             setIsActive(false);
         }
     };
-
+//muestra modal
+const [showModalAddProduct, setShowModalAddProduct] = useState(false);
+const handleClickModalAddProduct = () => {
+    setShowModalCancel(true);
+  }
 
 
     return (
@@ -40,6 +43,7 @@ export default function Administrator() {
                 </header>
 
                 <main >
+                    
 
                     <section className='content-general-products container'>
                         <div className='content-buttons'>
@@ -52,6 +56,10 @@ export default function Administrator() {
                                 onClick={() => handleClick('Staff')}
                                 className={`btn-staff ${!isActive && 'active'}`}>Staff</button>
                         </div>
+                        <div><button
+                                id='addProduct'
+                                // onClick={() => handleClick('Product')}
+                                className='btn-addProduct' >Add product</button></div>
                         <h3 className='rolTitle'>Waiter</h3>
                         <ul className='content-cards-products'>
                             <EditAndDelete Name='American Coffe' />

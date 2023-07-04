@@ -17,7 +17,6 @@ export default function cardListProductCheff({ orders, changeStatus }) {
             {
               order.status !== 'pending' && <p>Output: <span>{new Date(order.dateProcessed).toLocaleTimeString()}</span></p>
             }
-
             {
               order.status === 'pending' && <button className='btn-attended' onClick={() => changeStatus(order)}>To attend</button>
             }

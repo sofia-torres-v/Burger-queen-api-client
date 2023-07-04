@@ -8,8 +8,12 @@ export default function cardproductAdmin({ products }) {
         <div className='list-product' >
             {products.map((product, index) => {
                 // console.log(product)
-                return <section key={index} >
-                    {product.name} <EditAndDelete />
+                return <section key={index} className='content-text-btn' >
+                    {product.name ? (
+                        <p>{product.name}</p>
+                    ) : (
+                        <p>{product.email}</p>
+                    )} <EditAndDelete />
                 </section>
 
             })}

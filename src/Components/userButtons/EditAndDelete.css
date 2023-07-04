@@ -1,4 +1,8 @@
 /* lista de productos y sus botones editar y eliminar */
+.content-btns{
+    display: flex;
+    justify-content: flex-end;
+}
 
 .list-content{
     font-size: 2.2rem;
@@ -18,10 +22,13 @@
 
 .list-btn-edit,
 .list-btn-delete{
-    padding: 10px 30px 10px 30px;
+    padding: 6px 28px 6px 28px;
     font-size: 2rem;
-    border-radius:15px;
+    border-radius: 15px;
     margin-left: 25px;
-    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
 }
 

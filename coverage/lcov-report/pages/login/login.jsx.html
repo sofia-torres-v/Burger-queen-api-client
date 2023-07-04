@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
@@ -129,8 +129,17 @@
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -158,6 +167,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -174,12 +185,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -206,7 +226,6 @@ import './login.css';
 import api from '../../api_client/api';
 &nbsp;
 &nbsp;
-&nbsp;
 const Login = () =&gt; {
 &nbsp;
   const navigate = useNavigate();
@@ -224,13 +243,15 @@ const Login = () =&gt; {
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    try {</span>
       const data = <span class="cstat-no" title="statement not covered" >await api().login(email, password);</span>
-<span class="cstat-no" title="statement not covered" >      console.log(data);</span>
+      // console.log(data);
 <span class="cstat-no" title="statement not covered" >      if (data.user.role === 'waiter') {</span>
 <span class="cstat-no" title="statement not covered" >        navigate('/waiter');</span>
-      } else <span class="cstat-no" title="statement not covered" >if (data.user.role === 'admin') {</span>
+      } <span class="cstat-no" title="statement not covered" >if (data.user.role === 'admin') {</span>
 <span class="cstat-no" title="statement not covered" >        navigate('/admin');</span>
+      } else <span class="cstat-no" title="statement not covered" >if (data.user.role === 'cheff') {</span>
+<span class="cstat-no" title="statement not covered" >        navigate('/cheff');</span>
       }
-&nbsp;
+      
       const accessToken = <span class="cstat-no" title="statement not covered" >data.accessToken;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      try {</span>
@@ -240,8 +261,9 @@ const Login = () =&gt; {
       }
 &nbsp;
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      console.log(err);</span>
-<span class="cstat-no" title="statement not covered" >      setErrorMessage(err.message);</span>
+      // console.log(err)
+<span class="cstat-no" title="statement not covered" >      setErrorMessage('Oops! That username and password combination is incorrect. Please try again.');</span>
+      
     }
   };
 &nbsp;
@@ -261,14 +283,22 @@ const Login = () =&gt; {
 &nbsp;
 };
 &nbsp;
-export default Login;</pre></td></tr></table></pre>
+export default Login;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-23T17:00:13.750Z
+                at 2023-07-04T18:57:38.764Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

@@ -72,7 +72,6 @@ export default function Administrator() {
     return (
         <>
             <div className='global-container-Admi'>
-
                 <header>
                     <div className='box-text-logout'>
                         <Logout text='Administrator' icon={Icon} />

@@ -38,7 +38,7 @@ function groupProductsById(products) {
 export default function Menu() {
 
   const token = localStorage.getItem('token');
- 
+
   const [breakfasts, setBreakfasts] = useState([])
   const [lunches, setLunches] = useState([])
   useEffect(() => {
@@ -46,12 +46,12 @@ export default function Menu() {
       const result = await api().fetchProducts({ token });
       setBreakfasts(result.breakfasts);
       setLunches(result.lunches);
-      console.log(result);  
+      // console.log(result);  
     }
     fetchProducts();
 
   }, [])
-  
+
 
   //nombre del cliente con evento onChange
   const [firstName, setFirstName] = useState('');
@@ -79,7 +79,8 @@ export default function Menu() {
   //productos seleccionados que se muestran en OrderList
   const [selectedProducts, setSelectedProducts] = useState([]);
   const handleClickProduct = (product) => {
-  setSelectedProducts([...selectedProducts,product]);  
+    // operador de propagación '...' crear una nueva lista de productos seleccionados.
+    setSelectedProducts([...selectedProducts, product]);
   }
 
 
@@ -114,10 +115,10 @@ export default function Menu() {
       "userId": 1,
       "products": [],
       "status": "pending",
-      "dataEntry": "2022-03-05 15:00",
+      "dataEntry": new Date(),
 
     }
-//guarda en OrderDate.products los productos agrupados por id
+    //guarda en OrderDate.products los productos agrupados por id
     orderDate.products.push(...groupProductsById(selectedProducts))
 
     await api().fetchSendOrder(orderDate, token);
@@ -174,7 +175,6 @@ export default function Menu() {
                   onChange={manageNameChange} />
               </div>
 
-              {/* contenedor de los pedidos en general*/}
               <div className='content-order'>
                 <h2 className='sub-title'>Menu option</h2>
                 <div className='content-buttons'>
@@ -189,11 +189,11 @@ export default function Menu() {
                 </div>
                 {mostrarProducts === "lunch" ? < Products products={lunches} handleClickProduct={handleClickProduct} /> : <Products products={breakfasts} handleClickProduct={handleClickProduct} />}
               </div>
-              
+
             </div>
 
             <div className='column-ticket'>
-              
+
               <div className='ticket-header'>
                 <h2 className='ticket-subtitle'>Order List</h2>
                 <p>Client:{fullName}</p>

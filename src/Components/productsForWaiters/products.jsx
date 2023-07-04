@@ -8,12 +8,12 @@ export default function products({ products, handleClickProduct }) {
     return (
         <div className='content-list-breakfast' >
             {products.map((product) => {
-                return <CardElement 
-                title={product.name} 
-                key={product.id} 
-                price={product.price} 
-                image={product.image} 
-                onClick={() => handleClickProduct(product)} />
+                return <CardElement
+                    title={product.name}
+                    key={product.id}
+                    price={product.price}
+                    image={product.image}
+                    onClick={() => handleClickProduct(product)} />
             })}
         </div>
     )

@@ -26,11 +26,13 @@ const Login = () => {
 
     try {
       const data = await api().login(email, password);
-      console.log(data);
+      // console.log(data);
       if (data.user.role === 'waiter') {
         navigate('/waiter');
-      } else if (data.user.role === 'admin') {
+      } if (data.user.role === 'admin') {
         navigate('/admin');
+      } else if (data.user.role === 'cheff') {
+        navigate('/cheff');
       }
       
       const accessToken = data.accessToken;

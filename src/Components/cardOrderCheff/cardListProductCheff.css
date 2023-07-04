@@ -1,11 +1,11 @@
-.box-order-cheff{
+.box-order-cheff {
     background-color: rgba(0, 0, 0, 0.767);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 20px;
-    max-height: 495px; 
+    max-height: 536px;
     overflow-y: scroll
 }
 
@@ -13,13 +13,13 @@
     background-color: rgba(0, 0, 0, 0.445);
 }
 
-.box-order-cheff::-webkit-scrollbar-thumb{
-    background-color:  rgba(128, 128, 128, 0.247);
+.box-order-cheff::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.247);
 }
 
 
-@media (min-width:1024px){
-    .box-order-cheff{
+@media (min-width:1024px) {
+    /* .box-order-cheff{
         max-height: 455px; 
-    }
+    } */
 }

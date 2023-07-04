@@ -1,21 +1,20 @@
-
-.card-order-cheff{
+.card-order-cheff {
     background-color: #dacece;
     border-radius: 26px;
     padding: 10px 15px 20px 15px;
     display: flex;
     flex-direction: column;
-    width: 380px;
+    min-width: 491px;
     /* flex: 1 1 10px;s */
     font-size: 2rem;
 }
 
-.text-cards-name{
+.text-cards-name {
     font-weight: bold;
     font-size: 2.5rem;
 }
 
-.box-card{
+.box-card {
     /* background-color: chartreuse;  */
     display: flex;
     flex-direction: row;
@@ -26,31 +25,53 @@
     line-height: 1.3;
 }
 
-.item-card{
+.item-card {
     font-size: 2rem;
     font-weight: bold;
 }
 
-.span-card{
+.span-card {
     font-weight: normal;
 }
 
-.img-card img{
-    width: 100px;
+.img-card img {
+    width: 65px;
     display: block;
 }
 
-.time-attended{
-      /* background-color: cornflowerblue; */
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 15px;
+.time-attended {
+    /* background-color: cornflowerblue; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 15px;
+    
 }
 
-.btn-attended{
+.btn-attended {
     background-color: #F8B504;
-    padding: 10px;
+    padding: 10px 64px 10px 64px;
     font-size: 2rem;
     border-radius: 15px;
+}
+
+@media (min-width:750px) {
+
+.card-order-cheff {
+    min-width:  348px;
+}
+.btn-attended {
+    padding: 7px 35px 7px 35px;
+    font-weight: bold;
+}
+}
+
+@media (min-width:1024px) {
+    .card-order-cheff {
+width: 486px;;
+}
+.btn-attended {
+    padding: 10px 64px 10px 64px;
+    font-weight: bold;
+}
 }

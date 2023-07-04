@@ -126,12 +126,44 @@ const api = () => {
     }
 
 
+        // traer usuarios 
+        const fetchShowUsers = async ({ token }) => {
+            try {
+                const response = await fetch('http://localhost:8080/users', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'authorization': `Bearer ${token}`,
+                    }
+                })
+                if (response.ok) {
+                    const users = await response.json();
+                    // console.log(products);
+    
+                    return {
+                        admin: users.filter(item => item.role === 'admin'),
+                        waiter: users.filter(item => item.role === 'waiter'),
+                        cheff: users.filter(item => item.role === 'cheff'),
+                    };
+    
+                } else {
+                    throw Error('ERROR: token invalido');
+                }
+    
+    
+            } catch (error) {
+                throw error
+            }
+        };
+    
+
     return {
         fetchProducts,
         login,
         fetchSendOrder,
         fetchGetOrder,
         changeStatus,
+        fetchShowUsers
     }
 }
 

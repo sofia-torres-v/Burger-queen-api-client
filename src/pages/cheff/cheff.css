@@ -8,14 +8,13 @@
     background-color: rgba(128, 128, 128, 0.459);
     display: flex;
     justify-content: center;
-    height: 600px;
-    border-radius: 15px;
+    height: 755px;
     border-radius: 15px 15px ;
 }
 
 .title-columns-cheff{
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.8rem;
     padding: 15px;
     color: white; 
 }
@@ -27,7 +26,27 @@
 }
 
 .second-column{
-    border-left: solid 2px #F8B504;
     width: 50%;
     border-radius: 0px 15px 15px 0;
 }
+
+
+@media (min-width:820px){
+    .container-column-cheff{
+       height: 894px;
+    }
+}
+
+@media (min-width:1000px){
+    .container-column-cheff{
+       height: 560px;
+    }
+}
+
+@media (min-width:1024px){
+    .container-column-cheff{
+       height: 575px;
+    }
+}
+
+

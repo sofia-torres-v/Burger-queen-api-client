@@ -27,7 +27,6 @@
     font-size: 1rem;
     font-weight: bold;
     background-color: rgba(255, 0, 0, 0.123);
-    /* background-color: rgba(204, 62, 62, 0.349); */
     padding: 7px;
     height: 72px;
 }
@@ -58,33 +57,27 @@
 
 
 
-/* pantalla grande*/
-
 @media (min-width:750px) {
     .global-container {
         background-image: url('../../assets/lgVertical.png');
         gap: 30px;
     }
-
     .login-form {
         padding: 45px 20px 60px 20px;
         max-width: 570px;
         gap: 18px;
     }
-
     .inp,
     .btn {
         padding: 25px;
         font-size: 2.5rem;
         margin-top: 20px;
     }
-
     .login-form h2 {
         font-size: 3.5rem;
     }
 }
 
-/*  pantalla aun mas grande  */
 
 @media (min-width:1000px) {
     .login-form {

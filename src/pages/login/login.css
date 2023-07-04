@@ -11,10 +11,6 @@
 }
 
 
-
-
-/* estilos tablet   */
-
 @media (min-width:750px) {
     .global-container {
         gap: 30px;
@@ -33,7 +29,6 @@
     max-width: 550px;
 }
 
-/*  pantallas aún más grandes */
 
 @media (min-width:1000px) {
     .global-container {
@@ -41,3 +36,4 @@
         gap: 30px;
     }
 }
+

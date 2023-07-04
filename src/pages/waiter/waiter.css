@@ -199,9 +199,7 @@
   }
 
 
-
-
-  @media (min-width:1024px){
+@media (min-width:1024px){
 
     .container-columns1 {
         padding-top: 0px;
@@ -229,7 +227,6 @@
         margin: 10px 0 15px 0;
     }
   }
-
 
 
 

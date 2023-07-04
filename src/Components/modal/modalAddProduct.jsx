@@ -1,6 +1,5 @@
 import React from 'react';
 import close from '../../assets/close.png';
-
 import './modal.css'
 import './modalAddProduct.css'
 

@@ -12,6 +12,20 @@
     padding: 20px;
     border-radius: 0 0 20px 20px;
 }
+.content-add{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-addProduct{
+    display: flex;
+    align-items: center;
+    padding: 10px 25px 10px 25px;
+    gap: 10px;
+    border-radius: 18px;
+    font-size: 2rem;
+    margin: 12px;
+}
 
 .rolTitle {
     color: #F8B504;

@@ -5,8 +5,8 @@
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
-    max-height: 536px;
-    overflow-y: scroll
+    max-height: 700px;
+    overflow-y: scroll;
 }
 
 .box-order-cheff::-webkit-scrollbar {
@@ -18,8 +18,16 @@
 }
 
 
-@media (min-width:1024px) {
-    /* .box-order-cheff{
-        max-height: 455px; 
-    } */
+@media (min-width:820px){
+    .box-order-cheff {
+        max-height: 823px;   
+    }
 }
+
+
+@media (min-width:1000px){
+    .box-order-cheff{
+       height: 514px;
+    }
+}
+

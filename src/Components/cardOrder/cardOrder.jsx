@@ -1,12 +1,10 @@
 import React from 'react';
 import Delete from '../../assets/delete.png';
-import './cardOrder.css'
+import './cardOrder.css';
 
-
-export default function CardOrder({ product, price, item, onClick}) {
-
+export default function CardOrder({ product, price, item, onClick }) {
   return (
-      <div className='product-order-list'>
+    <div className="product-order-list" >
 
         <div className='item-product'>
           <p className='item-cardOrder'>{item}</p>
@@ -21,6 +19,7 @@ export default function CardOrder({ product, price, item, onClick}) {
           </figure>    
         </div>
 
-      </div>
-    )
+    </div>
+  );
 }
+ 

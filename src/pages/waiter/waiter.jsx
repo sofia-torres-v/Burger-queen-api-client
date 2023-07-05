@@ -15,8 +15,11 @@ import './waiter.css'
 function groupProductsById(products) {
   const groupedProducts = Object.values(products.reduce((grouped, product) => {
     const { id } = product;
+
     if (grouped[id]) {
       grouped[id].qty += 1;
+      console.log(grouped[id])
+      
     } else {
       grouped[id] = {
         qty: 1,
@@ -31,7 +34,9 @@ function groupProductsById(products) {
       };
     }
     return grouped;
+
   }, {}));
+  
   return groupedProducts;
 }
 
@@ -109,6 +114,8 @@ export default function Menu() {
 
   // enviar lista de pedidos a cocina segun la estructura
   const [orderSent, setOrderSent] = useState([]);
+
+  // funcion que ejecutA al dar click btn enviar a cocina
   const sendOrderToKitchen = async () => {
     const orderDate = {
       "client": fullName,
@@ -116,8 +123,8 @@ export default function Menu() {
       "products": [],
       "status": "pending",
       "dataEntry": new Date(),
-
     }
+
     //guarda en OrderDate.products los productos agrupados por id
     orderDate.products.push(...groupProductsById(selectedProducts))
 

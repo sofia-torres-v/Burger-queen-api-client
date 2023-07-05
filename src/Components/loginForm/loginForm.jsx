@@ -33,31 +33,10 @@ const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handl
       {/* <p id="messageError" data-testid="message-Error">{errorMessage}</p> */}
       {errorMessage && <p id="messageError" data-testid="message-Error">{errorMessage}</p>}
 
-      <button onClick={handleLogin} type="submit" className="btn">
-        Sign in
-      </button>
+      <button onClick={handleLogin} className="btn">Sign in</button>
     </form>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export default LoginForm;

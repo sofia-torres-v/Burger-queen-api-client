@@ -4,9 +4,9 @@ import './modalAddProduct.css'
 
 const ModalAddProduct = ({ handleClickCancel, cancel }) => {
     return (
-        <div className="modal">
+        <div className="modal-add">
 
-            <div className="modal-content">
+            <div className="modal-content-add">
                 <p className="title-add" > Add product</p>
                 <figure className="box-close" onClick={cancel}>
                     <img src={close} className="close" alt="close" />

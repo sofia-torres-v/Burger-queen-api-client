@@ -14,7 +14,7 @@ import './administrator.css'
 export default function Administrator() {
     const token = localStorage.getItem('token');
 
-    //muestra desayuno o almuerzo
+    //muestra peoductos o staff
     const [mostrarProducts, setMostrarProducts] = useState('Product');
     const [isActive, setIsActive] = useState(true);
     const handleClick = (value) => {

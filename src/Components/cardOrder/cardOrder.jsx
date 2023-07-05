@@ -9,7 +9,7 @@ export default function CardOrder({ product, price, item, onClick}) {
       <div className='product-order-list'>
 
         <div className='item-product'>
-          <p className='item'>{item}</p>
+          <p className='item-cardOrder'>{item}</p>
           <p className='product'>{product}</p>
           {/* <p className='quantity'>{quantity}</p> */}
         </div>

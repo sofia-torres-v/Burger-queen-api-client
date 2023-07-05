@@ -18,7 +18,7 @@ import LoginForm from './loginForm';
 // });
 
 describe('LoginForm', () => {
-    test('renders content', () => {
+    test('placeholder fields should exist/Debería existir los campos de placeholder', () => {
         const user = {
             email: 'example@example.com',
             password: '*********',

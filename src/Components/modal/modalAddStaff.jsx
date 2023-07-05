@@ -4,9 +4,9 @@ import './modalAddProduct.css'
 
 const ModalAddStaff = ({ cancel }) => {
     return (
-        <div className="modal">
+        <div className="modal-add">
 
-            <div className="modal-content">
+            <div className="modal-content-add">
                 <p className="title-add" > Add staff</p>
                 <figure className="box-close" onClick={cancel}>
                     <img src={close} className="close" alt="close" />
@@ -27,7 +27,7 @@ const ModalAddStaff = ({ cancel }) => {
                     </div>
                     <div className='item'>
                         <label>Contraseña: </label>
-                        <input type="text" placeholder="1000" />
+                        <input className="inp-modal" type="text" placeholder="1000" />
                     </div>
                 </div>
                 <button

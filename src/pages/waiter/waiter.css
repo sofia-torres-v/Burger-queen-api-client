@@ -1,6 +1,6 @@
 /* ---------------------fondo vista waiter----------------  */
 
-.global-container-waiter{
+.global-container-waiter {
     background-image: url('../../assets/fondoGeneral.jpg');
     background-size: cover;
     background-color: #000;
@@ -14,15 +14,16 @@
     padding-top: 20px;
 }
 
-.column-menu , .column-ticket{
+.column-menu,
+.column-ticket {
     flex: 1 1 400px;
 }
 
-.column-ticket{
+.column-ticket {
     flex: 1 1 320px;
 }
 
-.group-client{
+.group-client {
     color: #fff;
     padding-bottom: 25px;
     display: flex;
@@ -30,42 +31,43 @@
     gap: 15px;
 }
 
-.group-client label{
+.group-client label {
     font-size: 2.6rem;
     font-weight: bold;
 }
 
-.group-client input{
-   width: 100%;
-   padding: 16px 14px;
-   border-radius: 7px;
-   outline: none;
-   background-color: #fffffff1;
-   font-size: 2.6rem;
-   border-radius: 10px;
+.group-client input {
+    width: 100%;
+    padding: 16px 14px;
+    border-radius: 7px;
+    outline: none;
+    background-color: #fffffff1;
+    font-size: 2.6rem;
+    border-radius: 10px;
 }
 
 
 /* columna productos*/
-.content-order{
+.content-order {
     background-color: #5D5D5D;
     min-height: 660px;
-    border-radius:0 0 20px 20px;
+    border-radius: 0 0 20px 20px;
     padding: 0 15px;
 }
 
-.sub-title{
+.sub-title {
     text-align: center;
     color: #fff;
     padding: 15px;
     font-size: 3rem;
 }
 
-.content-buttons{
+.content-buttons {
     padding-bottom: 10px;
 }
 
-.btn-break, .btn-lunch{
+.btn-break,
+.btn-lunch {
     font-size: 2.3rem;
     padding: 18px;
     width: 50%;
@@ -77,46 +79,50 @@
 
 
 /* columna ticket orderList */
-.subtitle-list{
+.subtitle-list {
     display: flex;
     justify-content: space-between;
     padding: 12px;
 }
 
-.subtitle-product{
+.subtitle-product {
     font-weight: bold;
     font-size: 2.5rem;
 }
 
-.ticket-header{
-     border-radius: 10px;
-}
-.ticket-header, .ticket-body, .ticket-footer{
-    background-color:#fffffff1;
+.ticket-header {
+    border-radius: 10px;
 }
 
-.ticket-subtitle{
+.ticket-header,
+.ticket-body,
+.ticket-footer {
+    background-color: #fffffff1;
+}
+
+.ticket-subtitle {
     font-size: 3.4rem;
     text-align: center;
 }
 
-.ticket-subtitle, .ticket-header p{
+.ticket-subtitle,
+.ticket-header p {
     color: #000;
     padding: 10px;
-    border-bottom:3px solid #000;
+    border-bottom: 3px solid #000;
 }
 
-.ticket-header p{
+.ticket-header p {
     font-size: 2.6rem;
     font-weight: bold;
 }
 
-.ticket-body{
+.ticket-body {
     min-height: 420px;
     padding: 10px;
 }
 
-.ticket-footer{
+.ticket-footer {
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -124,10 +130,10 @@
     border-radius: 0 0 12px 12px;
 }
 
-.ticket-footer p{
+.ticket-footer p {
     font-size: 2.6rem;
     font-weight: bold;
-    margin-right: 10px;  
+    margin-right: 10px;
 }
 
 .ticket-footer span {
@@ -135,99 +141,111 @@
     margin-left: 10px;
 }
 
-.ticket-btns{
+.ticket-btns {
     display: grid;
     gap: 12px;
     margin: 15px 0 15px 0;
 }
 
-.ticket-enviar, .ticket-cancel{
+.ticket-enviar,
+.ticket-cancel {
     padding: 18px;
     border-radius: 25px;
     font-size: 2.5rem;
     font-weight: bold;
 }
 
-.active{
+.active {
     background-color: #F8B504;
 }
 
 
 
-@media (min-width:820px){ 
-    .ticket-body{
+@media (min-width:820px) {
+    .ticket-body {
         min-height: 550px;
-        padding: 10px; 
+        padding: 10px;
     }
-    .content-order{
+
+    .content-order {
         min-height: 790px;
         padding: 0 15px;
     }
-  }
+}
 
 
-@media (min-width:1000px){
-    .ticket-body{
+@media (min-width:1000px) {
+    .ticket-body {
         min-height: 300px;
         padding: 10px;
     }
-    .content-order{
+
+    .content-order {
         min-height: 492px;
-        border-radius:0 0 20px 20px;
+        border-radius: 0 0 20px 20px;
         padding: 0 15px;
     }
-    .ticket-enviar, .ticket-cancel{
+
+    .ticket-enviar,
+    .ticket-cancel {
         padding: 8px;
     }
-    .ticket-subtitle{
+
+    .ticket-subtitle {
         font-size: 2.7rem;
     }
-    .subtitle-product{
+
+    .subtitle-product {
         font-size: 2rem;
     }
-    .ticket-footer p{
+
+    .ticket-footer p {
         font-size: 2.3rem;
         font-weight: bold;
-        margin-right: 10px;  
+        margin-right: 10px;
     }
-    .sub-title{
+
+    .sub-title {
         font-size: 2.6rem;
     }
-    .btn-break, .btn-lunch{
-     padding: 15px;
-   }
-  }
+
+    .btn-break,
+    .btn-lunch {
+        padding: 15px;
+    }
+}
 
 
-@media (min-width:1024px){
+@media (min-width:1024px) {
 
     .container-columns1 {
         padding-top: 0px;
     }
 
-    .group-client input{
+    .group-client input {
         padding: 10px 14px;
-     }
-     .group-client{
+    }
+
+    .group-client {
         padding-bottom: 15px;
     }
-    .ticket-subtitle{
+
+    .ticket-subtitle {
         font-size: 2.4rem;
     }
 
-    .btn-break, .btn-lunch{
+    .btn-break,
+    .btn-lunch {
         padding: 10px;
-      }
-    .ticket-header p{
+    }
+
+    .ticket-header p {
         font-size: 2.4rem;
     }
-    .ticket-btns{
+
+    .ticket-btns {
         display: grid;
         gap: 7px;
         margin: 10px 0 15px 0;
     }
-  }
-
-
-
-
+}

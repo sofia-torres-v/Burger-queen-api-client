@@ -8,9 +8,24 @@
 }
 
 .content-general-products {
-    background-color: #5D5D5D;
+    background-color: #4e4e4e;
     padding: 20px;
     border-radius: 0 0 20px 20px;
+}
+
+.content-add {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-addProduct {
+    display: flex;
+    align-items: center;
+    padding: 10px 25px 10px 25px;
+    gap: 10px;
+    border-radius: 18px;
+    font-size: 2rem;
+    margin: 12px;
 }
 
 .rolTitle {
@@ -27,6 +42,7 @@
 .btn-product,
 .btn-staff {
     font-size: 2.3rem;
+    font-weight: bold;
     padding: 18px;
     width: 50%;
     border-radius: 0 0 20px 20px;
@@ -58,7 +74,8 @@
 
     }
 
-    .btn-product, .btn-staff {
+    .btn-product,
+    .btn-staff {
         padding: 11px;
     }
 }

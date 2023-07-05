@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1688572824719" clover="3.2.0">
-  <project timestamp="1688572824719" name="All files">
-    <metrics statements="82" coveredstatements="41" conditionals="22" coveredconditionals="5" methods="25" coveredmethods="17" elements="129" coveredelements="63" complexity="0" loc="82" ncloc="82" packages="8" files="8" classes="8"/>
-    <package name="Components.Logo">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="logo.jsx" path="C:\Burger-queen-api-client\src\Components\Logo\logo.jsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="Components.cardElement">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="cardElement.jsx" path="C:\Burger-queen-api-client\src\Components\cardElement\cardElement.jsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="7" count="3" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-      </file>
-    </package>
-    <package name="Components.cardOrder">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="cardOrder.jsx" path="C:\Burger-queen-api-client\src\Components\cardOrder\cardOrder.jsx">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="6" count="3" type="stmt"/>
-      </file>
-    </package>
+<coverage generated="1688497058980" clover="3.2.0">
+  <project timestamp="1688497058980" name="All files">
+    <metrics statements="84" coveredstatements="33" conditionals="24" coveredconditionals="5" methods="20" coveredmethods="8" elements="128" coveredelements="46" complexity="0" loc="84" ncloc="84" packages="4" files="4" classes="4"/>
     <package name="Components.loginForm">
       <metrics statements="4" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="1"/>
       <file name="loginForm.jsx" path="C:\Burger-queen-api-client\src\Components\loginForm\loginForm.jsx">
@@ -54,9 +31,9 @@
       </file>
     </package>
     <package name="api_client">
-      <metrics statements="44" coveredstatements="21" conditionals="10" coveredconditionals="4" methods="10" coveredmethods="5"/>
-      <file name="api.jsx" path="C:\Burger-queen-api-client\src\api_client\api.jsx">
-        <metrics statements="44" coveredstatements="21" conditionals="10" coveredconditionals="4" methods="10" coveredmethods="5"/>
+      <metrics statements="55" coveredstatements="22" conditionals="12" coveredconditionals="4" methods="14" coveredmethods="5"/>
+      <file name="api.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\api_client\api.jsx">
+        <metrics statements="55" coveredstatements="22" conditionals="12" coveredconditionals="4" methods="14" coveredmethods="5"/>
         <line num="1" count="2" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -100,12 +77,23 @@
         <line num="118" count="0" type="stmt"/>
         <line num="120" count="0" type="stmt"/>
         <line num="123" count="0" type="stmt"/>
-        <line num="129" count="4" type="stmt"/>
+        <line num="130" count="4" type="stmt"/>
+        <line num="131" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="139" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="140" count="0" type="stmt"/>
+        <line num="143" count="0" type="stmt"/>
+        <line num="144" count="0" type="stmt"/>
+        <line num="145" count="0" type="stmt"/>
+        <line num="146" count="0" type="stmt"/>
+        <line num="150" count="0" type="stmt"/>
+        <line num="155" count="0" type="stmt"/>
+        <line num="160" count="4" type="stmt"/>
       </file>
     </package>
     <package name="pages.login">
       <metrics statements="23" coveredstatements="7" conditionals="10" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <file name="login.jsx" path="C:\Burger-queen-api-client\src\pages\login\login.jsx">
+      <file name="login.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\pages\login\login.jsx">
         <metrics statements="23" coveredstatements="7" conditionals="10" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="12" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>

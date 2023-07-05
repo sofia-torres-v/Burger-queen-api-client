@@ -1,27 +1,36 @@
 import React from 'react';
 import close from '../../assets/close.png';
-import './modal.css'
 import './modalAddProduct.css'
 
 const ModalAddStaff = ({ cancel }) => {
     return (
         <div className="modal">
+
             <div className="modal-content">
+                <p className="title-add" > Add staff</p>
                 <figure className="box-close" onClick={cancel}>
                     <img src={close} className="close" alt="close" />
                 </figure>
-                <label>Email:</label>
-                <input type="text" placeholder="example@example.com" />
-                <label>Role:</label>
-                <select name="select" defaultValue="waiter">
-                    <option value="waiter">Waiter</option>
-                    <option value="cheff">Cheff</option>
-                    <option value="admin">Admin</option>
-                </select>
-                <label>Contraseña: </label>
-                <input type="text" placeholder="1000" />
-                
-                <button 
+                <div className='content-item'>
+                    <div className='item' >
+                        <label>Email:</label>
+                        <input className="inp-modal" type="text" placeholder="example@example.com" />
+                    </div>
+                    <div className='item'>
+                        <label>Role:</label>
+                        <select className="selec" name="select" defaultValue="waiter">
+                            <option value="waiter">Waiter</option>
+                            <option value="cheff">Cheff</option>
+                            <option value="admin">Admin</option>
+                        </select>
+
+                    </div>
+                    <div className='item'>
+                        <label>Contraseña: </label>
+                        <input type="text" placeholder="1000" />
+                    </div>
+                </div>
+                <button
                     className="btn-add"
                 >
                     Add

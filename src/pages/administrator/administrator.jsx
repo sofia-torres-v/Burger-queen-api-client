@@ -115,7 +115,7 @@ export default function Administrator() {
                                             <CardProductAdmin products={lunches} />
                                         </ul>
                                     </div></> :
-                                <><div div className='content-add'>
+                                <><div className='content-add'>
                                     <button
                                         id='addProduct'
                                         onClick={handleClickModalAddStaff}

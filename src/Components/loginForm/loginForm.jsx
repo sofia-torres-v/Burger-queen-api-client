@@ -10,6 +10,7 @@ const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handl
       <h2>Login</h2>
       <div className="group">
         <input
+          data-testid="email"
           className="inp"
           id="email"
           placeholder="example@example.com"
@@ -20,6 +21,7 @@ const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handl
         />
 
         <input
+          data-testid="password"
           className="inp"
           id="password"
           placeholder="*********"
@@ -33,7 +35,7 @@ const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handl
       {/* <p id="messageError" data-testid="message-Error">{errorMessage}</p> */}
       {errorMessage && <p id="messageError" data-testid="message-Error">{errorMessage}</p>}
 
-      <button onClick={handleLogin} className="btn">Sign in</button>
+      <button data-testid='button-login' onClick={handleLogin} className="btn">Sign in</button>
     </form>
   );
 };

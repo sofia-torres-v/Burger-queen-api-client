@@ -223,7 +223,7 @@ export default function Menu() {
               </div>
 
               <div className='ticket-btns'>
-                <button className='ticket-enviar active' disabled={!firstName || selectedProducts.length === 0} onClick={sendOrderToKitchen}>Send to kitchen</button>
+                <button data-testid='button-send' className='ticket-enviar active' disabled={!firstName || selectedProducts.length === 0} onClick={sendOrderToKitchen}>Send to kitchen</button>
 
                 {showModal && <Modal close={closeModal} />}
 

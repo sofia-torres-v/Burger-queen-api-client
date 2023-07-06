@@ -1,36 +1,62 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-// import { MemoryRouter } from 'react-router-dom'
+import { act } from 'react-dom/test-utils';
 import Login from './login';
+import api from '../../api_client/api';
+import { useNavigate } from 'react-router-dom';
 
-jest.mock('react-router-dom', () => {
-    return { useNavigate: jest.fn() }
-})
+const navigate = useNavigate();
+
+jest.mock('react-router-dom', () => ({
+    useNavigate: jest.fn(),
+}));
 
 describe('Login', () => {
+    test('debería navegar a la página correcta al iniciar sesión correctamente', async () => {
+        const email = 'example@example.com';
+        const password = 'password';
 
-    test('should display an error message for empty fields', async () => {
-        const { getByText, getByTestId } = render(<Login />
+        const loginSpy = jest.fn().mockResolvedValueOnce({
+            user: {
+                role: 'admin',
+            },
+            accessToken: 'accessToken',
+        });
 
-        );
-        // const loginButton = getByText('Login');
-        // fireEvent.click(loginButton);
+        api().login = loginSpy;
 
-        const errorMessage = getByTestId(errorMessage);
-        // expect(errorMessage).toBeInTheDocument('* These fields are required');
-        expect(errorMessage).toHaveTextContent('* These fields are required');
-    })
-})
+        render(<Login />);
+
+        const emailInput = screen.getByTestId('email');
+        const passwordInput = screen.getByTestId('password');
+
+        fireEvent.change(emailInput, { target: { value: email } });
+        fireEvent.change(passwordInput, { target: { value: password } });
+
+        const loginButton = screen.getByText('Login');
+        fireEvent.click(loginButton);
+
+        await act(async () => {
+            await Promise.resolve();
+        });
+
+        expect(navigate).toHaveBeenCalledWith('/admin');
+
+        const setItemSpy = jest.spyOn(localStorage, 'setItem');
+        expect(setItemSpy).toHaveBeenCalledWith('token', 'accessToken');
+
+        setItemSpy.mockRestore();
+    });
 
 
-// // para probar - Sofia consultar
-// test('Clicking the button calls event handler once', () => {
-//     const mockHandler = jest.fn();
-//     const component = render(<Login handleLogin={mockHandler} />);
-//     screen.debug()
-//     const button = component.getByText('Sign in');
-//     fireEvent.click(button);
-//     expect(mockHandler).toHaveBeenCalledTimes(1);
-// });
+    test('debe mostrar un mensaje de error para los campos vacíos', async () => {
+        render(<Login />);
 
-// });
+        const loginButton = screen.getByTestId('button-login');
+        fireEvent.click(loginButton);
+
+        const errorMessage = screen.getByText('* These fields are required');
+        expect(errorMessage).toBeInTheDocument();
+    });
+});
+

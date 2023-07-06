@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Logout from '../../Components/Logout/logout';
 import LogoBurger from '../../Components/Logo/logo';
 import Products from '../../Components/productsForWaiters/products';
@@ -40,12 +41,14 @@ function groupProductsById(products) {
   return groupedProducts;
 }
 
+
+
 export default function Menu() {
 
   const token = localStorage.getItem('token');
-
   const [breakfasts, setBreakfasts] = useState([])
   const [lunches, setLunches] = useState([])
+
   useEffect(() => {
     async function fetchProducts() {
       const result = await api().fetchProducts({ token });
@@ -54,7 +57,6 @@ export default function Menu() {
       // console.log(result);  
     }
     fetchProducts();
-
   }, [])
 
 
@@ -88,7 +90,6 @@ export default function Menu() {
     setSelectedProducts([...selectedProducts, product]);
   }
 
-
   // suma el precio total de productos
   const contarTotalProductos = (selectedProducts) => {
     let total = 0;
@@ -99,12 +100,10 @@ export default function Menu() {
     return total;
   }
 
-
   // suma los Items
   const contarTotalItems = (selectedProducts) => {
     return selectedProducts.length
   }
-
 
   // Borrar producto de orderList (1x1)
   const handleClickRemover = (productIndex) => {
@@ -112,9 +111,10 @@ export default function Menu() {
       prevSelectedProducts.filter((product, index) => index !== productIndex));
   }
 
+
+
   // enviar lista de pedidos a cocina segun la estructura
   const [orderSent, setOrderSent] = useState([]);
-
   // funcion que ejecutA al dar click btn enviar a cocina
   const sendOrderToKitchen = async () => {
     const orderDate = {
@@ -124,7 +124,6 @@ export default function Menu() {
       "status": "pending",
       "dataEntry": new Date(),
     }
-
     //guarda en OrderDate.products los productos agrupados por id
     orderDate.products.push(...groupProductsById(selectedProducts))
 
@@ -143,29 +142,43 @@ export default function Menu() {
   };
   // console.log(orderSent)
 
-  // Borrar datos en general (cancelar)
+
+
+
+ //abre modal de cancel
   const [showModalCancel, setShowModalCancel] = useState(false);
   const handleClickCancelModal = () => {
     setShowModalCancel(true);
   }
+   // Borrar datos en general (cancelar)
   const handleClickCancel = () => {
     setFullName('');
     setFirstName('');
     setSelectedProducts([]);
     setShowModalCancel(false);
   }
+//cierra modal de cancel
   const cancel = () => {
     setShowModalCancel(false);
   }
 
 
+//navega a la pages StatusOrder
+const navigate = useNavigate();
+    const handleClickNavigate = () => {
+      navigate('/statusOrder');
+    };
+
   return (
     <>
       <section className='global-container-waiter'>
         <header>
-          <div>
+          <div className='box-btn'>
             <Logout text='Waiter' icon={Icon} />
-            <LogoBurger />
+            <div>
+              <button className='btn-viewOrder' onClick={handleClickNavigate}>View Order</button>
+            </div>
+         <LogoBurger />
           </div>
         </header>
 
@@ -228,7 +241,6 @@ export default function Menu() {
                 {showModal && <Modal close={closeModal} />}
 
                 <button onClick={handleClickCancelModal} disabled={!firstName} className='ticket-cancel'>Cancel</button>
-
                 {showModalCancel && <ModalCancel cancel={cancel} handleClickCancel={handleClickCancel} />}
               </div>
             </div>

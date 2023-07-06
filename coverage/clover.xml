@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1688678836769" clover="3.2.0">
-  <project timestamp="1688678836770" name="All files">
-    <metrics statements="91" coveredstatements="48" conditionals="24" coveredconditionals="7" methods="29" coveredmethods="20" elements="144" coveredelements="75" complexity="0" loc="91" ncloc="91" packages="8" files="8" classes="8"/>
+<coverage generated="1688598372139" clover="3.2.0">
+  <project timestamp="1688598372140" name="All files">
+    <metrics statements="93" coveredstatements="42" conditionals="24" coveredconditionals="5" methods="29" coveredmethods="17" elements="146" coveredelements="64" complexity="0" loc="93" ncloc="93" packages="8" files="8" classes="8"/>
+    <package name="Components.Logo">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="logo.jsx" path="C:\Burger-queen-api-client\src\Components\Logo\logo.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="Components.cardElement">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="cardElement.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\Components\cardElement\cardElement.jsx">
@@ -36,9 +44,9 @@
       </file>
     </package>
     <package name="Components.productList">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="productList.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\Components\productList\productList.jsx">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+      <file name="productList.jsx" path="C:\Burger-queen-api-client\src\Components\productList\productList.jsx">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <line num="6" count="1" type="stmt"/>
         <line num="9" count="3" type="stmt"/>
         <line num="15" count="1" type="stmt"/>

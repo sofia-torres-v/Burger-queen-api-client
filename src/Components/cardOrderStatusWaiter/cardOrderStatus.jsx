@@ -1,10 +1,10 @@
 import React from 'react';
-import CardOrderCheff from '../cardElement/CardOrderCheff'
-import './cardListProductCheff.css'
+import CardOrderCheff from '../cardElement/CardOrderCheff';
+import './cardOrderStatus.css';
 
 export default function cardListProductCheff({ orders, changeStatus, showButton, text}) {
   return (
-    <div className='box-order-cheff'>
+    <div className='box-order-status'>
       {orders.map((order, index) => {
         return <div className='card-order-cheff' key={index}>
           <CardOrderCheff
@@ -16,10 +16,6 @@ export default function cardListProductCheff({ orders, changeStatus, showButton,
 
             {order.status !== 'pending' && <p>Output: <span>{new Date(order.dateProcessed).toLocaleTimeString()}</span></p>}
             {showButton  && <button className='btn-attended' onClick={() => changeStatus(order)}>{text}</button>}
-
-            {/* {
-              order.status === 'pending' && <button className='btn-attended' onClick={() => changeStatus(order)}>To attend</button>
-            } */}
 
           </div>
         </div>

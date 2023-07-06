@@ -9,6 +9,9 @@ import api from '../../api_client/api';
 
 
 export default function Cheff() {
+
+    let showButton = true
+
     const token = localStorage.getItem('token');
     //llamar a la api para traer las ordenes
     useEffect(() => {
@@ -16,6 +19,7 @@ export default function Cheff() {
             const result = await api().fetchGetOrder({ token });
             setOrderPending(result.pending);
             setOrderDelivery(result.delivery);
+            console.log(result)
         }
         fetchGetOrder();
     }, [])
@@ -49,13 +53,13 @@ export default function Cheff() {
 
                         <div className='first-column'>
                             <h2 className='title-columns-cheff'>Cooking orders</h2>
-                            <CardListProductCheff orders={orderPending} changeStatus={changeStatus} />
+                            <CardListProductCheff orders={orderPending} changeStatus={changeStatus} showButton={showButton} text={'To atend'}/>
                         </div>
 
                         <div className='second-column'>
                             <h2 className='title-columns-cheff'>Completed order</h2>
 
-                            < CardListProductCheff orders={orderDelivery} />
+                            < CardListProductCheff orders={orderDelivery} showButton={false} />
 
                         </div>
 

@@ -1,0 +1,11 @@
+.box-order-status{
+    background-color: blue;
+    width: 1001px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 92vh;
+    max-height: 700px;
+    gap: 20px;
+    overflow-y: scroll;
+}

@@ -91,7 +91,6 @@ describe('Api', () => {
                     ok: false,
                 })
             );
-
             await expect(Api().fetchProducts({ token })).rejects.toThrowError('ERROR: token invalido');
         });
     });

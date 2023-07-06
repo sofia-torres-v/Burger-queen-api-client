@@ -97,46 +97,46 @@ describe('Api', () => {
     });
 
 
-    //servidor de prueba para simular la respuesta de la API
-    // const server = setupServer(
-    //     rest.post('http://localhost:8080/orders', (req, res, ctx) => {
-    //         return res(ctx.json({ success: true }));
-    //     })
-    // );
+   // servidor de prueba para simular la respuesta de la API
+    const server = setupServer(
+        rest.post('http://localhost:8080/orders', (req, res, ctx) => {
+            return res(ctx.json({ success: true }));
+        })
+    );
 
-    // beforeAll(() => server.listen());
-    // afterEach(() => server.resetHandlers());
-    // afterAll(() => server.close());
+    beforeAll(() => server.listen());
+    afterEach(() => server.resetHandlers());
+    afterAll(() => server.close());
 
-    // describe('fetchSendOrder', () => {
-    //     test('envía la orden correctamente y muestra un mensaje de éxito', async () => {
-    //         const order = {
-    //             "client": 'Claudia',
-    //             "userId": 1,
-    //             "products": [],
-    //             "status": "pending",
-    //             "dataEntry": new Date(),
-    //         };
-    //         const token = '123456';
+    describe('fetchSendOrder', () => {
+        test('envía la orden correctamente y muestra un mensaje de éxito', async () => {
+            const order = {
+                "client": 'Claudia',
+                "userId": 1,
+                "products": [],
+                "status": "pending",
+                "dataEntry": new Date(),
+            };
+            const token = '123456';
 
-    //         render(<Api />);
+            render(<Api />);
             
-    //         const sendButton = screen.getByText('Send to kitchen');
-    //         fireEvent.click(sendButton);
+            const sendButton = screen.getByText('Send to kitchen');
+            fireEvent.click(sendButton);
 
-    //         await waitFor(() => screen.getByText('La orden se envió correctamente'));
-    //         // Ajusta este selector según el mensaje de éxito esperado
+            await waitFor(() => screen.getByText('La orden se envió correctamente'));
+            // Ajusta este selector según el mensaje de éxito esperado
 
-    //         expect(fetch).toHaveBeenCalledWith('http://localhost:8080/orders', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //                 'Authorization': `Bearer ${token}`
-    //             },
-    //             body: JSON.stringify(order)
-    //         });
-    //     });
-    // });
+            expect(fetch).toHaveBeenCalledWith('http://localhost:8080/orders', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(order)
+            });
+        });
+    });
 
 
 });

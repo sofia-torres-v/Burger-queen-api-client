@@ -6,7 +6,18 @@
     background-color: #000;
     height: 100vh;
 }
-
+.box-btn{
+    position: relative;
+       
+}
+.btn-viewOrder{
+    padding: 10px 30px 10px 30px;
+    left: 987px;
+    border-radius: 8px;
+    top: 140px;
+    position: absolute;
+    font-size: 2rem;
+}
 .container-columns1 {
     display: flex;
     justify-content: center;

@@ -241,9 +241,10 @@ const navigate = useNavigate();
                   <p>Total $:<span>{`${contarTotalProductos(selectedProducts)}`} </span> </p>
                 </div>
 
-                <div className='ticket-btns'>
-                  <button className='ticket-enviar active' disabled={!firstName || selectedProducts.length === 0} onClick={sendOrderToKitchen}>Send to kitchen</button>
-                  {showModal && <Modal close={closeModal} />}
+              <div className='ticket-btns'>
+                <button data-testid='button-send' className='ticket-enviar active' disabled={!firstName || selectedProducts.length === 0} onClick={sendOrderToKitchen}>Send to kitchen</button>
+
+                {showModal && <Modal close={closeModal} />}
 
                   <button onClick={handleClickCancelModal} disabled={!firstName} className='ticket-cancel'>Cancel</button>
                   {showModalCancel && <ModalCancel cancel={cancel} handleClickCancel={handleClickCancel} />}

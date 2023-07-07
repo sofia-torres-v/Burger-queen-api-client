@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30.43% </span>
+                <span class="strong">47.82% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/23</span>
+                <span class='fraction'>11/23</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>2/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30.43% </span>
+                <span class="strong">47.82% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/23</span>
+                <span class='fraction'>11/23</span>
             </div>
         
             
@@ -152,17 +152,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -191,7 +191,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -233,12 +233,12 @@ const Login = () =&gt; {
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 &nbsp;
-  const handleLogin = <span class="fstat-no" title="function not covered" >as</span>ync (e) =&gt; {
-<span class="cstat-no" title="statement not covered" >    e.preventDefault();</span>
+  const handleLogin = async (e) =&gt; {
+    e.preventDefault();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (email.trim() === '' || password.trim() === '') {</span>
-<span class="cstat-no" title="statement not covered" >      setErrorMessage('* These fields are required');</span>
-<span class="cstat-no" title="statement not covered" >      return;</span>
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (email.trim() === '' || <span class="branch-1 cbranch-no" title="branch not covered" >password.trim() === '')</span> {
+      setErrorMessage('* These fields are required');
+      return;
     }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    try {</span>

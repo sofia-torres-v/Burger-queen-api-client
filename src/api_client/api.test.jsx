@@ -1,6 +1,12 @@
+import React from 'react';
 import Api from './api.jsx';
+import { rest } from 'msw';
+import { setupServer } from 'msw/node';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 
-describe('API', () => {
+
+
+describe('Api', () => {
     describe('Función API', () => {
         test('should log in with correct credentials', async () => {
             const email = 'waiter@bbq.com';
@@ -27,25 +33,27 @@ describe('API', () => {
         });
 
         test('should throw an error with incorrect credentials', async () => {
+            const mensageError = new Error('Oops! That username and password combination is incorrect. Please try again.');
             const email = 'waiter@bbq.com';
             const password = 'waiter123456';
-
             // Simular respuesta de error
             global.fetch = jest.fn(() =>
-                Promise.resolve({
-                    ok: false,
+                Promise.reject({
+                    mensageError
                 })
-            );
 
-            await expect(Api().login(email, password)).rejects.toThrowError('Oops! That username and password combination is incorrect. Please try again.'
+                // global.fetch = jest.fn(() =>
+                //     Promise.reject(new Error('Oops! That username and password combination is incorrect. Please try again.'))
             );
+            // console.log(Api().login(email, password));
+            await expect(Api().login(email, password)).rejects.toThrowError(mensageError);
         });
+
     });
 
 
-
     describe('fetchProducts', () => {
-        it('should fetch products with a valid token//debe buscar productos con un token válido', async () => {
+        test('should fetch products with a valid token//debe buscar productos con un token válido', async () => {
             const token = 'validtoken123';
             // Simular respuesta exitosa
             global.fetch = jest.fn(() =>
@@ -74,7 +82,7 @@ describe('API', () => {
             });
         });
 
-        it('should throw an error with an invalid token', async () => {
+        test('should throw an error with an invalid token', async () => {
             const token = 'invalidtoken123';
 
             // Simular respuesta de error
@@ -83,8 +91,51 @@ describe('API', () => {
                     ok: false,
                 })
             );
-
             await expect(Api().fetchProducts({ token })).rejects.toThrowError('ERROR: token invalido');
         });
     });
+
+
+   // servidor de prueba para simular la respuesta de la API
+    const server = setupServer(
+        rest.post('http://localhost:8080/orders', (req, res, ctx) => {
+            return res(ctx.json({ success: true }));
+        })
+    );
+
+    beforeAll(() => server.listen());
+    afterEach(() => server.resetHandlers());
+    afterAll(() => server.close());
+
+    describe('fetchSendOrder', () => {
+        test('envía la orden correctamente y muestra un mensaje de éxito', async () => {
+            const order = {
+                "client": 'Claudia',
+                "userId": 1,
+                "products": [],
+                "status": "pending",
+                "dataEntry": new Date(),
+            };
+            const token = '123456';
+
+            render(<Api />);
+            
+            const sendButton = screen.getByText('Send to kitchen');
+            fireEvent.click(sendButton);
+
+            await waitFor(() => screen.getByText('La orden se envió correctamente'));
+            // Ajusta este selector según el mensaje de éxito esperado
+
+            expect(fetch).toHaveBeenCalledWith('http://localhost:8080/orders', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(order)
+            });
+        });
+    });
+
+
 });

@@ -3,7 +3,7 @@ import EditAndDelete from '../../Components/userButtons/EditAndDelete';
 import './cardsProductAdmin.css'
 
 
-export default function cardproductAdmin({ products }) {
+export default function cardproductAdmin({ products,handleClickDeleteProduct }) {
     return (
         <div className='list-product' >
             {products.map((product, index) => {
@@ -13,7 +13,7 @@ export default function cardproductAdmin({ products }) {
                         <p>{product.name}</p>
                     ) : (
                         <p>{product.email}</p>
-                    )} <EditAndDelete />
+                    )} <EditAndDelete onClick={() => handleClickDeleteProduct(index)}/>
                 </section>
 
             })}

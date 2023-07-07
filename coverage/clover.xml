@@ -12,7 +12,7 @@
     </package>
     <package name="Components.cardElement">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="cardElement.jsx" path="C:\Burger-queen-api-client\src\Components\cardElement\cardElement.jsx">
+      <file name="cardElement.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\Components\cardElement\cardElement.jsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="7" count="3" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
@@ -20,25 +20,33 @@
     </package>
     <package name="Components.cardOrder">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="cardOrder.jsx" path="C:\Burger-queen-api-client\src\Components\cardOrder\cardOrder.jsx">
+      <file name="cardOrder.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\Components\cardOrder\cardOrder.jsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="6" count="3" type="stmt"/>
       </file>
     </package>
     <package name="Components.loginForm">
-      <metrics statements="4" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="1"/>
-      <file name="loginForm.jsx" path="C:\Burger-queen-api-client\src\Components\loginForm\loginForm.jsx">
-        <metrics statements="4" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="1"/>
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <file name="loginForm.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\Components\loginForm\loginForm.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
         <line num="5" count="2" type="stmt"/>
-        <line num="7" count="2" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Components.logo">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="logo.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\Components\logo\logo.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
       </file>
     </package>
     <package name="Components.productList">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
       <file name="productList.jsx" path="C:\Burger-queen-api-client\src\Components\productList\productList.jsx">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <line num="6" count="1" type="stmt"/>
         <line num="9" count="3" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
@@ -46,7 +54,7 @@
     </package>
     <package name="Components.productsForWaiters">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <file name="products.jsx" path="C:\Burger-queen-api-client\src\Components\productsForWaiters\products.jsx">
+      <file name="products.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\Components\productsForWaiters\products.jsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="8" count="1" type="stmt"/>
         <line num="11" count="3" type="stmt"/>
@@ -54,80 +62,78 @@
       </file>
     </package>
     <package name="api_client">
-      <metrics statements="55" coveredstatements="22" conditionals="12" coveredconditionals="4" methods="14" coveredmethods="5"/>
-      <file name="api.jsx" path="C:\Burger-queen-api-client\src\api_client\api.jsx">
-        <metrics statements="55" coveredstatements="22" conditionals="12" coveredconditionals="4" methods="14" coveredmethods="5"/>
+      <metrics statements="53" coveredstatements="22" conditionals="12" coveredconditionals="3" methods="14" coveredmethods="5"/>
+      <file name="api.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\api_client\api.jsx">
+        <metrics statements="53" coveredstatements="22" conditionals="12" coveredconditionals="3" methods="14" coveredmethods="5"/>
         <line num="1" count="2" type="stmt"/>
-        <line num="3" count="4" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
-        <line num="12" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="14" count="1" type="stmt"/>
+        <line num="12" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
-        <line num="25" count="4" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
-        <line num="27" count="2" type="stmt"/>
-        <line num="34" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="10" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="31" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="39" count="2" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="56" count="4" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="66" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="53" count="10" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="63" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
         <line num="67" count="0" type="stmt"/>
-        <line num="68" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="78" count="4" type="stmt"/>
-        <line num="79" count="0" type="stmt"/>
-        <line num="80" count="0" type="stmt"/>
-        <line num="87" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="75" count="10" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="84" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
         <line num="88" count="0" type="stmt"/>
         <line num="89" count="0" type="stmt"/>
-        <line num="90" count="0" type="stmt"/>
-        <line num="91" count="0" type="stmt"/>
         <line num="92" count="0" type="stmt"/>
         <line num="95" count="0" type="stmt"/>
-        <line num="98" count="0" type="stmt"/>
-        <line num="103" count="4" type="stmt"/>
-        <line num="104" count="0" type="stmt"/>
-        <line num="105" count="0" type="stmt"/>
-        <line num="116" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="100" count="10" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="113" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="114" count="0" type="stmt"/>
+        <line num="115" count="0" type="stmt"/>
         <line num="117" count="0" type="stmt"/>
-        <line num="118" count="0" type="stmt"/>
-        <line num="120" count="0" type="stmt"/>
-        <line num="123" count="0" type="stmt"/>
-        <line num="130" count="4" type="stmt"/>
-        <line num="131" count="0" type="stmt"/>
-        <line num="132" count="0" type="stmt"/>
-        <line num="139" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="127" count="10" type="stmt"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="129" count="0" type="stmt"/>
+        <line num="136" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="137" count="0" type="stmt"/>
         <line num="140" count="0" type="stmt"/>
+        <line num="141" count="0" type="stmt"/>
+        <line num="142" count="0" type="stmt"/>
         <line num="143" count="0" type="stmt"/>
-        <line num="144" count="0" type="stmt"/>
-        <line num="145" count="0" type="stmt"/>
-        <line num="146" count="0" type="stmt"/>
-        <line num="150" count="0" type="stmt"/>
-        <line num="155" count="0" type="stmt"/>
-        <line num="160" count="4" type="stmt"/>
+        <line num="152" count="0" type="stmt"/>
+        <line num="157" count="10" type="stmt"/>
       </file>
     </package>
     <package name="pages.login">
-      <metrics statements="23" coveredstatements="7" conditionals="10" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <file name="login.jsx" path="C:\Burger-queen-api-client\src\pages\login\login.jsx">
-        <metrics statements="23" coveredstatements="7" conditionals="10" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="23" coveredstatements="11" conditionals="10" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="login.jsx" path="C:\Users\Claudia\Desktop\proyectos\Burger-queen-api-client\src\pages\login\login.jsx">
+        <metrics statements="23" coveredstatements="11" conditionals="10" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="22" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="2" falsecount="2"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
         <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -140,7 +146,7 @@
         <line num="40" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
+        <line num="53" count="5" type="stmt"/>
       </file>
     </package>
   </project>

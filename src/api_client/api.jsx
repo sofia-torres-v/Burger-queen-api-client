@@ -10,13 +10,10 @@ const api = () => {
                 body: JSON.stringify({ email, password }),
             });
             if (response.ok) {
-
                 return await response.json();
-            } else {
-                throw new Error('Oops! That username and password combination is incorrect. Please try again.');
-            }
-        } catch (err) {
-            // throw new Error(err.message);
+            } 
+        } catch (error) {
+            throw new Error('Oops! That username and password combination is incorrect. Please try again.');
         }
     };
 
@@ -121,7 +118,7 @@ const api = () => {
                 console.log('algo salio mal')
             }
         } catch (err) {
-            console.log(err, 'Error de la solicitud HTTP')
+            // console.log(err, 'Error de la solicitud HTTP')
         }
 
     }
@@ -148,7 +145,7 @@ const api = () => {
                     };
     
                 } else {
-                    throw Error('ERROR: token invalido');
+                    // throw Error('ERROR: token invalido');
                 }
     
     

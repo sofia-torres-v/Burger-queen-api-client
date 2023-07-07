@@ -1,21 +1,22 @@
 import React from 'react';
-import CardOrderCheff from '../cardElement/CardOrderCheff';
 import './cardOrderStatus.css';
+import CardOrderDelivered from '../cardOrderStatusWaiter/cardOrderDelivered'; 
 
-export default function cardListProductCheff({ orders, changeStatus, showButton, text}) {
+
+export default function cardOrderStatus({ orders, changeStatus, showButton, text}) {
   return (
-    <div className='box-order-status'>
+    <div className='box-order-status container'>
       {orders.map((order, index) => {
-        return <div className='card-order-cheff' key={index}>
-          <CardOrderCheff
+        return <div className='box-card-button'  key={index}>
+          <CardOrderDelivered
             client={order.client}
             items={order.products}
           />
-          <div className='time-attended'  >
+          <div className='time-attended-delivered'  >
             <p>Entry: <span>{new Date(order.dataEntry).toLocaleTimeString()}</span></p>
 
             {order.status !== 'pending' && <p>Output: <span>{new Date(order.dateProcessed).toLocaleTimeString()}</span></p>}
-            {showButton  && <button className='btn-attended' onClick={() => changeStatus(order)}>{text}</button>}
+            {showButton  && <button className='btn-attended-delivered' onClick={() => changeStatus(order)}>{text}</button>}
 
           </div>
         </div>

@@ -5,6 +5,7 @@ import back from '../../assets/back.png';
 import Api from '../../api_client/api';
 import CardOrderStatus from '../../Components/cardOrderStatusWaiter/cardOrderStatus';
 import ModalDelivered from '../../Components/modal/modalDelivered';
+import LogoBurger from '../../Components/Logo/logo';
 import './statusOrder.css'
 
 
@@ -52,14 +53,15 @@ const cancel = () => {
   }
 
     return (
-        <div className="modal-viewOrder">
+        <div className="global-container-waiter">
+            <figure className="box-back" onClick={handleClickBack}>
+                 <img src={back} className="back" alt="back" />
+            </figure>
 
-            <div className="modal-content-viewOrder">
-                <figure className="box-close" onClick={handleClickBack}>
-                    <img src={back} className="back" alt="back" />
-                </figure>
-
-                <h2 className='title-columns-pending'>listo por entregar</h2>
+            <LogoBurger />
+          
+            <div className="content-viewOrder">
+                <h2 className='title-columns-pending'>Orders to deliver</h2>
                 <CardOrderStatus orders={orderDelivery} changeStatus={changeStatus} showButton={true} text={'Delivered'}/> 
                 {showModalDelivered && <ModalDelivered back={cancel} />} 
             </div>

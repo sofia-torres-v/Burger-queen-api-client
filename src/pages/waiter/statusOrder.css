@@ -1,5 +1,5 @@
 
-.modal-viewOrder{
+/* .modal-viewOrder{
     background-color: rgba(0, 0, 0, 0.863);
     position: fixed;
     height: 100%;
@@ -7,6 +7,35 @@
     top: 0;
     left: 0;
     display: flex;
-    justify-content: center;
+    justify-content: center;#F8B504
     align-items: center;
+} */
+
+.global-container-waiter{
+    background-image: url('../../assets/fondoGeneral.jpg');
+    background-size: cover;
+    height: 100vh;
+  
+    
+}
+
+.title-columns-pending{
+    color: white;
+    /* text-align: center; */
+    font-size: 3rem;
+    padding: 50px 0 10px 0;
+    margin-left: 40px;
+}
+.box-back{
+    /* background-color: aqua; */
+    display: flex;
+    /* justify-content:flex-end; */
+    padding: 25px 0px 0px 35px;
+}
+
+.back{
+    background-color: #f8b704 ;
+    width: 50px;
+    padding: 5px;
+    border-radius: 50%;
 }

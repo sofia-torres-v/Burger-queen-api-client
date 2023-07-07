@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1688598372139" clover="3.2.0">
-  <project timestamp="1688598372140" name="All files">
+<coverage generated="1688669759966" clover="3.2.0">
+  <project timestamp="1688669759967" name="All files">
     <metrics statements="93" coveredstatements="42" conditionals="24" coveredconditionals="5" methods="29" coveredmethods="17" elements="146" coveredelements="64" complexity="0" loc="93" ncloc="93" packages="8" files="8" classes="8"/>
     <package name="Components.Logo">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -98,20 +98,20 @@
         <line num="116" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="117" count="0" type="stmt"/>
         <line num="118" count="0" type="stmt"/>
-        <line num="120" count="0" type="stmt"/>
-        <line num="123" count="0" type="stmt"/>
-        <line num="130" count="4" type="stmt"/>
-        <line num="131" count="0" type="stmt"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="124" count="0" type="stmt"/>
+        <line num="131" count="4" type="stmt"/>
         <line num="132" count="0" type="stmt"/>
-        <line num="139" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="140" count="0" type="stmt"/>
-        <line num="143" count="0" type="stmt"/>
+        <line num="133" count="0" type="stmt"/>
+        <line num="140" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="141" count="0" type="stmt"/>
         <line num="144" count="0" type="stmt"/>
         <line num="145" count="0" type="stmt"/>
         <line num="146" count="0" type="stmt"/>
-        <line num="150" count="0" type="stmt"/>
-        <line num="155" count="0" type="stmt"/>
-        <line num="160" count="4" type="stmt"/>
+        <line num="147" count="0" type="stmt"/>
+        <line num="151" count="0" type="stmt"/>
+        <line num="156" count="0" type="stmt"/>
+        <line num="161" count="4" type="stmt"/>
       </file>
     </package>
     <package name="pages.login">

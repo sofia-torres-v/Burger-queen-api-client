@@ -11,8 +11,9 @@ const api = () => {
             });
             if (response.ok) {
                 return await response.json();
-            } 
+            }
         } catch (error) {
+            console.log(error);
             throw new Error('Oops! That username and password combination is incorrect. Please try again.');
         }
     };
@@ -129,36 +130,97 @@ const api = () => {
     }
 
 
-        // traer usuarios 
-        const fetchShowUsers = async ({ token }) => {
-            try {
-                const response = await fetch('http://localhost:8080/users', {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'authorization': `Bearer ${token}`,
-                    }
-                })
-                if (response.ok) {
-                    const users = await response.json();
-                    // console.log(products);
-    
-                    return {
-                        admin: users.filter(item => item.role === 'admin'),
-                        waiter: users.filter(item => item.role === 'waiter'),
-                        cheff: users.filter(item => item.role === 'cheff'),
-                    };
-    
-                } else {
-                    // throw Error('ERROR: token invalido');
+    // traer usuarios 
+    const fetchShowUsers = async ({ token }) => {
+        try {
+            const response = await fetch('http://localhost:8080/users', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': `Bearer ${token}`,
                 }
-    
-    
-            } catch (error) {
-                throw error
+            })
+            if (response.ok) {
+                const users = await response.json();
+                    return {
+                    admin: users.filter(item => item.role === 'admin'),
+                    waiter: users.filter(item => item.role === 'waiter'),
+                    cheff: users.filter(item => item.role === 'cheff'),
+                };
+
+            } else {
+                // throw Error('ERROR: token invalido');
             }
-        };
-    
+        } catch (error) {
+            throw error
+        }
+    };
+
+    //Crear productos
+    const fetchCreateProduct = async ({ token, name, price, img, type }) => {
+        return fetch('http://localhost:8080/products', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                "name": name,
+                "price": price,
+                "image": img,
+                "dateEntry": new Date(),
+                "type": type
+            })
+        })
+    };
+
+    //Crear usuarios
+    const fetchCreateStaff = async ({ token, email, password, role }) => {
+        return fetch('http://localhost:8080/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                "email": email,
+                "password": password,
+                "role": role,
+            })
+        })
+    };
+
+  //editar producto
+    // export const requestEditProducts = (token, id, name, price, img, type) => {
+    //     return fetch(`http://localhost:8080/products/${id}`, {
+    //         method: 'PATCH',
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             "Authorization": "Bearer " + token
+    //         },
+    //         body: JSON.stringify({
+    //             "id": id,
+    //             "name": name,
+    //             "price": price,
+    //             "image": img,
+    //             "type": type
+    //         })
+    //     })
+    // }
+
+
+  //Eliminar producto
+    // export const requestDeleteProduct = (id, token) => {
+    //     return fetch(`http://localhost:8080/products/${id}`, {
+    //         method: 'DELETE',
+    //         headers: {
+    //             "Access-Control-Request-Method": "DELETE",
+    //             "Authorization": "Bearer " + token
+    //         },
+    //         body: id
+    //     })
+
+
 
     return {
         fetchProducts,
@@ -166,7 +228,9 @@ const api = () => {
         fetchSendOrder,
         fetchGetOrder,
         changeStatus,
-        fetchShowUsers
+        fetchShowUsers,
+        fetchCreateProduct,
+        fetchCreateStaff,
     }
 }
 

@@ -45,7 +45,7 @@ const Login = () => {
       }
 
     } catch (err) {
-      // console.log(err)
+      console.log(err)
       setErrorMessage('Oops! That username and password combination is incorrect. Please try again.');
       
     }

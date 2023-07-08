@@ -50,7 +50,7 @@ const api = () => {
 
 
     // Enviar lista de pedidos  a la Api
-    const fetchSendOrder = async (order, token) => {
+    const fetchSendOrder = async (orderDate, token) => {
         try {
             const response = await fetch('http://localhost:8080/orders', {
                 method: 'POST',
@@ -58,11 +58,11 @@ const api = () => {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
                 },
-                body: JSON.stringify(order)
+                body: JSON.stringify(orderDate)
             })
             if (response.ok) {
                 console.log('La orden se envió correctamente')
-                return order
+                return orderDate
             } else {
                 console.log('Hubo un error al enviar la orden')
             }
@@ -70,6 +70,9 @@ const api = () => {
             // console.log(error,'Error de la solicitud HTTP')
         }
     };
+
+
+
 
     // trae lista de pedidos  a la Api
     const fetchGetOrder = async ({ token }) => {
@@ -95,6 +98,8 @@ const api = () => {
             console.log(error, 'Error de la solicitud HTTP')
         }
     };
+
+    
 
     //Cambiando el estado de la orden 
     const changeStatus = async (order, status, token) => {

@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 import api from '../../api_client/api';
 import Logout from '../../Components/Logout/logout';
 import LogoBurger from '../../Components/Logo/logo';
+import CardProductAdmin from '../../Components/cardsAdministrator/cardsProductAdmin';
 import ModalAddProduct from '../../Components/modal/modalAddProduct';
-import CardProductAdmin from '../../Components/cardsAdministrator/cardsProductAdmin'
-import ModalAddStaff from '../../Components/modal/modalAddStaff'
+import ModalAddStaff from '../../Components/modal/modalAddStaff';
+import ModalDeleteProduct from '../../Components/modal/modalDeleteProduct';
 import Icon from '../../assets/iconAdmin.png';
 import IconAdd from '../../assets/addProduct.png';
 import AddStaff from '../../assets/addStaff.png';
@@ -36,11 +37,16 @@ export default function Administrator() {
     const handleClickModalAddStaff = () => {
         setShowModalAddStaff(true);
     }
+    const [showModalDeleteProduct, setShowModalDeleteProduct] = useState(false);
+    const handleClickDeleteProduct = () => {
+        setShowModalDeleteProduct(true);
+    }
 
     //cierra modal
     const cancel = () => {
         setShowModalAddProduct(false);
         setShowModalAddStaff(false);
+        setShowModalDeleteProduct(false);
     }
 
     const [userAdmin, setUserAdmin] = useState([]);
@@ -55,7 +61,7 @@ export default function Administrator() {
             setUserCheff(result.cheff);
         }
         fetchShowUsers();
-    }, [])
+    }, [showModalAddStaff])
 
     //llama a la api para traer los productos
     const [breakfasts, setBreakfasts] = useState([])
@@ -67,7 +73,7 @@ export default function Administrator() {
             setLunches(result.lunches);
         }
         fetchProducts();
-    }, [])
+    }, [showModalAddProduct])
 
     return (
         <>
@@ -106,7 +112,8 @@ export default function Administrator() {
                                     <div>
                                         <h3 className='rolTitle'>Breakfasts</h3>
                                         <ul className='content-cards-products'>
-                                            <CardProductAdmin products={breakfasts} />
+                                            <CardProductAdmin products={breakfasts} handleClickDeleteProduct={handleClickDeleteProduct} />
+                                            {showModalDeleteProduct && <ModalDeleteProduct cancel={cancel} />}
 
                                         </ul>
 

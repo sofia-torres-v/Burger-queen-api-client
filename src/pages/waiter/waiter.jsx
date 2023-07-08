@@ -20,7 +20,6 @@ function groupProductsById(products) {
     if (grouped[id]) {
       grouped[id].qty += 1;
       console.log(grouped[id])
-      
     } else {
       grouped[id] = {
         qty: 1,
@@ -35,16 +34,11 @@ function groupProductsById(products) {
       };
     }
     return grouped;
-
   }, {}));
-  
   return groupedProducts;
 }
 
-
-
 export default function Menu() {
-
   const token = localStorage.getItem('token');
   const [breakfasts, setBreakfasts] = useState([])
   const [lunches, setLunches] = useState([])
@@ -59,7 +53,6 @@ export default function Menu() {
     fetchProducts();
   }, [])
 
-
   //nombre del cliente con evento onChange
   const [firstName, setFirstName] = useState('');
   const [fullName, setFullName] = useState('');
@@ -67,7 +60,6 @@ export default function Menu() {
     setFirstName(e.target.value);
     setFullName(e.target.value);
   };
-
 
   //muestra desayuno o almuerzo
   const [mostrarProducts, setMostrarProducts] = useState("breakfast");
@@ -82,7 +74,6 @@ export default function Menu() {
     }
   };
 
-
   //productos seleccionados que se muestran en OrderList
   const [selectedProducts, setSelectedProducts] = useState([]);
   const handleClickProduct = (product) => {
@@ -96,7 +87,6 @@ export default function Menu() {
     selectedProducts.forEach((product) => {
       total += parseFloat(product.price);
     });
-    // console.log(total);
     return total;
   }
 
@@ -111,8 +101,6 @@ export default function Menu() {
       prevSelectedProducts.filter((product, index) => index !== productIndex));
   }
 
-
-
   // enviar lista de pedidos a cocina segun la estructura
   const [orderSent, setOrderSent] = useState([]);
   // funcion que ejecutA al dar click btn enviar a cocina
@@ -126,7 +114,6 @@ export default function Menu() {
     }
     //guarda en OrderDate.products los productos agrupados por id
     orderDate.products.push(...groupProductsById(selectedProducts))
-
     await api().fetchSendOrder(orderDate, token);
     setOrderSent(orderDate);
     setFullName('');
@@ -140,34 +127,29 @@ export default function Menu() {
     // Oculta el modal al hacer clic en "OK"
     setShowModal(false);
   };
-  // console.log(orderSent)
 
-
-
-
- //abre modal de cancel
+  //abre modal de cancel
   const [showModalCancel, setShowModalCancel] = useState(false);
   const handleClickCancelModal = () => {
     setShowModalCancel(true);
   }
-   // Borrar datos en general (cancelar)
+  // Borrar datos en general (cancelar)
   const handleClickCancel = () => {
     setFullName('');
     setFirstName('');
     setSelectedProducts([]);
     setShowModalCancel(false);
   }
-//cierra modal de cancel
+  //cierra modal de cancel
   const cancel = () => {
     setShowModalCancel(false);
   }
 
-
-//navega a la pages StatusOrder
-const navigate = useNavigate();
-    const handleClickNavigate = () => {
-      navigate('/statusOrder');
-    };
+  //navega a la pages StatusOrder
+  const navigate = useNavigate();
+  const handleClickNavigate = () => {
+    navigate('/statusOrder');
+  };
 
   return (
     <>
@@ -181,7 +163,7 @@ const navigate = useNavigate();
 
         <main>
           <div className='container-all container'>
-            
+
             <div className='box-btn-view'>
               <button className='btn-viewOrder' onClick={handleClickNavigate}>View Order</button>
               {/* <img src={IconViewOrder} alt="view order" /> */}
@@ -241,10 +223,10 @@ const navigate = useNavigate();
                   <p>Total $:<span>{`${contarTotalProductos(selectedProducts)}`} </span> </p>
                 </div>
 
-              <div className='ticket-btns'>
-                <button data-testid='button-send' className='ticket-enviar active' disabled={!firstName || selectedProducts.length === 0} onClick={sendOrderToKitchen}>Send to kitchen</button>
+                <div className='ticket-btns'>
+                  <button data-testid='button-send' className='ticket-enviar active' disabled={!firstName || selectedProducts.length === 0} onClick={sendOrderToKitchen}>Send to kitchen</button>
 
-                {showModal && <Modal close={closeModal} />}
+                  {showModal && <Modal close={closeModal} />}
 
                   <button onClick={handleClickCancelModal} disabled={!firstName} className='ticket-cancel'>Cancel</button>
                   {showModalCancel && <ModalCancel cancel={cancel} handleClickCancel={handleClickCancel} />}

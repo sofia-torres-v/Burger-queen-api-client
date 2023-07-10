@@ -16,7 +16,7 @@ const ModalAddStaff = ({ cancel }) => {
 
     const fetchCreateStaff = async (e) => {
         e.preventDefault()
-       
+
         await api().fetchCreateStaff({ token, email, password, role });
         cancel();
     }
@@ -32,7 +32,7 @@ const ModalAddStaff = ({ cancel }) => {
                 <form className='content-item' onSubmit={fetchCreateStaff}>
                     <div className='item' >
                         <label>Email:</label>
-                        <input className="inp-modal" onChange={(e) => setEmail(e.target.value)}type="text" placeholder="example@example.com" />
+                        <input className="inp-modal" onChange={(e) => setEmail(e.target.value)} type="text" placeholder="example@example.com" />
                     </div>
 
                     <div className='item'>
@@ -48,7 +48,7 @@ const ModalAddStaff = ({ cancel }) => {
                         <label>Contraseña: </label>
                         <input className="inp-modal" onChange={(e) => setPassword(e.target.value)} type="text" placeholder="********" />
                     </div>
-                    <input type="submit"  className="btn-add" value="Add"/>
+                    <input type="submit" className="btn-add" value="Add" />
                 </form>
 
             </div>

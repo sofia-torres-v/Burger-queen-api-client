@@ -7,10 +7,12 @@ import CardProductAdmin from '../../Components/cardsAdministrator/cardsProductAd
 import ModalAddProduct from '../../Components/modal/modalAddProduct';
 import ModalAddStaff from '../../Components/modal/modalAddStaff';
 import ModalDeleteProduct from '../../Components/modal/modalDeleteProduct';
+import ModalDeleteStaff from  '../../Components/modal/modalDeleteStaff';
 import Icon from '../../assets/iconAdmin.png';
 import IconAdd from '../../assets/addProduct.png';
 import AddStaff from '../../assets/addStaff.png';
 import './administrator.css'
+
 
 export default function Administrator() {
     const token = localStorage.getItem('token');
@@ -33,20 +35,33 @@ export default function Administrator() {
     const handleClickModalAddProduct = () => {
         setShowModalAddProduct(true);
     }
+
+
     const [showModalAddStaff, setShowModalAddStaff] = useState(false);
     const handleClickModalAddStaff = () => {
         setShowModalAddStaff(true);
     }
-    const [showModalDeleteProduct, setShowModalDeleteProduct] = useState(false);
-    const handleClickDeleteProduct = () => {
-        setShowModalDeleteProduct(true);
-    }
 
+// muestra modal de eliminar
+    const [showModalDeleteProduct, setShowModalDeleteProduct] = useState(false);
+    const [productToDelete, setProductToDelete] = useState(null);
+    const [showModalDeleteStaff, setShowModalDeleteStaff] = useState(false);
+    const [staffToDelete, setStaffToDelete] = useState(null);
+    
+    const handleClickDelete = (product) => {
+        setShowModalDeleteProduct(true);
+        setShowModalDeleteStaff(true)
+        setProductToDelete(product);
+        setStaffToDelete(product)
+    }
+    console.log('staff--',staffToDelete);
+    console.log('product--',productToDelete);
     //cierra modal
     const cancel = () => {
         setShowModalAddProduct(false);
         setShowModalAddStaff(false);
         setShowModalDeleteProduct(false);
+        setShowModalDeleteStaff(false);
     }
 
     const [userAdmin, setUserAdmin] = useState([]);
@@ -75,6 +90,10 @@ export default function Administrator() {
         fetchProducts();
     }, [showModalAddProduct])
 
+    
+
+
+
     return (
         <>
             <div className='global-container-Admi'>
@@ -82,7 +101,7 @@ export default function Administrator() {
                     <div className='box-text-logout'>
                         <Logout text='Administrator' icon={Icon} />
                     </div>
-                    <LogoBurger />
+                       <LogoBurger />
                 </header>
 
                 <main >
@@ -112,14 +131,15 @@ export default function Administrator() {
                                     <div>
                                         <h3 className='rolTitle'>Breakfasts</h3>
                                         <ul className='content-cards-products'>
-                                            <CardProductAdmin products={breakfasts} handleClickDeleteProduct={handleClickDeleteProduct} />
-                                            {showModalDeleteProduct && <ModalDeleteProduct cancel={cancel} />}
-
+                                            <CardProductAdmin products={breakfasts} handleClickDeleteProduct={handleClickDelete} />
+                                            {showModalDeleteProduct &&                                           
+                                             <ModalDeleteProduct product={productToDelete}  cancel={cancel} setBreakfasts={setBreakfasts} setLunches={setLunches}/>}
                                         </ul>
 
                                         <h3 className='rolTitle'>Lunches</h3>
                                         <ul className='content-cards-products'>
-                                            <CardProductAdmin products={lunches} />
+                                            <CardProductAdmin products={lunches} handleClickDeleteProduct={handleClickDelete}/>
+                                            
                                         </ul>
                                     </div></> :
                                 <><div className='content-add'>
@@ -133,17 +153,18 @@ export default function Administrator() {
                                     <div>
                                         <h3 className='rolTitle'>Waiter</h3>
                                         <ul className='content-cards-products'>
-                                            <CardProductAdmin products={userWaiter} />
+                                            <CardProductAdmin products={userWaiter}  handleClickDeleteProduct={handleClickDelete}/>
+                                            {showModalDeleteStaff && <ModalDeleteStaff user={staffToDelete}  cancel={cancel} setUserAdmin={setUserAdmin} setUserWaiter={setUserWaiter} setUserCheff={setUserCheff}/>}
                                         </ul>
 
                                         <h3 className='rolTitle'>Chef</h3>
                                         <ul className='content-cards-products'>
-                                            <CardProductAdmin products={userCheff} />
+                                            <CardProductAdmin products={userCheff}  handleClickDeleteProduct={handleClickDelete} />
                                         </ul>
 
                                         <h3 className='rolTitle'>Administrator</h3>
                                         <ul className='content-cards-products'>
-                                            <CardProductAdmin products={userAdmin} />
+                                            <CardProductAdmin products={userAdmin}  handleClickDeleteProduct={handleClickDelete} />
                                         </ul>
                                     </div></>
                             }

@@ -14,11 +14,11 @@ export default function cardOrderStatus({ orders, changeStatus, showButton, text
           />
           <div className='time-attended-delivered'  >
             <p>Entry: <span>{new Date(order.dataEntry).toLocaleTimeString()}</span></p>
-
             {order.status !== 'pending' && <p>Output: <span>{new Date(order.dateProcessed).toLocaleTimeString()}</span></p>}
+          </div>
             {showButton  && <button className='btn-attended-delivered' onClick={() => changeStatus(order)}>{text}</button>}
 
-          </div>
+          
         </div>
       })}
 

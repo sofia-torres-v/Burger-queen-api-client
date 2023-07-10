@@ -3,22 +3,21 @@ import close from '../../assets/close.png';
 import './modalDeleteProduct.css'
 import Api from '../../api_client/api'
 
-const ModalDeleteProduct = ({ product, cancel, setBreakfasts, setLunches}) => {
-
+const ModalDeleteStaff = ({ user, cancel, setUserWaiter, setUserCheff, setUserAdmin}) => {
+ 
     const token = localStorage.getItem('token');
 
-    const deletetProduct = async () => {
+    const deletetStaff = async () => {
         try {
-            console.log('Realizando solicitud de eliminación del producto');
-            const response = await Api().fetchDeleteProduct({
-            productId: product.id,
-            token
-        });
-            console.log('producto se elimino correctamente:', response);  
+            console.log('Realizando solicitud de eliminación del personal');
+            const response = await Api().fetchDeleteStaff({ user ,token});
+            console.log('usuario se elimino correctamente:', response);  
             // Actualizamos el estado de breakfasts después de eliminar el producto
-            setBreakfasts(prevBreakfasts => prevBreakfasts.filter(item => item.id !== product.id));
-            setLunches(prevLunches=> prevLunches.filter(item => item.id !== product.id));
+            setUserWaiter(prevUserWaiter => prevUserWaiter.filter(item => item.id !== user.id));
+            setUserCheff(prevUserCheff=> prevUserCheff.filter(item => item.id !== user.id));
+            setUserAdmin(prevUserAdmin=> prevUserAdmin.filter(item => item.id !== user.id));
             cancel()
+            
         } catch (error) {
             console.log('Error en la solicitud de eliminación del producto:', error);
             throw error;
@@ -41,11 +40,12 @@ const ModalDeleteProduct = ({ product, cancel, setBreakfasts, setLunches}) => {
                 <div className="modal-text-delete modal-text-admin">
                     <br />
                     <h2>Do you want to eliminate ?</h2>
-                    <p> Product: {product.name}</p>
-                    <p>Type: {product.type}</p>
-                    <p>Price: ${product.price}</p>
+                    <p> Email:
+                         {user.email}</p>
+                    <p>Role:
+                        {user.role}  </p>
                 </div>
-                <button onClick={deletetProduct} className="btn-modal btn-admin"> Continue </button>
+                <button onClick={deletetStaff} className="btn-modal btn-admin"> Continue </button>
 
             </div>
 
@@ -53,4 +53,4 @@ const ModalDeleteProduct = ({ product, cancel, setBreakfasts, setLunches}) => {
     )
 }
 
-export default ModalDeleteProduct;
+export default ModalDeleteStaff;

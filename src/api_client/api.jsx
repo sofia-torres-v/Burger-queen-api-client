@@ -190,7 +190,7 @@ const api = () => {
         })
     };
 
-  //editar producto
+//editar producto
     // export const requestEditProducts = (token, id, name, price, img, type) => {
     //     return fetch(`http://localhost:8080/products/${id}`, {
     //         method: 'PATCH',
@@ -209,17 +209,44 @@ const api = () => {
     // }
 
 
-  //Eliminar producto
-    // export const requestDeleteProduct = (id, token) => {
-    //     return fetch(`http://localhost:8080/products/${id}`, {
-    //         method: 'DELETE',
-    //         headers: {
-    //             "Access-Control-Request-Method": "DELETE",
-    //             "Authorization": "Bearer " + token
-    //         },
-    //         body: id
-    //     })
 
+    // Eliminar productos
+      const fetchDeleteProduct = async ({ token, productId }) => {
+        try {
+            console.log('Realizando solicitud de eliminación del producto');
+          const response = await fetch(`http://localhost:8080/products/${productId}`, {
+            method: 'DELETE',
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+          console.log('Respuesta de la solicitud de eliminación del producto:', response);
+          return response;
+        } catch (error) {
+          console.log('Error en la solicitud de eliminación del producto:', error);
+          throw error;
+        }
+      };
+      
+
+       // Eliminar personal
+       const fetchDeleteStaff = async ({ token, user }) => {
+        try {
+            // console.log('Realizando solicitud de eliminación del producto');
+          const response = await fetch(`http://localhost:8080/users/${user.id}`, {
+            method: 'DELETE',
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+          console.log('Respuesta de la solicitud de eliminación del producto:', response);
+          return response;
+        } catch (error) {
+          console.log('Error en la solicitud de eliminación del producto:', error);
+          throw error;
+        }
+      };
+   
 
 
     return {
@@ -231,6 +258,8 @@ const api = () => {
         fetchShowUsers,
         fetchCreateProduct,
         fetchCreateStaff,
+        fetchDeleteProduct,
+        fetchDeleteStaff
     }
 }
 

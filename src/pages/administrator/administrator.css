@@ -4,13 +4,14 @@
     background-image: url('../../assets/fondoGeneral.jpg');
     background-color: #000;
     padding: 20px 0 90px 0;
-    min-height: 100vh;
 }
 
 .content-general-products {
     background-color: #4e4e4e;
     padding: 20px;
-    border-radius: 0 0 20px 20px;
+    height: 750px;
+    overflow: auto; 
+
 }
 
 .content-add {
@@ -35,7 +36,7 @@
 }
 
 .content-cards-products {
-    border-top: solid 4px #F8B504;
+    border-top: solid 2px #F8B504;
     padding: 25px;
 }
 
@@ -55,27 +56,31 @@
     background-color: #F8B504;
 }
 
-@media (min-width:1024px) {
-
-    .btn-product,
-    .btn-staff {
-        margin: -20px 0px 0px -1px;
-
-    }
-}
-
-
 
 @media (min-width:820px) {
-
+    .content-general-products{
+        height: 900px;
+    }
     .btn-product,
     .btn-staff {
         margin: -20px 0px 0px -1px;
-
     }
-
     .btn-product,
     .btn-staff {
         padding: 11px;
     }
 }
+
+
+@media (min-width:1024px) {
+    .btn-product,
+    .btn-staff {
+        margin: -20px 0px 0px -1px;
+    }
+    .content-general-products{
+        height: 570px;
+    }
+}
+
+
+

@@ -1,53 +1,41 @@
-/* ---------------------fondo vista waiter----------------  */
-
+/* Estilos para dispositivos móviles */
 .global-container-waiter {
-    background-image: url('../../assets/fondoGeneral.jpg');
-    background-size: cover;
-    height: 100vh;
+  background-color: #000;
 }
 
-.box-btn-view{
-    
+.box-btn-view {
     text-align: end;
-    margin-bottom: 4px; 
+    margin-bottom: 4px;
     display: flex;
     justify-content: end;
     align-items: center;
-  
 }
+
 .btn-viewOrder {
-    padding: 10px 16px ;
-    font-size: 1.8rem;
+    padding: 8px 16px;
+    font-size: 1rem;
     font-weight: bold;
     border-radius: 20px;
     display: flex;
     justify-content: end;
     align-items: center;
-    gap: 5px;
     background-color: #F8B504;
-
 }
-/* .box-btn-view img{
-    width: 35px;
-} */
+
 .container-columns1 {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 15px;
-    padding-top: 20px;
 }
 
 .column-menu,
 .column-ticket {
-    flex: 1 1 400px;
-}
-
-.column-ticket {
-    flex: 1 1 320px;
+    flex: 1 1 100%;
 }
 
 .group-client {
-    color: #fff;
+  
     padding-bottom: 25px;
     display: flex;
     align-items: center;
@@ -60,8 +48,9 @@
 }
 
 .group-client input {
+   
     width: 100%;
-    padding: 16px 14px;
+    padding: 5px ;
     border-radius: 7px;
     outline: none;
     background-color: #fffffff1;
@@ -69,20 +58,19 @@
     border-radius: 10px;
 }
 
-
-/* columna productos*/
 .content-order {
     background-color: #5D5D5D;
-    min-height: 660px;
+    min-height: 625px;
     border-radius: 0 0 20px 20px;
     padding: 0 15px;
+    /* overflow: hidden; */
 }
 
 .sub-title {
     text-align: center;
     color: #fff;
-    padding: 15px;
-    font-size: 3rem;
+    padding: 20px;
+    font-size: 2rem;
 }
 
 .content-buttons {
@@ -100,8 +88,6 @@
     outline: none;
 }
 
-
-/* columna ticket orderList */
 .subtitle-list {
     display: flex;
     justify-content: space-between;
@@ -109,12 +95,13 @@
 }
 
 .subtitle-product {
+    background-color: #fff;
     font-weight: bold;
     font-size: 2.5rem;
 }
 
 .ticket-header {
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
 }
 
 .ticket-header,
@@ -124,28 +111,32 @@
 }
 
 .ticket-subtitle {
+   background-color: #ffffff;
     font-size: 3.4rem;
     text-align: center;
+
 }
 
-.ticket-subtitle,
+
+.ticket-subtitle
 .ticket-header p {
     color: #000;
     padding: 10px;
-    border-bottom: 3px solid #000;
+    /* border-bottom: 5px solid #000; */
 }
 
 .ticket-header p {
     font-size: 2.6rem;
     font-weight: bold;
 }
-
 .ticket-body {
     min-height: 420px;
+    background-color: #fff;
     padding: 10px;
 }
 
 .ticket-footer {
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -154,7 +145,7 @@
 }
 
 .ticket-footer p {
-    font-size: 2.6rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-right: 10px;
 }
@@ -172,9 +163,9 @@
 
 .ticket-enviar,
 .ticket-cancel {
-    padding: 18px;
+    padding: 5px;
     border-radius: 25px;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -182,33 +173,72 @@
     background-color: #F8B504;
 }
 
-
-
-@media (min-width:820px) {
-    .ticket-body {
-        min-height: 550px;
-        padding: 10px;
+/* Consultas de medios para tabletas y pantallas más grandes */
+@media (min-width: 768px) {
+    .global-container-waiter {
+        background-image: url('../../assets/fondoGeneral.jpg');
+        background-size: cover;
+    }
+    .container-columns1{
+        flex-wrap: nowrap; 
+    }
+    .column-menu,
+    .column-ticket {
+        flex: 1 1 400px;
+    }
+    .btn-viewOrder{
+        font-size: 1.8rem;
     }
 
-   
+    .ticket-body {
+        min-height: 570px;
+        border-top: solid 3px #000;
+    }
+
     .content-order {
-        min-height: 790px;
-        padding: 0 15px;
+        min-height: 785px;
+    }
+
+    .ticket-enviar,
+    .ticket-cancel {
+        padding: 8px;
+    }
+
+    .ticket-subtitle {
+        font-size: 3.4rem;
+        padding: 10px;
+        margin-bottom: 12px;
+        border-bottom: solid 3px #000;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .subtitle-product {
+        font-size: 2.5rem;
+    }
+
+    .ticket-footer p {
+        font-size: 2.6rem;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .sub-title {
+        font-size: 2.6rem;
+    }
+
+    .btn-break,
+    .btn-lunch {
+        padding: 15px;
     }
 }
 
-
-@media (min-width:1000px) {
+@media (min-width: 1000px) {
     .ticket-body {
         min-height: 300px;
-        padding: 10px;
     }
-
     .content-order {
-        /* min-height: 492px; */
-        min-height: 495px;
+        min-height: 450px;
         border-radius: 0 0 20px 20px;
-        padding: 0 15px;
     }
 
     .ticket-enviar,
@@ -228,6 +258,7 @@
         font-size: 2.3rem;
         font-weight: bold;
         margin-right: 10px;
+
     }
 
     .sub-title {
@@ -238,16 +269,16 @@
     .btn-lunch {
         padding: 15px;
     }
-
-
-
 }
 
+@media (min-width: 1024px) {
+    .ticket-body {
+        min-height: 310px;
+    }
 
-@media (min-width:1024px) {
-
-    .container-columns1 {
-        padding-top: 0px;
+    .content-order {
+        min-height: 490px;
+        border-radius: 0 0 20px 20px;
     }
 
     .group-client input {
@@ -276,8 +307,9 @@
         gap: 7px;
         margin: 10px 0 15px 0;
     }
-    /* .box-btn-view{
- 
-        margin-bottom: 0px; 
-    } */
+
+    .ticket-enviar,
+    .ticket-cancel {
+        padding: 10px;
+    }
 }

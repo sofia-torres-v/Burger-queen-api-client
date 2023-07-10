@@ -1,52 +1,59 @@
+/* Estilos para dispositivos móviles */
+/* Estos estilos se aplicarán por defecto para dispositivos móviles */
 .global-container-cheff {
     background-image: url('../../assets/fondoGeneral.jpg');
     background-size: cover;
     height: 100vh;
 }
 
-.container-column-cheff{
-    background-color: rgba(128, 128, 128, 0.459);
+.container-column-cheff {
     display: flex;
     justify-content: center;
     height: 755px;
-    border-radius: 15px 15px ;
+    border-radius: 15px 15px;
 }
 
-.title-columns-cheff{
+.title-columns-cheff {
+    background-color: rgba(128, 128, 128, 0.459);
     text-align: center;
     font-size: 2.8rem;
     padding: 15px;
-    color: white; 
+    color: white;
 }
 
-.first-column{
-    border-right: solid 2px #F8B504;
+.first-column {
+    border-right: solid 2.5px #F8B504;
     width: 50%;
-    border-radius: 15px 0 0 15px; 
+    border-radius: 15px 0 0 15px;
 }
 
-.second-column{
+.second-column {
     width: 50%;
     border-radius: 0px 15px 15px 0;
 }
 
-
-@media (min-width:820px){
-    .container-column-cheff{
-       height: 894px;
+/* Consultas de medios para tabletas y pantallas más grandes */
+@media (min-width: 768px) {
+    .container-column-cheff {
+        height: 894px;
     }
+
+    .first-column{
+        border-right: solid 3px #F8B504;  
+    }
+
 }
 
-@media (min-width:1000px){
-    .container-column-cheff{
-       height: 560px;
+@media (min-width: 1000px) {
+    .container-column-cheff {
+        height: 560px;
     }
+
+
 }
 
-@media (min-width:1024px){
-    .container-column-cheff{
-       height: 575px;
+@media (min-width: 1024px) {
+    .container-column-cheff {
+        height: 575px;
     }
 }
-
-

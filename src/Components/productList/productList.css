@@ -1,5 +1,8 @@
+
+
+/* ya esta responsive */
 .content-product-list{
-    max-height: 350px; 
+    max-height: 320px; 
     overflow-y: auto
 }
 

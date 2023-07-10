@@ -1,31 +1,36 @@
 .box-order-status{
-    /* border: solid 5px greenyellow; */
-    background-color: #5D5D5D;
+    background-color: #5d5d5dda;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    max-height: 538px;
+    /* max-height: 838px; */
     overflow-y: scroll;
-    padding: 13px;
+    padding: 35px 0 0 0;
     border-radius: 26px;
 }
 
+.box-order-status::-webkit-scrollbar {
+    background-color: rgba(65, 63, 63, 0.445);
+}
+
+.box-order-status::-webkit-scrollbar-thumb {
+    background-color: rgba(12, 12, 12, 0.247);
+}
 .box-card-button{
-    background-color: #dacece;
     border-radius: 26px;
+    background-color: #dacece;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 26px;
-    width: 32%;
-    padding: 5px;
-
+    width: 100%;
+    padding: 5px 0 10px 0;
+    min-height: 200px;
 }
 
 .time-attended-delivered{
-    /* background-color: lightseagreen; */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -33,14 +38,40 @@
     font-size: 1.5rem;
     font-weight: bold;
     width: 100%;
-    /* border-radius: 0 0 26px 26px; */
-    padding-bottom: 10px;
-    
+    padding: 10px;
 }
+
 .btn-attended-delivered{
     padding: 10px 20px 10px 20px;
+    font-size: 1.8rem;
     font-weight: bold;
     border-radius: 15px;
     background-color: #F8B504;
-  
+}
+
+@media (min-width:768px) {
+    .box-order-status{
+        height: 700px;
+    }
+    .box-card-button {
+        width: 45%; 
+    }
+}
+
+@media (min-width:820px) {
+    .box-order-status{
+        height: 800px;
+    }
+}
+
+@media (min-width:1000px) {
+    .box-order-status{
+        height: 488px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .box-card-button {
+        width: 30%;
+    }
 }

@@ -12,6 +12,11 @@ export default function Cheff() {
 
     let showButton = true
 
+    //llamar a la api para editar los productos
+    const [orderPending, setOrderPending] = useState([]);
+    const [orderDelivery, setOrderDelivery] = useState([]);
+
+
     const token = localStorage.getItem('token');
     //llamar a la api para traer las ordenes
     useEffect(() => {
@@ -19,14 +24,14 @@ export default function Cheff() {
             const result = await api().fetchGetOrder({ token });
             setOrderPending(result.pending);
             setOrderDelivery(result.delivery);
-            console.log(result)
+            // console.log(result)
         }
         fetchGetOrder();
     }, [])
 
-    //llamar a la api para editar los productos
-    const [orderPending, setOrderPending] = useState([]);
-    const [orderDelivery, setOrderDelivery] = useState([]);
+// console.log(orderPending)
+
+    // funcion click para mandar de pending a delivery
     const changeStatus = async (order) => {
         const result = await api().changeStatus(order, "delivery", token);
         async function fetchGetOrder() {

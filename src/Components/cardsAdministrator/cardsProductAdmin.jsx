@@ -13,7 +13,7 @@ export default function cardproductAdmin({ products,handleClickDeleteProduct }) 
                         <p>{product.name}</p>
                     ) : (
                         <p>{product.email}</p>
-                    )} <EditAndDelete onClick={() => handleClickDeleteProduct(index)}/>
+                    )} <EditAndDelete onClick={() => handleClickDeleteProduct(product)}/>
                 </section>
 
             })}

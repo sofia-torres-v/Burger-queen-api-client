@@ -115,6 +115,7 @@ export default function Menu() {
     //guarda en OrderDate.products los productos agrupados por id
     orderDate.products.push(...groupProductsById(selectedProducts))
     await api().fetchSendOrder(orderDate, token);
+    
     setOrderSent(orderDate);
     setFullName('');
     setFirstName('');
@@ -122,6 +123,8 @@ export default function Menu() {
     // Muestra el modal al enviar el pedido
     setShowModal(true);
   };
+
+
   const [showModal, setShowModal] = useState(false);
   const closeModal = () => {
     // Oculta el modal al hacer clic en "OK"

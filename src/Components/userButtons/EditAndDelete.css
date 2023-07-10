@@ -1,6 +1,6 @@
-/* lista de productos y sus botones editar y eliminar */
 .content-btns{
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
 }
 
@@ -30,5 +30,16 @@
     display: flex;
     align-items: center;
     gap: 18px;
+}
+
+@media (min-width: 820px) {
+    .content-btns{
+   flex-direction: row;
+    }
+}
+@media (min-width: 1024px) {
+    .content-btns{
+   flex-direction: row;
+    }
 }
 

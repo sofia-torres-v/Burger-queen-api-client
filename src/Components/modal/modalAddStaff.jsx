@@ -16,7 +16,7 @@ const ModalAddStaff = ({ cancel }) => {
 
     const fetchCreateStaff = async (e) => {
         e.preventDefault()
-        console.log('shbkuhsbk');
+       
         await api().fetchCreateStaff({ token, email, password, role });
         cancel();
     }
@@ -37,7 +37,7 @@ const ModalAddStaff = ({ cancel }) => {
 
                     <div className='item'>
                         <label>Role:</label>
-                        <select className="selec" name="select" defaultValue="waiter" onChange={(e) => setRole(e.target.value)} >
+                        <select className="inp-select" name="select" defaultValue="waiter" onChange={(e) => setRole(e.target.value)} >
                             <option value="waiter">Waiter</option>
                             <option value="cheff">Cheff</option>
                             <option value="admin">Admin</option>

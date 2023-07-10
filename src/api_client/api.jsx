@@ -51,7 +51,7 @@ const api = () => {
 
 
     // Enviar lista de pedidos  a la Api
-    const fetchSendOrder = async (order, token) => {
+    const fetchSendOrder = async (orderDate, token) => {
         try {
             const response = await fetch('http://localhost:8080/orders', {
                 method: 'POST',
@@ -59,11 +59,11 @@ const api = () => {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
                 },
-                body: JSON.stringify(order)
+                body: JSON.stringify(orderDate)
             })
             if (response.ok) {
                 console.log('La orden se envió correctamente')
-                return order
+                return orderDate
             } else {
                 console.log('Hubo un error al enviar la orden')
             }
@@ -71,6 +71,9 @@ const api = () => {
             // console.log(error,'Error de la solicitud HTTP')
         }
     };
+
+
+
 
     // trae lista de pedidos  a la Api
     const fetchGetOrder = async ({ token }) => {
@@ -96,6 +99,8 @@ const api = () => {
             console.log(error, 'Error de la solicitud HTTP')
         }
     };
+
+    
 
     //Cambiando el estado de la orden 
     const changeStatus = async (order, status, token) => {
@@ -185,7 +190,7 @@ const api = () => {
         })
     };
 
-  //editar producto
+//editar producto
     // export const requestEditProducts = (token, id, name, price, img, type) => {
     //     return fetch(`http://localhost:8080/products/${id}`, {
     //         method: 'PATCH',
@@ -204,17 +209,44 @@ const api = () => {
     // }
 
 
-  //Eliminar producto
-    // export const requestDeleteProduct = (id, token) => {
-    //     return fetch(`http://localhost:8080/products/${id}`, {
-    //         method: 'DELETE',
-    //         headers: {
-    //             "Access-Control-Request-Method": "DELETE",
-    //             "Authorization": "Bearer " + token
-    //         },
-    //         body: id
-    //     })
 
+    // Eliminar productos
+      const fetchDeleteProduct = async ({ token, productId }) => {
+        try {
+            console.log('Realizando solicitud de eliminación del producto');
+          const response = await fetch(`http://localhost:8080/products/${productId}`, {
+            method: 'DELETE',
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+          console.log('Respuesta de la solicitud de eliminación del producto:', response);
+          return response;
+        } catch (error) {
+          console.log('Error en la solicitud de eliminación del producto:', error);
+          throw error;
+        }
+      };
+      
+
+       // Eliminar personal
+       const fetchDeleteStaff = async ({ token, user }) => {
+        try {
+            // console.log('Realizando solicitud de eliminación del producto');
+          const response = await fetch(`http://localhost:8080/users/${user.id}`, {
+            method: 'DELETE',
+            headers: {
+              'Authorization': `Bearer ${token}`
+            }
+          });
+          console.log('Respuesta de la solicitud de eliminación del producto:', response);
+          return response;
+        } catch (error) {
+          console.log('Error en la solicitud de eliminación del producto:', error);
+          throw error;
+        }
+      };
+   
 
 
     return {
@@ -226,6 +258,8 @@ const api = () => {
         fetchShowUsers,
         fetchCreateProduct,
         fetchCreateStaff,
+        fetchDeleteProduct,
+        fetchDeleteStaff
     }
 }
 

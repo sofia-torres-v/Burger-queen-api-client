@@ -2,14 +2,12 @@
     background-color: #dacece;
     border-radius: 26px;
     width: 100%;
-    /* height: 100%; */
     font-size: 2rem;
     padding: 10px 15px 20px 15px;
  
 }
 
 .box-card-delivered{
-
     display: flex;
     border-radius: 26px;
     justify-content: space-between;
@@ -17,19 +15,19 @@
     width: 100%;
     margin-top: 10px;
     line-height: 1.3;
-
 }
 
 .text-cards-name-delivered{
     font-size: 2.5rem;
     margin: 0 auto;
     display: block;
+    font-weight: bold;
 }
 
 .img-card-delivered{
-    /* background-color: aqua; */
     width: 150px;
 }
+
 .img-card-delivered img{
     width: 65px;
     margin: 0 auto;

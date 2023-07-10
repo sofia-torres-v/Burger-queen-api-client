@@ -4,7 +4,6 @@
 .content-logo{
     width: 200px;
     margin: 0 auto;
-    margin-bottom: 10px;
 }
 
 .content-logo img{
@@ -15,11 +14,9 @@
 
 /* pantallas más grandes */
 
-@media (min-width:750px){
+@media (min-width:768px){
     .content-logo{
         width: 450px;
-        margin-bottom: unset;
-  
     }
 
     .content-logo img{
@@ -34,8 +31,10 @@
 
     .content-logo{
         width: 375px;
+        padding-bottom: 35px;
     }
     .content-logo img{
         max-width: 250px;
     }
 }
+

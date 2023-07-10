@@ -39,9 +39,7 @@ describe('Login', () => {
         await act(async () => {
             await Promise.resolve();
         });
-
         expect(navigate).toHaveBeenCalledWith('/admin');
-
         const setItemSpy = jest.spyOn(localStorage, 'setItem');
         expect(setItemSpy).toHaveBeenCalledWith('token', 'accessToken');
 

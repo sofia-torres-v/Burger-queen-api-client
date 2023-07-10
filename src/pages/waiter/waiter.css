@@ -1,6 +1,6 @@
 /* Estilos para dispositivos móviles */
 .global-container-waiter {
-  background-color: #000;
+    background-color: #000;
 }
 
 .box-btn-view {
@@ -20,6 +20,7 @@
     justify-content: end;
     align-items: center;
     background-color: #F8B504;
+
 }
 
 .container-columns1 {
@@ -35,7 +36,7 @@
 }
 
 .group-client {
-  
+
     padding-bottom: 25px;
     display: flex;
     align-items: center;
@@ -48,9 +49,9 @@
 }
 
 .group-client input {
-   
+
     width: 100%;
-    padding: 5px ;
+    padding: 5px;
     border-radius: 7px;
     outline: none;
     background-color: #fffffff1;
@@ -63,7 +64,6 @@
     min-height: 625px;
     border-radius: 0 0 20px 20px;
     padding: 0 15px;
-    /* overflow: hidden; */
 }
 
 .sub-title {
@@ -111,24 +111,24 @@
 }
 
 .ticket-subtitle {
-   background-color: #ffffff;
+    background-color: #ffffff;
     font-size: 3.4rem;
     text-align: center;
-
 }
 
 
-.ticket-subtitle
-.ticket-header p {
+.ticket-subtitle .ticket-header p {
     color: #000;
     padding: 10px;
-    /* border-bottom: 5px solid #000; */
 }
 
 .ticket-header p {
     font-size: 2.6rem;
     font-weight: bold;
+    margin-left: 19px;
+    height: 34px;
 }
+
 .ticket-body {
     min-height: 420px;
     background-color: #fff;
@@ -179,15 +179,19 @@
         background-image: url('../../assets/fondoGeneral.jpg');
         background-size: cover;
     }
-    .container-columns1{
-        flex-wrap: nowrap; 
+
+    .container-columns1 {
+        flex-wrap: nowrap;
     }
+
     .column-menu,
     .column-ticket {
         flex: 1 1 400px;
     }
-    .btn-viewOrder{
+
+    .btn-viewOrder {
         font-size: 1.8rem;
+
     }
 
     .ticket-body {
@@ -236,6 +240,7 @@
     .ticket-body {
         min-height: 300px;
     }
+
     .content-order {
         min-height: 450px;
         border-radius: 0 0 20px 20px;
@@ -248,6 +253,11 @@
 
     .ticket-subtitle {
         font-size: 2.7rem;
+    }
+
+    .btn-viewOrder {
+
+        margin-top: -22px;
     }
 
     .subtitle-product {

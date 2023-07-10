@@ -92,7 +92,7 @@ export default function Administrator() {
             setUserCheff(result.cheff);
         }
         fetchShowUsers();
-    }, [showModalAddStaff,showModalEditStaff])
+    }, [showModalAddStaff, showModalEditStaff])
 
     //llama a la api para traer los productos
     const [breakfasts, setBreakfasts] = useState([])
@@ -171,19 +171,19 @@ export default function Administrator() {
                                     <div>
                                         <h3 className='rolTitle'>Waiter</h3>
                                         <ul className='content-cards-products'>
-                                            <CardProductAdmin products={userWaiter} handleClickDeleteProduct={handleClickDelete} handleClickEdit={handleClickEdit}  />
+                                            <CardProductAdmin products={userWaiter} handleClickDeleteProduct={handleClickDelete} handleClickEdit={handleClickEdit} />
                                             {showModalDeleteStaff && <ModalDeleteStaff user={staffToDelete} cancel={cancel} setUserAdmin={setUserAdmin} setUserWaiter={setUserWaiter} setUserCheff={setUserCheff} />}
                                             {showModalEditStaff && <ModalEditStaff user={staffEdit} cancel={cancel} setUserAdmin={setUserAdmin} setUserWaiter={setUserWaiter} setUserCheff={setUserCheff} />}
                                         </ul>
 
                                         <h3 className='rolTitle'>Chef</h3>
                                         <ul className='content-cards-products'>
-                                            <CardProductAdmin products={userCheff} handleClickDeleteProduct={handleClickDelete} handleClickEdit={handleClickEdit}  />
+                                            <CardProductAdmin products={userCheff} handleClickDeleteProduct={handleClickDelete} handleClickEdit={handleClickEdit} />
                                         </ul>
 
                                         <h3 className='rolTitle'>Administrator</h3>
                                         <ul className='content-cards-products'>
-                                            <CardProductAdmin products={userAdmin} handleClickDeleteProduct={handleClickDelete} handleClickEdit={handleClickEdit}  />
+                                            <CardProductAdmin products={userAdmin} handleClickDeleteProduct={handleClickDelete} handleClickEdit={handleClickEdit} />
                                         </ul>
                                     </div></>
                             }

@@ -1,4 +1,3 @@
-/* Estilos para dispositivos móviles */
 /* Estos estilos se aplicarán por defecto para dispositivos móviles */
 .global-container-waiter {
     background-image: url('../../assets/fondoGeneral.jpg');
@@ -9,7 +8,7 @@
 .title-columns-pending {
     color: white;
     font-size: 3rem;
-    padding: 10px 0 10px 0;
+    padding: 0px 0px 12px 0px;
     margin-left: 40px;
 }
 
@@ -28,7 +27,7 @@
 /* Consultas de medios para tabletas y pantallas más grandes */
 @media (min-width: 768px) {
     .title-columns-pending {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     .box-back {
@@ -43,7 +42,7 @@
 
 @media (min-width: 1024px) {
     .box-back {
-        padding: 40px 0 0 50px;
+        padding: 28px 0px 0px 22px
     }
 
     .back {

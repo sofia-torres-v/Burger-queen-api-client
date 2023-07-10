@@ -1,13 +1,10 @@
-
 /* estilos para el texto producto, precio y total */
-
 .product-order-list {
     font-size: 2.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 3px 0 4px 0;
-
 }
 
 .item-cardOrder {
@@ -43,8 +40,9 @@
     .product-order-list {
         margin: 23px 5px 23px 15px;
     }
+
     .item-cardOrder {
-    padding-left: 0px;
+        padding-left: 0px;
     }
 }
 

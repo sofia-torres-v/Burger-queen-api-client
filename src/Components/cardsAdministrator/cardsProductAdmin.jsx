@@ -3,7 +3,7 @@ import EditAndDelete from '../../Components/userButtons/EditAndDelete';
 import './cardsProductAdmin.css'
 
 
-export default function cardproductAdmin({ products,handleClickDeleteProduct, handleClickEdit }) {
+export default function cardproductAdmin({ products, handleClickDeleteProduct, handleClickEdit }) {
     return (
         <div className='list-product' >
             {products.map((product, index) => {

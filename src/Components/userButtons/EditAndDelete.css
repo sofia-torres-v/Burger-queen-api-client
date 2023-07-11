@@ -32,6 +32,13 @@
     gap: 18px;
 }
 
+
+@media (min-width: 768px) {
+    .content-btns{
+   flex-direction: row;
+    }
+}
+
 @media (min-width: 820px) {
     .content-btns{
    flex-direction: row;

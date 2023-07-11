@@ -19,8 +19,10 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    background-color: #F8B504;
+}
 
+.btn-viewOrder:hover{
+    background-color: #faba13;
 }
 
 .container-columns1 {
@@ -173,7 +175,7 @@
     background-color: #F8B504;
 }
 
-/* Consultas de medios para tabletas y pantallas más grandes */
+/* tabletas y pantallas más grandes */
 @media (min-width: 768px) {
     .global-container-waiter {
         background-image: url('../../assets/fondoGeneral.jpg');
@@ -200,7 +202,7 @@
     }
 
     .content-order {
-        min-height: 785px;
+        min-height: 720px;
     }
 
     .ticket-enviar,
@@ -236,11 +238,18 @@
     }
 }
 
+
+@media (min-width: 820px){
+    .content-order {
+        min-height: 785px;
+    }
+}
+
 @media (min-width: 1000px) {
     .ticket-body {
         min-height: 300px;
     }
-
+    
     .content-order {
         min-height: 450px;
         border-radius: 0 0 20px 20px;

@@ -15,26 +15,26 @@
     background-color: rgba(128, 128, 128, 0.247);
 }
 
-
-@media (min-width:768px){
+@media (min-width:768px) {
     .box-order-cheff {
-        max-height: 720px;   
+        max-height: 720px;
         overflow-y: scroll;
+        margin-top: 15px;
     }
 }
 
-@media (min-width:820px){
+@media (min-width:820px) {
     .box-order-cheff {
-        max-height: 823px;   
+        max-height: 823px;
         overflow-y: scroll;
+        margin-top: 15px;
     }
 }
 
-
-@media (min-width:1000px){
-    .box-order-cheff{
-       height: 504px;
-       overflow-y: scroll;
+@media (min-width:1000px) {
+    .box-order-cheff {
+        height: 504px;
+        overflow-y: scroll;
+        margin-top: 15px;
     }
 }
-

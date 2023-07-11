@@ -15,9 +15,12 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isActive, setIsActive] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setIsActive(true);
+
 
     if (email.trim() === '' || password.trim() === '') {
       setErrorMessage('* These fields are required');
@@ -27,7 +30,7 @@ const Login = () => {
     try {
       const data = await api().login(email, password);
       console.log(data);
-      
+
       if (data.user.role === 'waiter') {
         navigate('/waiter');
       } if (data.user.role === 'admin') {
@@ -35,7 +38,7 @@ const Login = () => {
       } else if (data.user.role === 'cheff') {
         navigate('/cheff');
       }
-      
+
       const accessToken = data.accessToken;
 
       try {
@@ -45,16 +48,20 @@ const Login = () => {
       }
 
     } catch (err) {
-      console.log(err)
+      // console.log(err)
       setErrorMessage('Oops! That username and password combination is incorrect. Please try again.');
-      
+
     }
   };
+
+
+
 
   return (
     <section className="global-container">
       <LogoBurger />
       <LoginForm
+        isActive={isActive}
         email={email}
         password={password}
         setEmail={setEmail}

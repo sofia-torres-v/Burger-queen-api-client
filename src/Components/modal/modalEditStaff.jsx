@@ -4,40 +4,46 @@ import close from '../../assets/close.png';
 import './modalAddProduct.css'
 import api from '../../api_client/api';
 
-const ModalAddStaff = ({ cancel }) => {
+const ModalEditStaff = ({ cancel, user }) => {
 
     const token = localStorage.getItem('token');
+    // console.log('usuario--contenido: ', user)
+    //llamo a la api para editar producto
+    const [id, setId] = useState(user.id)
+    const [email, setEmail] = useState(user.email)
+    const [password, setPassword] = useState(user.password)
+    const [role, setRole] = useState(user.role)
 
-    //llamo a la api para agregar usuario
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [role, setRole] = useState('waiter')
 
-
-    const fetchCreateStaff = async (e) => {
+    const fetchEditStaff = async (e) => {
         e.preventDefault()
 
-        await api().fetchCreateStaff({ token, email, password, role });
+        await api().fetchEditStaff(token, {
+            email,
+            id,
+            role,
+            password,
+        });
         cancel();
     }
 
     return (
         <div className="modal-add">
             <div className="modal-content-add">
-                <p className="title-add" > Add staff</p>
+                <p className="title-add" > Edit staff</p>
                 <figure className="box-close" onClick={cancel}>
                     <img src={close} className="close" alt="close" />
                 </figure>
 
-                <form className='content-item' onSubmit={fetchCreateStaff}>
+                <form className='content-item' onSubmit={fetchEditStaff}>
                     <div className='item' >
                         <label>Email:</label>
-                        <input className="inp-modal" onChange={(e) => setEmail(e.target.value)} type="text" placeholder="example@example.com" />
+                        <input className="inp-modal" defaultValue={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="example@example.com" />
                     </div>
 
                     <div className='item'>
                         <label>Role:</label>
-                        <select className="inp-select" name="select" defaultValue="waiter" onChange={(e) => setRole(e.target.value)} >
+                        <select className="inp-select" name="select" defaultValue={role} onChange={(e) => setRole(e.target.value)} >
                             <option value="waiter">Waiter</option>
                             <option value="cheff">Cheff</option>
                             <option value="admin">Admin</option>
@@ -48,7 +54,7 @@ const ModalAddStaff = ({ cancel }) => {
                         <label>Contraseña: </label>
                         <input className="inp-modal" onChange={(e) => setPassword(e.target.value)} type="text" placeholder="********" />
                     </div>
-                    <input type="submit" className="btn-add" value="Add" />
+                    <input type="submit" className="btn-add" value="Save" />
                 </form>
 
             </div>
@@ -56,4 +62,4 @@ const ModalAddStaff = ({ cancel }) => {
     );
 };
 
-export default ModalAddStaff;
+export default ModalEditStaff;

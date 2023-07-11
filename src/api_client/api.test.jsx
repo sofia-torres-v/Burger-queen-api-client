@@ -191,7 +191,7 @@ describe('Api', () => {
             const expectedError = new Error('Network error');
             global.fetch.mockImplementationOnce(() => Promise.reject(expectedError));
             const token = 'token456';
-            const { result } = renderHook(() => fetchShowUsers({ token }));
+            const { result } = renderHook(() => fetchShowUsers(token));
             await waitFor(() => {
                 expect(result.error).toEqual(expectedError);
             });

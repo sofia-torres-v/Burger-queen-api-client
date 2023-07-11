@@ -29,7 +29,7 @@ export default function Cheff() {
         fetchGetOrder();
     }, [])
 
-// console.log(orderPending)
+    // console.log(orderPending)
 
     // funcion click para mandar de pending a delivery
     const changeStatus = async (order) => {
@@ -58,7 +58,7 @@ export default function Cheff() {
 
                         <div className='first-column'>
                             <h2 className='title-columns-cheff'>Cooking orders</h2>
-                            <CardListProductCheff orders={orderPending} changeStatus={changeStatus} showButton={showButton} text={'To atend'}/>
+                            <CardListProductCheff orders={orderPending} changeStatus={changeStatus} showButton={showButton} text={'To atend'} />
                         </div>
 
                         <div className='second-column'>

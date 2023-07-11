@@ -100,7 +100,7 @@ const api = () => {
         }
     };
 
-    
+
 
     //Cambiando el estado de la orden 
     const changeStatus = async (order, status, token) => {
@@ -142,7 +142,7 @@ const api = () => {
             })
             if (response.ok) {
                 const users = await response.json();
-                    return {
+                return {
                     admin: users.filter(item => item.role === 'admin'),
                     waiter: users.filter(item => item.role === 'waiter'),
                     cheff: users.filter(item => item.role === 'cheff'),
@@ -190,63 +190,77 @@ const api = () => {
         })
     };
 
-//editar producto
-    // export const requestEditProducts = (token, id, name, price, img, type) => {
-    //     return fetch(`http://localhost:8080/products/${id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             "Authorization": "Bearer " + token
-    //         },
-    //         body: JSON.stringify({
-    //             "id": id,
-    //             "name": name,
-    //             "price": price,
-    //             "image": img,
-    //             "type": type
-    //         })
-    //     })
-    // }
+    //editar producto
+    const fetchEditProducts = (token, product) => {
+        return fetch(`http://localhost:8080/products/${product.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                "name": product.name,
+                "price": product.price,
+                "image": product.img,
+                "type": product.type
+            })
+        })
+    }
+    
+    //editar staff
+    const fetchEditStaff = (token, user) => {
+        return fetch(`http://localhost:8080/users/${user.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                "email": user.email,
+                "role": user.role,
+            })
+        })
+    }
 
 
 
     // Eliminar productos
-      const fetchDeleteProduct = async ({ token, productId }) => {
+    const fetchDeleteProduct = async ({ token, productId }) => {
         try {
             console.log('Realizando solicitud de eliminación del producto');
-          const response = await fetch(`http://localhost:8080/products/${productId}`, {
-            method: 'DELETE',
-            headers: {
-              'Authorization': `Bearer ${token}`
-            }
-          });
-          console.log('Respuesta de la solicitud de eliminación del producto:', response);
-          return response;
+            const response = await fetch(`http://localhost:8080/products/${productId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            console.log('Respuesta de la solicitud de eliminación del producto:', response);
+            return response;
         } catch (error) {
-          console.log('Error en la solicitud de eliminación del producto:', error);
-          throw error;
+            console.log('Error en la solicitud de eliminación del producto:', error);
+            throw error;
         }
-      };
-      
+    };
 
-       // Eliminar personal
-       const fetchDeleteStaff = async ({ token, user }) => {
+
+    // Eliminar personal
+    const fetchDeleteStaff = async ({ token, user }) => {
         try {
             // console.log('Realizando solicitud de eliminación del producto');
-          const response = await fetch(`http://localhost:8080/users/${user.id}`, {
-            method: 'DELETE',
-            headers: {
-              'Authorization': `Bearer ${token}`
-            }
-          });
-          console.log('Respuesta de la solicitud de eliminación del producto:', response);
-          return response;
+            const response = await fetch(`http://localhost:8080/users/${user.id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            console.log('Respuesta de la solicitud de eliminación del producto:', response);
+            return response;
         } catch (error) {
-          console.log('Error en la solicitud de eliminación del producto:', error);
-          throw error;
+            console.log('Error en la solicitud de eliminación del producto:', error);
+            throw error;
         }
-      };
-   
+    };
+
 
 
     return {
@@ -258,6 +272,8 @@ const api = () => {
         fetchShowUsers,
         fetchCreateProduct,
         fetchCreateStaff,
+        fetchEditProducts,
+        fetchEditStaff,
         fetchDeleteProduct,
         fetchDeleteStaff
     }

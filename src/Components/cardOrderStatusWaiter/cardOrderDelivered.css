@@ -1,13 +1,12 @@
-.card-order-delivered{
+.card-order-delivered {
     background-color: #dacece;
     border-radius: 26px;
     width: 100%;
     font-size: 2rem;
     padding: 10px 15px 20px 15px;
- 
 }
 
-.box-card-delivered{
+.box-card-delivered {
     display: flex;
     border-radius: 26px;
     justify-content: space-between;
@@ -17,18 +16,18 @@
     line-height: 1.3;
 }
 
-.text-cards-name-delivered{
+.text-cards-name-delivered {
     font-size: 2.5rem;
-    margin: 0 auto;
+    margin: -35px 0px 19px 0;
     display: block;
     font-weight: bold;
 }
 
-.img-card-delivered{
+.img-card-delivered {
     width: 150px;
 }
 
-.img-card-delivered img{
+.img-card-delivered img {
     width: 65px;
     margin: 0 auto;
     display: block;

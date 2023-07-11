@@ -1,5 +1,3 @@
-/* ya esta responsive */
-
 /* estilos que contiens a los productos en vista waiter */
 .content-list-breakfast{
     padding-top: 25px;
@@ -8,7 +6,7 @@
     justify-content: center;
     gap: 15px;
     overflow: auto;
-    max-height: 438px;
+    max-height: 435px;
 }
 
 .content-list-breakfast::-webkit-scrollbar {

@@ -47,8 +47,7 @@ export default function Menu() {
     async function fetchProducts() {
       const result = await api().fetchProducts({ token });
       setBreakfasts(result.breakfasts);
-      setLunches(result.lunches);
-      // console.log(result);  
+      setLunches(result.lunches); 
     }
     fetchProducts();
   }, [])
@@ -101,9 +100,11 @@ export default function Menu() {
       prevSelectedProducts.filter((product, index) => index !== productIndex));
   }
 
+  
   // enviar lista de pedidos a cocina segun la estructura
   const [orderSent, setOrderSent] = useState([]);
-  // funcion que ejecutA al dar click btn enviar a cocina
+  // funcion que ejecuta al dar click btn enviar a cocina
+
   const sendOrderToKitchen = async () => {
     const orderDate = {
       "client": fullName,
@@ -169,7 +170,6 @@ export default function Menu() {
 
             <div className='box-btn-view'>
               <button className='btn-viewOrder' onClick={handleClickNavigate}>View Order</button>
-              {/* <img src={IconViewOrder} alt="view order" /> */}
             </div>
 
             <div className='container-columns1'>
@@ -202,8 +202,6 @@ export default function Menu() {
               </div>
 
               <div className='column-ticket'>
-
-
 
                 <div className='ticket-header'>
                   <h2 className='ticket-subtitle'>Order List</h2>

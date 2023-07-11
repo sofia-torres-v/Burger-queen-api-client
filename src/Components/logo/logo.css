@@ -27,6 +27,13 @@
     }
 }
 
+@media (min-width:820px){
+
+    .content-logo{
+        padding-bottom: 30px;
+    }
+   
+}
 @media (min-width:1000px){
 
     .content-logo{

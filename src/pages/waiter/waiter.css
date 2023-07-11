@@ -48,7 +48,6 @@
 }
 
 .group-client input {
-   
     width: 100%;
     padding: 5px ;
     border-radius: 7px;
@@ -63,7 +62,6 @@
     min-height: 625px;
     border-radius: 0 0 20px 20px;
     padding: 0 15px;
-    /* overflow: hidden; */
 }
 
 .sub-title {
@@ -122,7 +120,6 @@
 .ticket-header p {
     color: #000;
     padding: 10px;
-    /* border-bottom: 5px solid #000; */
 }
 
 .ticket-header p {
@@ -173,7 +170,7 @@
     background-color: #F8B504;
 }
 
-/* Consultas de medios para tabletas y pantallas más grandes */
+/* tabletas y pantallas más grandes */
 @media (min-width: 768px) {
     .global-container-waiter {
         background-image: url('../../assets/fondoGeneral.jpg');
@@ -196,7 +193,7 @@
     }
 
     .content-order {
-        min-height: 785px;
+        min-height: 720px;
     }
 
     .ticket-enviar,
@@ -229,6 +226,13 @@
     .btn-break,
     .btn-lunch {
         padding: 15px;
+    }
+}
+
+
+@media (min-width: 820px){
+    .content-order {
+        min-height: 785px;
     }
 }
 

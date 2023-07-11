@@ -2,7 +2,7 @@ import React from 'react';
 import CardOrderCheff from '../cardElement/CardOrderCheff'
 import './cardListProductCheff.css'
 
-export default function cardListProductCheff({ orders, changeStatus, showButton, text}) {
+export default function cardListProductCheff({ orders, changeStatus, showButton, text }) {
   return (
     <div className='box-order-cheff'>
       {orders.map((order, index) => {
@@ -15,11 +15,7 @@ export default function cardListProductCheff({ orders, changeStatus, showButton,
             <p>Entry: <span>{new Date(order.dataEntry).toLocaleTimeString()}</span></p>
 
             {order.status !== 'pending' && <p>Output: <span>{new Date(order.dateProcessed).toLocaleTimeString()}</span></p>}
-            {showButton  && <button className='btn-attended' onClick={() => changeStatus(order)}>{text}</button>}
-
-            {/* {
-              order.status === 'pending' && <button className='btn-attended' onClick={() => changeStatus(order)}>To attend</button>
-            } */}
+            {showButton && <button className='btn-attended' onClick={() => changeStatus(order)}>{text}</button>}
 
           </div>
         </div>

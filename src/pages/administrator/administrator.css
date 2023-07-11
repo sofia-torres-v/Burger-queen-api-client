@@ -1,5 +1,3 @@
-/* ---------------------fondo vista administrator----------------  */
-
 .global-container-Admi {
     background-image: url('../../assets/fondoGeneral.jpg');
     background-color: #000;
@@ -10,8 +8,8 @@
     background-color: #4e4e4e;
     padding: 20px;
     height: 750px;
-    overflow: auto; 
-
+    overflow: auto;
+    border-radius: 18px;
 }
 
 .content-add {
@@ -58,13 +56,15 @@
 
 
 @media (min-width:820px) {
-    .content-general-products{
+    .content-general-products {
         height: 900px;
     }
+
     .btn-product,
     .btn-staff {
         margin: -20px 0px 0px -1px;
     }
+
     .btn-product,
     .btn-staff {
         padding: 11px;
@@ -73,14 +73,13 @@
 
 
 @media (min-width:1024px) {
+
     .btn-product,
     .btn-staff {
         margin: -20px 0px 0px -1px;
     }
-    .content-general-products{
+
+    .content-general-products {
         height: 570px;
     }
 }
-
-
-

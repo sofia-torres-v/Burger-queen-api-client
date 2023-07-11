@@ -22,14 +22,19 @@
     align-items: center;
 }
 
-#messageError {
-    color: rgb(35 1 1);
+.messageError {
+    color: rgb(70, 3, 3);
     font-size: 1rem;
-    font-weight: bold;
-    background-color: rgba(255, 0, 0, 0.123);
+    font-weight: bold;  
     padding: 7px;
     height: 72px;
+
 }
+.activate  {
+    background-color: rgba(255, 0, 0, 0.123);
+    border-radius: 18px;
+}
+
 
 .inp,
 .btn {
@@ -55,24 +60,25 @@
     color: rgb(130, 126, 126);
 }
 
-
-
 @media (min-width:750px) {
     .global-container {
         background-image: url('../../assets/lgVertical.png');
         gap: 30px;
     }
+
     .login-form {
         padding: 45px 20px 60px 20px;
         max-width: 570px;
         gap: 18px;
     }
+
     .inp,
     .btn {
         padding: 25px;
         font-size: 2.5rem;
         margin-top: 20px;
     }
+
     .login-form h2 {
         font-size: 3.5rem;
     }

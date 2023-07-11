@@ -2,7 +2,7 @@ import React from 'react';
 import './loginForm.css';
 
 
-const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handleLogin }) => {
+const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handleLogin, isActive }) => {
 
   return (
 
@@ -32,8 +32,8 @@ const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handl
         />
       </div>
 
-      {/* <p id="messageError" data-testid="message-Error">{errorMessage}</p> */}
-      {errorMessage && <p id="messageError" data-testid="message-Error">{errorMessage}</p>}
+      <p id="messageError" data-testid="message-Error"  className={`messageError ${isActive && 'activate'}`} >{errorMessage}</p>
+      {/* {errorMessage && <p id="messageError" data-testid="message-Error">{errorMessage}</p>} */}
 
       <button data-testid='button-login' onClick={handleLogin} className="btn">Sign in</button>
     </form>

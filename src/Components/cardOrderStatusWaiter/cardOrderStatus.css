@@ -1,10 +1,9 @@
-.box-order-status{
+.box-order-status {
     background-color: #5d5d5dda;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    /* max-height: 838px; */
     overflow-y: scroll;
     padding: 35px 0 0 0;
     border-radius: 26px;
@@ -17,20 +16,21 @@
 .box-order-status::-webkit-scrollbar-thumb {
     background-color: rgba(12, 12, 12, 0.247);
 }
-.box-card-button{
+
+.box-card-button {
     border-radius: 26px;
     background-color: #dacece;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 26px;
     width: 100%;
     padding: 5px 0 10px 0;
     min-height: 200px;
 }
 
-.time-attended-delivered{
+.time-attended-delivered {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -41,7 +41,7 @@
     padding: 10px;
 }
 
-.btn-attended-delivered{
+.btn-attended-delivered {
     padding: 10px 20px 10px 20px;
     font-size: 1.8rem;
     font-weight: bold;
@@ -50,23 +50,24 @@
 }
 
 @media (min-width:768px) {
-    .box-order-status{
+    .box-order-status {
         height: 700px;
     }
+
     .box-card-button {
-        width: 45%; 
+        width: 45%;
     }
 }
 
 @media (min-width:820px) {
-    .box-order-status{
-        height: 800px;
+    .box-order-status {
+        height: 901px;
     }
 }
 
 @media (min-width:1000px) {
-    .box-order-status{
-        height: 488px;
+    .box-order-status {
+        height: 520px;
     }
 }
 

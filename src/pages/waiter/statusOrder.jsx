@@ -24,46 +24,44 @@ const ViewOrder = () => {
 
     //llamar a la api para editar los productos
     const [orderDelivery, setOrderDelivery] = useState([]);
-    //las ordenes atendidas se almacenarian en la siguiente linea-
-    // const [orderDelivered, setOrderDelivered] = useState([]);
+    //las ordenes atendidas se almacenarian en setOrderDelivered
     const changeStatus = async (order) => {
         console.log('le di click, ')
         const result = await Api().changeStatus(order, "delivered", token);
         async function fetchGetOrder() {
             const result = await Api().fetchGetOrder({ token });
             setOrderDelivery(result.delivery);
-            setShowModalDelivered(true);            
+            setShowModalDelivered(true);
         }
         fetchGetOrder();
         console.log('estado', result)
     };
 
-//navega a waiter
-const navigate = useNavigate();
-const handleClickBack = () => {
-  navigate('/waiter');
-};
+    //navega a waiter
+    const navigate = useNavigate();
+    const handleClickBack = () => {
+        navigate('/waiter');
+    };
 
-// Abre modal de viewOrder
- const [showModalDelivered, setShowModalDelivered] = useState(false);
-
-// cierra modal de cancel
-const cancel = () => {
-    setShowModalDelivered(false);
-  }
+    // Abre modal de viewOrder
+    const [showModalDelivered, setShowModalDelivered] = useState(false);
+    // cierra modal de cancel
+    const cancel = () => {
+        setShowModalDelivered(false);
+    }
 
     return (
         <div className="global-container-waiter">
             <figure className="box-back" onClick={handleClickBack}>
-                 <img src={back} className="back" alt="back" />
+                <img src={back} className="back" alt="back" />
             </figure>
 
             <LogoBurger />
-          
+
             <div className="content-viewOrder">
                 <h2 className='title-columns-pending'>Orders to deliver</h2>
-                <CardOrderStatus orders={orderDelivery} changeStatus={changeStatus} showButton={true} text={'Delivered'}/> 
-                {showModalDelivered && <ModalDelivered back={cancel} />} 
+                <CardOrderStatus orders={orderDelivery} changeStatus={changeStatus} showButton={true} text={'Delivered'} />
+                {showModalDelivered && <ModalDelivered back={cancel} />}
             </div>
         </div>
     );

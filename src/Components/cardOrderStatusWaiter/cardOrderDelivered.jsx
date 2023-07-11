@@ -20,7 +20,7 @@ export default function CardOrderDelivered({ status, client, items, }) {
                                 <p className='item-card-delivered' >Quantity: <span className='span-card-delivered'>{item.qty}</span></p>
                                 <p className='item-card-delivered' >Type: <span className='span-card-delivered'>{item?.product?.type}</span></p>
                             </div>
-                            
+
                             <div className='img-card-delivered'>
                                 <img src={item?.product?.image} />
                             </div>

@@ -21,12 +21,11 @@ const Login = () => {
     e.preventDefault();
     setIsActive(true);
 
-
     if (email.trim() === '' || password.trim() === '') {
       setErrorMessage('* These fields are required');
       return;
     }
-
+    
     try {
       const data = await api().login(email, password);
       console.log(data);
@@ -35,7 +34,7 @@ const Login = () => {
         navigate('/waiter');
       } if (data.user.role === 'admin') {
         navigate('/admin');
-      } else if (data.user.role === 'cheff') {
+      } if (data.user.role === 'cheff') {
         navigate('/cheff');
       }
 
@@ -43,14 +42,13 @@ const Login = () => {
 
       try {
         localStorage.setItem('token', accessToken);
-      } catch (error) {
-        // setErrorMessage('Error al guardar el token');
+      } catch (err) {
+        // setErrorMessage('Connection error.');
       }
 
     } catch (err) {
       // console.log(err)
-      setErrorMessage('Oops! That username and password combination is incorrect. Please try again.');
-
+     setErrorMessage('Oops! That username and password combination is incorrect. Please try again.');
     }
   };
 

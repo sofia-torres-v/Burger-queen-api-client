@@ -33,7 +33,6 @@ const LoginForm = ({ email, password, setEmail, setPassword, errorMessage, handl
       </div>
 
       <p id="messageError" data-testid="message-Error"  className={`messageError ${isActive && 'activate'}`} >{errorMessage}</p>
-      {/* {errorMessage && <p id="messageError" data-testid="message-Error">{errorMessage}</p>} */}
 
       <button data-testid='button-login' onClick={handleLogin} className="btn">Sign in</button>
     </form>

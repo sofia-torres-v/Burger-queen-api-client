@@ -13,7 +13,7 @@ const api = () => {
                 return await response.json();
             }
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             throw new Error('Oops! That username and password combination is incorrect. Please try again.');
         }
     };

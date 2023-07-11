@@ -19,7 +19,7 @@ function groupProductsById(products) {
 
     if (grouped[id]) {
       grouped[id].qty += 1;
-      console.log(grouped[id])
+      // console.log(grouped[id])
     } else {
       grouped[id] = {
         qty: 1,

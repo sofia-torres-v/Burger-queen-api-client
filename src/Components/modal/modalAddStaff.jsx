@@ -32,22 +32,23 @@ const ModalAddStaff = ({ cancel }) => {
                 <form className='content-item' onSubmit={fetchCreateStaff}>
                     <div className='item' >
                         <label>Email:</label>
-                        <input className="inp-modal" onChange={(e) => setEmail(e.target.value)} type="text" placeholder="example@example.com" />
+                        <input className="inp-modal inp-modal-edit" onChange={(e) => setEmail(e.target.value)} type="text" placeholder="example@example.com" />
+                    </div>
+   
+                    <div className='item'>
+                        <label>Password: </label>
+                        <input className="inp-modal" onChange={(e) => setPassword(e.target.value)} type="text" placeholder="********" />
                     </div>
 
-                    <div className='item'>
-                        <label>Role:</label>
+                    <div className='item  item-text-role'>
+                        <label className='text-role'>Role:</label>
                         <select className="inp-select" name="select" defaultValue="waiter" onChange={(e) => setRole(e.target.value)} >
                             <option value="waiter">Waiter</option>
                             <option value="cheff">Cheff</option>
                             <option value="admin">Admin</option>
                         </select>
+                    </div>
 
-                    </div>
-                    <div className='item'>
-                        <label>Contraseña: </label>
-                        <input className="inp-modal" onChange={(e) => setPassword(e.target.value)} type="text" placeholder="********" />
-                    </div>
                     <input type="submit" className="btn-add" value="Add" />
                 </form>
 

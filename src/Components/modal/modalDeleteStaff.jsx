@@ -9,9 +9,9 @@ const ModalDeleteStaff = ({ user, cancel, setUserWaiter, setUserCheff, setUserAd
 
     const deletetStaff = async () => {
         try {
-            console.log('Realizando solicitud de eliminación del personal');
+            // console.log('Realizando solicitud de eliminación del personal');
             const response = await Api().fetchDeleteStaff({ user ,token});
-            console.log('usuario se elimino correctamente:', response);  
+            // console.log('usuario se elimino correctamente:', response);  
             // Actualizamos el estado de breakfasts después de eliminar el producto
             setUserWaiter(prevUserWaiter => prevUserWaiter.filter(item => item.id !== user.id));
             setUserCheff(prevUserCheff=> prevUserCheff.filter(item => item.id !== user.id));
@@ -19,7 +19,7 @@ const ModalDeleteStaff = ({ user, cancel, setUserWaiter, setUserCheff, setUserAd
             cancel()
             
         } catch (error) {
-            console.log('Error en la solicitud de eliminación del producto:', error);
+            // console.log('Error en la solicitud de eliminación del producto:', error);
             throw error;
         }
     }

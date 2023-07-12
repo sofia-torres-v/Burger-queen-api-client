@@ -17,7 +17,7 @@ const ViewOrder = () => {
         async function fetchGetOrder() {
             const result = await Api().fetchGetOrder({ token });
             setOrderDelivery(result.delivery);
-            console.log('Viendo order', result)
+            // console.log('Viendo order', result)
         }
         fetchGetOrder();
     }, [])
@@ -26,7 +26,7 @@ const ViewOrder = () => {
     const [orderDelivery, setOrderDelivery] = useState([]);
     //las ordenes atendidas se almacenarian en setOrderDelivered
     const changeStatus = async (order) => {
-        console.log('le di click, ')
+        // console.log('le di click, ')
         const result = await Api().changeStatus(order, "delivered", token);
         async function fetchGetOrder() {
             const result = await Api().fetchGetOrder({ token });
@@ -34,7 +34,7 @@ const ViewOrder = () => {
             setShowModalDelivered(true);
         }
         fetchGetOrder();
-        console.log('estado', result)
+        // console.log('estado', result)
     };
 
     //navega a waiter

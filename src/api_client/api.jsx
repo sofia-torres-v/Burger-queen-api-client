@@ -87,7 +87,7 @@ const api = () => {
             })
             if (response.ok) {
                 const listProducts = await response.json();
-                console.log('la lista se trajo correctamente')
+                // console.log('la lista se trajo correctamente')
                 return {
                     pending: listProducts.filter(item => item.status === 'pending'),
                     delivery: listProducts.filter(item => item.status === 'delivery'),
@@ -227,17 +227,17 @@ const api = () => {
     // Eliminar productos
     const fetchDeleteProduct = async ({ token, productId }) => {
         try {
-            console.log('Realizando solicitud de eliminación del producto');
+            // console.log('Realizando solicitud de eliminación del producto');
             const response = await fetch(`http://localhost:8080/products/${productId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
             });
-            console.log('Respuesta de la solicitud de eliminación del producto:', response);
+            // console.log('Respuesta de la solicitud de eliminación del producto:', response);
             return response;
         } catch (error) {
-            console.log('Error en la solicitud de eliminación del producto:', error);
+            // console.log('Error en la solicitud de eliminación del producto:', error);
             throw error;
         }
     };
@@ -253,10 +253,10 @@ const api = () => {
                     'Authorization': `Bearer ${token}`
                 }
             });
-            console.log('Respuesta de la solicitud de eliminación del producto:', response);
+            // console.log('Respuesta de la solicitud de eliminación del producto:', response);
             return response;
         } catch (error) {
-            console.log('Error en la solicitud de eliminación del producto:', error);
+            // console.log('Error en la solicitud de eliminación del producto:', error);
             throw error;
         }
     };

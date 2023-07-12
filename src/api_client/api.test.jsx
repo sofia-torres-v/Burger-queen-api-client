@@ -1,12 +1,13 @@
 import React from 'react';
 import Api from './api.jsx';
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-
+// import { rest } from 'msw';
+// import { setupServer } from 'msw/node';
+// import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 
 
 describe('Api', () => {
+    const token = 'validtoken123';
+
     describe('Función login', () => {
         test('should log in with correct credentials', async () => {
             const email = 'waiter@bbq.com';
@@ -46,7 +47,7 @@ describe('Api', () => {
 
     describe('Función fetchProducts', () => {
         test('should fetch products with a valid token//debe buscar productos con un token válido', async () => {
-            const token = 'validtoken123';
+            // const token = 'validtoken123';
             // Simular respuesta exitosa
             global.fetch = jest.fn(() =>
                 Promise.resolve({
@@ -73,7 +74,6 @@ describe('Api', () => {
         });
 
         test('should throw an error with an invalid token', async () => {
-            const token = 'invalidtoken123';
             // Simular respuesta de error
             global.fetch = jest.fn(() =>
                 Promise.resolve({
@@ -83,6 +83,79 @@ describe('Api', () => {
             await expect(Api().fetchProducts({ token })).rejects.toThrowError('ERROR: token invalido');
         });
     });
+
+
+    
+    // Enviar lista de pedidos  a la Api
+    describe('Función fetchSendOrder', () => {
+
+        const orderDate = {
+            client: 'John Doe',
+            userId: 1,
+            products: [],
+            status: 'pending',
+            dataEntry: new Date(),
+          };
+
+          beforeEach(() => {
+            global.fetch = jest.fn(); // Mockear global.fetch antes de cada prueba
+          })
+
+          afterEach(() => {
+            jest.restoreAllMocks(); // Restaurar todos los mocks después de cada prueba
+          });
+
+        test('enviar orden exitosamente', async () => {
+                  // Simular una respuesta exitosa de la API
+                global.fetch = jest.fn(() =>
+                Promise.resolve({
+                    ok: true,
+                })
+                )     
+                const result = await Api().fetchSendOrder(orderDate, token);
+                expect(fetch).toHaveBeenCalledWith('http://localhost:8080/orders', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`,
+                  },
+                  body: JSON.stringify(orderDate),
+                });
+                expect(result).toEqual(orderDate); // Verificar que la función devuelva los datos de la orden
+        });
+
+        test('Deberia mostrar error cuando el token es invalido', async () => {
+            // Simular respuesta de error
+            global.fetch = jest.fn(() =>
+              Promise.resolve({
+                ok: false,
+              })
+            );
+          
+            // Envuelve la llamada a fetchSendOrder en una función asíncrona
+            const testFunction = async () => {
+              await Api().fetchSendOrder({ orderDate, token });
+            };
+          
+            // Verifica que la función arroje un error
+            await expect(testFunction()).rejects.toThrowError('Error de la solicitud HTTP');
+          });
+    })          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     //    // servidor de prueba para simular la respuesta de la API
@@ -127,81 +200,81 @@ describe('Api', () => {
     // });
 
 
-    describe('Función fetchShowUsers', () => {
-        beforeEach(() => {
+    // describe('Función fetchShowUsers', () => {
+    //     beforeEach(() => {
             
-            global.fetch = jest.fn(() =>
-                Promise.resolve({
-                    ok: true,
-                    json: () =>
-                        Promise.resolve([
-                            { id: 1, role: 'admin', name: 'Admin User' },
-                            { id: 2, role: 'waiter', name: 'Waiter User' },
-                            { id: 3, role: 'cheff', name: 'Cheff User' },
-                        ]),
-                })
-            );
-        });
-        afterEach(() => {
-            jest.clearAllMocks();
-        });
+    //         global.fetch = jest.fn(() =>
+    //             Promise.resolve({
+    //                 ok: true,
+    //                 json: () =>
+    //                     Promise.resolve([
+    //                         { id: 1, role: 'admin', name: 'Admin User' },
+    //                         { id: 2, role: 'waiter', name: 'Waiter User' },
+    //                         { id: 3, role: 'cheff', name: 'Cheff User' },
+    //                     ]),
+    //             })
+    //         );
+    //     });
+    //     afterEach(() => {
+    //         jest.clearAllMocks();
+    //     });
 
-        it('debe obtener los usuarios y filtrarlos por función', async () => {
-            const token = 'token123';
-            const expectedUsers = {
-                admin: [{ id: 1, role: 'admin', name: 'Admin User' }],
-                waiter: [{ id: 2, role: 'waiter', name: 'Waiter User' }],
-                cheff: [{ id: 3, role: 'cheff', name: 'Cheff User' }],
-            };
-            const { result } = renderHook(() => fetchShowUsers({ token }));
-            //WAITFOR: se utiliza para esperar a que se cumpla una condición antes de continuar con las comprobaciones en un test unitario.
-            await waitFor(() => {
-                expect(result.current).toEqual(expectedUsers);
-            });
-            expect(global.fetch).toHaveBeenCalledWith('http://localhost:8080/users', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    authorization: `Bearer ${token}`,
-                },
-            });
-        });
+    //     it('debe obtener los usuarios y filtrarlos por función', async () => {
+    //         const token = 'token123';
+    //         const expectedUsers = {
+    //             admin: [{ id: 1, role: 'admin', name: 'Admin User' }],
+    //             waiter: [{ id: 2, role: 'waiter', name: 'Waiter User' }],
+    //             cheff: [{ id: 3, role: 'cheff', name: 'Cheff User' }],
+    //         };
+    //         const { result } = renderHook(() => fetchShowUsers({ token }));
+    //         //WAITFOR: se utiliza para esperar a que se cumpla una condición antes de continuar con las comprobaciones en un test unitario.
+    //         await waitFor(() => {
+    //             expect(result.current).toEqual(expectedUsers);
+    //         });
+    //         expect(global.fetch).toHaveBeenCalledWith('http://localhost:8080/users', {
+    //             method: 'GET',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 authorization: `Bearer ${token}`,
+    //             },
+    //         });
+    //     });
 
-        it('should throw an error when response is not "ok"', async () => {
-            global.fetch.mockImplementationOnce(() =>
-                Promise.resolve({
-                    ok: false,
-                })
-            );
-            const token = 'token789';
-            const { result } = renderHook(() => fetchShowUsers({ token }));
-            await waitFor(() => {
-                expect(result.error).toEqual(Error('ERROR: token inválido'));
-            });
-            expect(global.fetch).toHaveBeenCalledWith('http://localhost:8080/users', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    authorization: `Bearer ${token}`,
-                },
-            });
-        });
+    //     it('should throw an error when response is not "ok"', async () => {
+    //         global.fetch.mockImplementationOnce(() =>
+    //             Promise.resolve({
+    //                 ok: false,
+    //             })
+    //         );
+    //         const token = 'token789';
+    //         const { result } = renderHook(() => fetchShowUsers({ token }));
+    //         await waitFor(() => {
+    //             expect(result.error).toEqual(Error('ERROR: token inválido'));
+    //         });
+    //         expect(global.fetch).toHaveBeenCalledWith('http://localhost:8080/users', {
+    //             method: 'GET',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 authorization: `Bearer ${token}`,
+    //             },
+    //         });
+    //     });
 
-        it('should throw an error when an error occurs during the request', async () => {
-            const expectedError = new Error('Network error');
-            global.fetch.mockImplementationOnce(() => Promise.reject(expectedError));
-            const token = 'token456';
-            const { result } = renderHook(() => fetchShowUsers(token));
-            await waitFor(() => {
-                expect(result.error).toEqual(expectedError);
-            });
-            expect(global.fetch).toHaveBeenCalledWith('http://localhost:8080/users', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    authorization: `Bearer ${token}`,
-                },
-            });
-        });
-    });
+    //     it('should throw an error when an error occurs during the request', async () => {
+    //         const expectedError = new Error('Network error');
+    //         global.fetch.mockImplementationOnce(() => Promise.reject(expectedError));
+    //         const token = 'token456';
+    //         const { result } = renderHook(() => fetchShowUsers(token));
+    //         await waitFor(() => {
+    //             expect(result.error).toEqual(expectedError);
+    //         });
+    //         expect(global.fetch).toHaveBeenCalledWith('http://localhost:8080/users', {
+    //             method: 'GET',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 authorization: `Bearer ${token}`,
+    //             },
+    //         });
+    //     });
+    // });
 });

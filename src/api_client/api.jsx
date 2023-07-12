@@ -62,13 +62,13 @@ const api = () => {
                 body: JSON.stringify(orderDate)
             })
             if (response.ok) {
-                console.log('La orden se envió correctamente')
+                // console.log('La orden se envió correctamente')
                 return orderDate
             } else {
-                console.log('Hubo un error al enviar la orden')
+                throw new Error('Hubo un error al enviar la orden');
             }
         } catch (error) {
-            // console.log(error,'Error de la solicitud HTTP')
+            throw new Error('Error de la solicitud HTTP');
         }
     };
 

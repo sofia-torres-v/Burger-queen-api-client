@@ -10,8 +10,15 @@ import './statusOrder.css'
 
 
 const ViewOrder = () => {
-
     const token = localStorage.getItem('token');
+    //las ordenes atendidas se almacenarian en setOrderDelivered
+    const [orderDelivery, setOrderDelivery] = useState([]);
+    // Abre modal de viewOrder
+    const [showModalDelivered, setShowModalDelivered] = useState(false);
+    //navega a waiter
+    const navigate = useNavigate();
+
+
     //llamar a la api para traer las ordenes
     useEffect(() => {
         async function fetchGetOrder() {
@@ -23,8 +30,6 @@ const ViewOrder = () => {
     }, [])
 
     //llamar a la api para editar los productos
-    const [orderDelivery, setOrderDelivery] = useState([]);
-    //las ordenes atendidas se almacenarian en setOrderDelivered
     const changeStatus = async (order) => {
         // console.log('le di click, ')
         const result = await Api().changeStatus(order, "delivered", token);
@@ -37,14 +42,11 @@ const ViewOrder = () => {
         // console.log('estado', result)
     };
 
-    //navega a waiter
-    const navigate = useNavigate();
+
     const handleClickBack = () => {
         navigate('/waiter');
     };
 
-    // Abre modal de viewOrder
-    const [showModalDelivered, setShowModalDelivered] = useState(false);
     // cierra modal de cancel
     const cancel = () => {
         setShowModalDelivered(false);
@@ -67,5 +69,12 @@ const ViewOrder = () => {
     );
 };
 
-export default ViewOrder;
+const ViewOrderWrapper = () => (
+    <Router>
+      <ViewOrder />
+    </Router>
+  );
+
+
+export default ViewOrderWrapper;
 

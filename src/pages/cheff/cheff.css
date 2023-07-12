@@ -1,5 +1,4 @@
 /* Estilos para dispositivos móviles */
-/* Estos estilos se aplicarán por defecto para dispositivos móviles */
 .global-container-cheff {
     background-image: url('../../assets/fondoGeneral.jpg');
     background-size: cover;
@@ -32,7 +31,7 @@
     border-radius: 0px 15px 15px 0;
 }
 
-/* Consultas de medios para tabletas y pantallas más grandes */
+
 @media (min-width: 768px) {
     .container-column-cheff {
         height: 894px;
@@ -48,8 +47,6 @@
     .container-column-cheff {
         height: 560px;
     }
-
-
 }
 
 @media (min-width: 1024px) {

@@ -69,5 +69,3 @@ const ViewOrder = () => {
 
 export default ViewOrder;
 
-
-

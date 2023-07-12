@@ -1,11 +1,12 @@
 import React from 'react';
 import './CardOrderCheff.css'
+import '../../Components/cardOrderStatusWaiter/cardOrderStatus'
 
 export default function CardOrderCheff({ status, client, items, }) {
 
     return (
 
-        <div className='card-order-cheff-'>
+        <div className='card-order-cheff- card-order-view'>
             <p className='item'>{status}</p>
             <p className='text-cards-name'>Client: <span>{client}</span></p>
 

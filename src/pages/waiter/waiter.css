@@ -1,6 +1,6 @@
 /* Estilos para dispositivos móviles */
 .global-container-waiter {
-    background-color: #000;
+    background-image: url('../../assets/fondoGeneral.jpg');
 }
 
 .box-btn-view {
@@ -17,12 +17,9 @@
     font-weight: bold;
     border-radius: 16px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
-}
-
-.btn-viewOrder:hover{
-    background-color: #faba13;
+    background-color: #fffffff1;
 }
 
 .container-columns1 {
@@ -38,7 +35,6 @@
 }
 
 .group-client {
-
     padding-bottom: 25px;
     display: flex;
     align-items: center;
@@ -56,7 +52,7 @@
     padding: 5px;
     border-radius: 7px;
     outline: none;
-    background-color: #fffffff1;
+    background-color: #fffffff9;
     font-size: 2.6rem;
     border-radius: 10px;
 }
@@ -86,7 +82,8 @@
     width: 50%;
     border-radius: 0 0 20px 20px;
     background-color: transparent;
-    color: #fff;
+    color: #000;
+    font-weight: bold;
     outline: none;
 }
 
@@ -97,7 +94,6 @@
 }
 
 .subtitle-product {
-    background-color: #fff;
     font-weight: bold;
     font-size: 2.5rem;
 }
@@ -113,8 +109,7 @@
 }
 
 .ticket-subtitle {
-    background-color: #ffffff;
-    font-size: 3.4rem;
+    background-color: #fffffff1;
     text-align: center;
 }
 
@@ -125,6 +120,7 @@
 }
 
 .ticket-header p {
+    background-color: #fffffff1;
     font-size: 2.6rem;
     font-weight: bold;
     margin-left: 19px;
@@ -133,12 +129,10 @@
 
 .ticket-body {
     min-height: 420px;
-    background-color: #fff;
     padding: 10px;
 }
 
 .ticket-footer {
-    background-color: #fff;
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -195,6 +189,10 @@
         font-size: 1.8rem;
 
     }
+    .btn-break,
+    .btn-lunch{
+        font-size: 2.1rem;
+    }
 
     .ticket-body {
         min-height: 570px;
@@ -218,10 +216,6 @@
         border-radius: 12px 12px 0 0;
     }
 
-    .subtitle-product {
-        font-size: 2.5rem;
-    }
-
     .ticket-footer p {
         font-size: 2.6rem;
         font-weight: bold;
@@ -230,11 +224,6 @@
 
     .sub-title {
         font-size: 2.6rem;
-    }
-
-    .btn-break,
-    .btn-lunch {
-        padding: 15px;
     }
 }
 
@@ -277,7 +266,6 @@
         font-size: 2.3rem;
         font-weight: bold;
         margin-right: 10px;
-
     }
 
     .sub-title {
@@ -292,11 +280,11 @@
 
 @media (min-width: 1024px) {
     .ticket-body {
-        min-height: 310px;
+        min-height: 285px;
     }
 
     .content-order {
-        min-height: 490px;
+        min-height: 472px;
         border-radius: 0 0 20px 20px;
     }
 
@@ -310,11 +298,6 @@
 
     .ticket-subtitle {
         font-size: 2.4rem;
-    }
-
-    .btn-break,
-    .btn-lunch {
-        padding: 10px;
     }
 
     .ticket-header p {

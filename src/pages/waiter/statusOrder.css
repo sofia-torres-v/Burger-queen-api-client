@@ -1,4 +1,4 @@
-/* Estos estilos se aplicarán por defecto para dispositivos móviles */
+
 .global-container-waiter {
     background-image: url('../../assets/fondoGeneral.jpg');
     background-size: cover;
@@ -24,7 +24,7 @@
     border-radius: 50%;
 }
 
-/* Consultas de medios para tabletas y pantallas más grandes */
+
 @media (min-width: 768px) {
     .title-columns-pending {
         font-size: 3rem;

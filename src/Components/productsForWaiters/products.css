@@ -1,6 +1,6 @@
 /* estilos que contiens a los productos en vista waiter */
 .content-list-breakfast{
-    padding-top: 25px;
+    padding-top: 18px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -27,6 +27,6 @@
 
 @media (min-width:1000px){
     .content-list-breakfast{
-        max-height: 305px;
+        max-height: 289px;
     }
 }

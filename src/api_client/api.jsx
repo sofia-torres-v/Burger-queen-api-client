@@ -65,7 +65,7 @@ const api = () => {
                 // console.log('La orden se envió correctamente')
                 return orderDate
             } else {
-                throw new Error('Hubo un error al enviar la orden');
+                throw new Error();
             }
         } catch (error) {
             throw new Error('Error de la solicitud HTTP');
@@ -236,9 +236,8 @@ const api = () => {
             });
             // console.log('Respuesta de la solicitud de eliminación del producto:', response);
             return response;
-        } catch (error) {
-            // console.log('Error en la solicitud de eliminación del producto:', error);
-            throw error;
+        } catch {
+            throw new Error('Error de la solicitud HTTP');
         }
     };
 
@@ -255,9 +254,8 @@ const api = () => {
             });
             // console.log('Respuesta de la solicitud de eliminación del producto:', response);
             return response;
-        } catch (error) {
-            // console.log('Error en la solicitud de eliminación del producto:', error);
-            throw error;
+        } catch {
+            throw new Error('Error de la solicitud HTTP');
         }
     };
 

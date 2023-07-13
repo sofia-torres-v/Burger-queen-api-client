@@ -69,13 +69,4 @@ const ViewOrder = () => {
     );
 };
 
-// const ViewOrderWrapper = () => (
-//     <Router>
-//       <ViewOrder />
-//     </Router>
-//   );
-
-
-// export default ViewOrderWrapper;
-
 export default ViewOrder;

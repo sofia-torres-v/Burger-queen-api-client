@@ -1,13 +1,15 @@
 import React from 'react';
 import Api from './api.jsx';
-// import { rest } from 'msw';
-// import { setupServer } from 'msw/node';
-// import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 
+//fijando una fecha
+const mockDate = new Date('12 Jul 2023')
+//mokiamos la fecha
+global.Date = jest.fn().mockImplementation(() => mockDate)
+
+const token = 'validtoken123';
 
 describe('Api', () => {
-    const token = 'validtoken123';
-
+    //Login
     describe('Función login', () => {
         test('should log in with correct credentials', async () => {
             const email = 'waiter@bbq.com';
@@ -64,7 +66,7 @@ describe('Api', () => {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'authorization': `Bearer ${token}`,
+                    'Authorization': `Bearer ${token}`,
                 },
             });
             expect(response).toEqual({
@@ -85,10 +87,8 @@ describe('Api', () => {
     });
 
 
-
     // Enviar lista de pedidos  a la Api
     describe('Función fetchSendOrder', () => {
-
         const orderDate = {
             client: 'John Doe',
             userId: 1,
@@ -124,15 +124,12 @@ describe('Api', () => {
             expect(result).toEqual(orderDate); // Verificar que la función devuelva los datos de la orden
         });
 
-        test('Deberia mostrar error cuando el token es invalido', async () => {
+        test('Deberia mostrar error cuando el token es invalido-fetchSendOrder', async () => {
             // Simular respuesta de error
             global.fetch = jest.fn(() =>
-                Promise.resolve({
-                    ok: false,
-                })
+                Promise.reject(new Error())
             );
-
-            // Envuelve la llamada a fetchSendOrder en una función asíncrona
+            // Envuelve la llamada en una función asíncrona
             const testFunction = async () => {
                 await Api().fetchSendOrder(orderDate, token);
             };
@@ -143,84 +140,153 @@ describe('Api', () => {
     })
 
 
+    // trae lista de pedidos de la APi
+    describe('Función fetchGetOrder', () => {
+        test('Deberia mostrar la lista de pedidos', async () => {
+            // Simula una respuesta exitosa
+            const mockResponse = {
+                ok: true,
+                json: jest.fn().mockResolvedValue([
+                    { name: 'Pollo', type: 'Desayuno' },
+                    { name: 'Papas', type: 'Almuerzo' },
+                    { name: 'Aros de cebolla', type: "Almuerzo" }
+                ])
+            };
+            global.fetch = jest.fn().mockResolvedValue(mockResponse);
 
+            //   Llama a la función y verifica los resultados
+            const result = await Api().fetchGetOrder({ token });
 
+            expect(global.fetch).toHaveBeenCalledWith('http://localhost:8080/orders', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                }
+            });
+        })
 
+        test('Deberia mostrar error cuando el token es invalido -fetchGetOrder', async () => {
+            // Simular respuesta de error
+            global.fetch = jest.fn(() =>
+                Promise.reject(new Error())
+            );
+            // Envuelve la llamada en una función asíncrona
+            const testFunction = async () => {
+                await Api().fetchGetOrder({ token })
+            };
+            // Verifica que la función arroje un error
+            await expect(testFunction()).rejects.toThrow('Error de la solicitud HTTP');
+        });
 
+    })
 
+    //Cambiando el estado de la orden 
+    describe('Función changeStatus', () => {
+        const order = { id: 1 };
+        const status = 'delivery';
+        test('Deberia modificar el estado de la orden', async () => {
+            // Simula una respuesta exitosa
+            const mockResponse = {
+                ok: true,
+                json: jest.fn().mockResolvedValue([{ id: 1, status: 'delivery' }])
+            };
+            global.fetch = jest.fn().mockResolvedValue(mockResponse);
 
+            // Llama a la función y verifica los resultados
+            const result = await Api().changeStatus(order, status, token);
 
+            expect(global.fetch).toHaveBeenCalledWith('http://localhost:8080/orders/1', {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                },
+                body: JSON.stringify({
+                    status: 'delivery',
+                    dateProcessed: new Date(),
+                })
+            })
+            expect(result).toEqual([{ id: 1, status: 'delivery' }]);
+        })
 
+        test('Deberia mostrar error ', async () => {
+            // Simular respuesta de error
+            global.fetch = jest.fn(() =>
+                Promise.reject(new Error())
+            );
+            // Envuelve la llamada en una función asíncrona
+            const testFunction = async () => {
+                await Api().changeStatus(order, status, token);
+            };
+            // Verifica que la función arroje un error
+            await expect(testFunction()).rejects.toThrow('Error de la solicitud HTTP');
+        });
 
+    })
 
-
-
-
-
-
-
-
-    //---
-    // traer usuarios 
-    // Mockear la función fetch para simular las respuestas
-    global.fetch = jest.fn().mockImplementation((url, options) => {
-        if (url === 'http://localhost:8080/users' && options.method === 'GET') {
-            if (options.headers && options.headers.authorization === 'Bearer valid-token') {
-                // Simular respuesta exitosa
-                return Promise.resolve({
-                    ok: true,
-                    json: () =>
-                        Promise.resolve([
-                            { id: 1, role: 'admin' },
-                            { id: 2, role: 'waiter' },
-                            { id: 3, role: 'chef' },
-                        ]),
-                });
-            } else {
-                // Simular respuesta no exitosa
-                return Promise.resolve({ ok: false });
-            }
-        } else {
-            throw new Error(`Invalid request - URL: ${url}, Method: ${options.method}`);
-        }
-    });
-
+    // traer usuarios
     describe('fetchShowUsers', () => {
-        test('devuelve los usuarios filtrados correctamente', async () => {
-            const token = 'valid-token';
+        test('debería devolver los usuarios filtrados por rol si la respuesta es exitosa', async () => {
+            // Simula una respuesta exitosa
+            const mockResponse = {
+                ok: true,
+                json: jest.fn().mockResolvedValue([
+                    { name: 'Usuario1', role: 'admin' },
+                    { name: 'Usuario2', role: 'waiter' },
+                    { name: 'Usuario3', role: 'cheff' }
+                ])
+            };
+            global.fetch = jest.fn().mockResolvedValue(mockResponse);
 
-            const result = await fetchShowUsers({ token });
+            //   Llama a la función y verifica los resultados
+            const result = await Api().fetchShowUsers({ token });
 
+            expect(global.fetch).toHaveBeenCalledWith('http://localhost:8080/users', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                }
+            });
+            expect(mockResponse.json).toHaveBeenCalled();
             expect(result).toEqual({
-                admin: [{ id: 1, role: 'admin' }],
-                waiter: [{ id: 2, role: 'waiter' }],
-                chef: [{ id: 3, role: 'chef' }],
+                admin: [{ name: 'Usuario1', role: 'admin' }],
+                waiter: [{ name: 'Usuario2', role: 'waiter' }],
+                cheff: [{ name: 'Usuario3', role: 'cheff' }]
             });
         });
 
-        test('lanza una excepción cuando la respuesta no es exitosa', async () => {
-            const token = 'invalid-token';
-
-            await expect(fetchShowUsers({ token })).rejects.toThrow(Error);
+        test('Deberia mostrar error ', async () => {
+            // Simular respuesta de error
+            global.fetch = jest.fn(() =>
+                Promise.reject(new Error())
+            );
+            // Envuelve la llamada en una función asíncrona
+            const testFunction = async () => {
+                await Api().fetchShowUsers({ token });
+            };
+            // Verifica que la función arroje un error
+            await expect(testFunction()).rejects.toThrow('Error de la solicitud HTTP');
         });
     });
+
 
 
     //Crear productos
     describe('Función fetchCreateProduct ', () => {
-        test.skip('Debe crear un producto', async () => {
+        test('Debe crear un producto', async () => {
             const name = 'Papa Frita';
             const price = 500;
             const img = 'https://img.freepik.com/vector-gratis/papas-fritas-realistas-3d-caja-papel-rojo-condimento-mayochup-tazon_1441-2192.jpg?w=740&t=st=1689196713~exp=1689197313~hmac=a88d540b0944e540e0842b60530e4d888133590339af6c56be737eafe3f011a3';
             const type = 'Desayuno';
-
             global.fetch = jest.fn(() =>
                 Promise.resolve({
                     ok: true,
                 })
             )
-            const result = await Api().fetchCreateProduct({ token, name, price, img, type });
 
+            const result = await Api().fetchCreateProduct({ token, name, price, img, type });
             expect(fetch).toHaveBeenCalledWith(
                 'http://localhost:8080/products',
                 {
@@ -246,14 +312,12 @@ describe('Api', () => {
             const email = 'waiter@bbq.com';
             const password = '123456';
             const role = 'Waiter'
-
             global.fetch = jest.fn(() =>
                 Promise.resolve({
                     ok: true,
                 })
             )
             const result = await Api().fetchCreateStaff({ token, email, password, role });
-
             expect(fetch).toHaveBeenCalledWith(
                 'http://localhost:8080/users',
                 {
@@ -271,7 +335,6 @@ describe('Api', () => {
         })
     })
 
-
     //editar producto
     describe('Función fetchEditProducts ', () => {
         const product = {
@@ -281,7 +344,6 @@ describe('Api', () => {
             image: 'https://img.freepik.com/vector-gratis/papas-fritas-realistas-3d-caja-papel-rojo-condimento-mayochup-tazon_1441-2192.jpg?w=740&t=st=1689196713~exp=1689197313~hmac=a88d540b0944e540e0842b60530e4d888133590339af6c56be737eafe3f011a3',
             type: 'Desayuno'
         };
-
         test('Debe Editar a un producto especifico', async () => {
             global.fetch = jest.fn(() =>
                 Promise.resolve({
@@ -305,15 +367,12 @@ describe('Api', () => {
                     })
                 }
             );
-
         });
     })
-
 
     //editar staff
     describe('Función fetchEditStaff', () => {
         const user = { id: 1, email: 'example@example.com', role: 'admin' };
-
         test('Debe Editar a un personal especifico', async () => {
             global.fetch = jest.fn(() =>
                 Promise.resolve({
@@ -335,10 +394,8 @@ describe('Api', () => {
                     })
                 }
             );
-
         });
     })
-
 
     // Eliminar productos
     describe('Función fetchDeleteProduct', () => {
@@ -350,7 +407,6 @@ describe('Api', () => {
                 })
             )
             const result = await Api().fetchDeleteProduct({ token, productId });
-
             expect(fetch).toHaveBeenCalledWith(
                 `http://localhost:8080/products/${productId}`,
                 {
@@ -361,27 +417,23 @@ describe('Api', () => {
                 }
             );
         });
-        it('Debe lanzar un error si la solicitud falla', async () => {
+        test('Debe lanzar un error si la solicitud falla', async () => {
             // Simular respuesta de error
             global.fetch = jest.fn(() =>
                 Promise.reject(new Error())
             );
-
             // Envuelve la llamada en una función asíncrona
             const testFunction = async () => {
                 await Api().fetchDeleteProduct({ token, productId });
             };
-
             // Verifica que la función arroje un error
             await expect(testFunction).rejects.toThrow('Error de la solicitud HTTP');
         });
     })
 
-
     // Eliminar personal
     describe('Función fetchDeleteStaff', () => {
         const user = { id: 1 };
-
         test('Debe eliminar el usuario especificado', async () => {
             global.fetch = jest.fn(() =>
                 Promise.resolve({
@@ -389,7 +441,6 @@ describe('Api', () => {
                 })
             )
             const result = await Api().fetchDeleteStaff({ token, user });
-
             expect(fetch).toHaveBeenCalledWith(
                 `http://localhost:8080/users/${user.id}`,
                 {
@@ -400,8 +451,7 @@ describe('Api', () => {
                 }
             );
         });
-
-        it('Debe lanzar un error si la solicitud falla-', async () => {
+        test('Debe lanzar un error si la solicitud falla-', async () => {
             // Simular respuesta de error
             global.fetch = jest.fn(() =>
                 Promise.reject(new Error())
@@ -410,11 +460,9 @@ describe('Api', () => {
             const testFunction = async () => {
                 await Api().fetchDeleteStaff({ token, user });
             };
-
             // Verifica que la función arroje un error
             await expect(testFunction).rejects.toThrow('Error de la solicitud HTTP');
         });
-
     })
 
 });

@@ -26,7 +26,7 @@ const api = () => {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'authorization': `Bearer ${token}`,
+                    'Authorization': `Bearer ${token}`,
                 }
             })
             if (response.ok) {
@@ -49,7 +49,6 @@ const api = () => {
     };
 
 
-
     // Enviar lista de pedidos  a la Api
     const fetchSendOrder = async (orderDate, token) => {
         try {
@@ -62,17 +61,12 @@ const api = () => {
                 body: JSON.stringify(orderDate)
             })
             if (response.ok) {
-                // console.log('La orden se envió correctamente')
                 return orderDate
-            } else {
-                throw new Error();
             }
-        } catch (error) {
+        } catch {
             throw new Error('Error de la solicitud HTTP');
         }
     };
-
-
 
 
     // trae lista de pedidos  a la Api
@@ -93,10 +87,10 @@ const api = () => {
                     delivery: listProducts.filter(item => item.status === 'delivery'),
                 }
             } else {
-                console.log('Hubo un error al traer la orden')
+                // console.log('Hubo un error al traer la orden')
             }
-        } catch (error) {
-            console.log(error, 'Error de la solicitud HTTP')
+        } catch {
+            throw new Error('Error de la solicitud HTTP');
         }
     };
 
@@ -109,7 +103,7 @@ const api = () => {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
-                    'authorization': `Bearer ${token}`,
+                    'Authorization': `Bearer ${token}`,
                 },
                 body: JSON.stringify({
                     status: status,
@@ -119,14 +113,10 @@ const api = () => {
             if (response.ok) {
                 const orders = await response.json();
                 return orders
-
-            } else {
-                console.log('algo salio mal')
             }
-        } catch (err) {
-            // console.log(err, 'Error de la solicitud HTTP')
+        } catch {
+            throw new Error('Error de la solicitud HTTP');
         }
-
     }
 
 
@@ -137,7 +127,7 @@ const api = () => {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'authorization': `Bearer ${token}`,
+                    'Authorization': `Bearer ${token}`,
                 }
             })
             if (response.ok) {
@@ -147,12 +137,9 @@ const api = () => {
                     waiter: users.filter(item => item.role === 'waiter'),
                     cheff: users.filter(item => item.role === 'cheff'),
                 };
-
-            } else {
-                // throw Error('ERROR: token invalido');
             }
         } catch (error) {
-            throw error
+            throw new Error('Error de la solicitud HTTP');
         }
     };
 
@@ -206,7 +193,7 @@ const api = () => {
             })
         })
     }
-    
+
     //editar staff
     const fetchEditStaff = (token, user) => {
         return fetch(`http://localhost:8080/users/${user.id}`, {
@@ -221,6 +208,7 @@ const api = () => {
             })
         })
     }
+
 
 
 

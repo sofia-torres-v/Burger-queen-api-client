@@ -24,14 +24,14 @@ const ViewOrder = () => {
         async function fetchGetOrder() {
             const result = await Api().fetchGetOrder({ token });
             setOrderDelivery(result.delivery);
-            console.log('Viendo order', result)
+            // console.log('Viendo order', result)
         }
         fetchGetOrder();
     }, [])
 
     //llamar a la api para editar los productos
     const changeStatus = async (order) => {
-        console.log('le di click, ')
+        // console.log('le di click, ')
         const result = await Api().changeStatus(order, "delivered", token);
         async function fetchGetOrder() {
             const result = await Api().fetchGetOrder({ token });
@@ -39,7 +39,7 @@ const ViewOrder = () => {
             setShowModalDelivered(true);
         }
         fetchGetOrder();
-        console.log('estado', result)
+        // console.log('estado', result)
     };
 
 
@@ -69,12 +69,4 @@ const ViewOrder = () => {
     );
 };
 
-const ViewOrderWrapper = () => (
-    <Router>
-      <ViewOrder />
-    </Router>
-  );
-
-
-export default ViewOrderWrapper;
-
+export default ViewOrder;

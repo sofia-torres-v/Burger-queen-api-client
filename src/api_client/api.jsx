@@ -49,7 +49,6 @@ const api = () => {
     };
 
 
-
     // Enviar lista de pedidos  a la Api
     const fetchSendOrder = async (orderDate, token) => {
         try {
@@ -62,17 +61,12 @@ const api = () => {
                 body: JSON.stringify(orderDate)
             })
             if (response.ok) {
-                // console.log('La orden se envió correctamente')
                 return orderDate
-            } else {
-                throw new Error();
             }
         } catch {
             throw new Error('Error de la solicitud HTTP');
         }
     };
-
-
 
 
     // trae lista de pedidos  a la Api
@@ -87,7 +81,7 @@ const api = () => {
             })
             if (response.ok) {
                 const listProducts = await response.json();
-                console.log('la lista se trajo correctamente')
+                // console.log('la lista se trajo correctamente')
                 return {
                     pending: listProducts.filter(item => item.status === 'pending'),
                     delivery: listProducts.filter(item => item.status === 'delivery'),
@@ -119,14 +113,10 @@ const api = () => {
             if (response.ok) {
                 const orders = await response.json();
                 return orders
-
-            } else {
-                // console.log('algo salio mal')
             }
-        } catch  {
+        } catch {
             throw new Error('Error de la solicitud HTTP');
         }
-
     }
 
 
@@ -147,12 +137,9 @@ const api = () => {
                     waiter: users.filter(item => item.role === 'waiter'),
                     cheff: users.filter(item => item.role === 'cheff'),
                 };
-
-            } else {
-                // throw Error('ERROR: token invalido');
             }
         } catch (error) {
-            throw error
+            throw new Error('Error de la solicitud HTTP');
         }
     };
 
@@ -206,7 +193,7 @@ const api = () => {
             })
         })
     }
-    
+
     //editar staff
     const fetchEditStaff = (token, user) => {
         return fetch(`http://localhost:8080/users/${user.id}`, {
@@ -225,40 +212,40 @@ const api = () => {
 
 
 
-// Eliminar productos
-const fetchDeleteProduct = async ({ token, productId }) => {
-    try {
-        // console.log('Realizando solicitud de eliminación del producto');
-        const response = await fetch(`http://localhost:8080/products/${productId}`, {
-            method: 'DELETE',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
-        // console.log('Respuesta de la solicitud de eliminación del producto:', response);
-        return response;
-    } catch {
-        throw new Error('Error de la solicitud HTTP');
-    }
-};
+    // Eliminar productos
+    const fetchDeleteProduct = async ({ token, productId }) => {
+        try {
+            // console.log('Realizando solicitud de eliminación del producto');
+            const response = await fetch(`http://localhost:8080/products/${productId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            // console.log('Respuesta de la solicitud de eliminación del producto:', response);
+            return response;
+        } catch {
+            throw new Error('Error de la solicitud HTTP');
+        }
+    };
 
 
-// Eliminar personal
-const fetchDeleteStaff = async ({ token, user }) => {
-    try {
-        // console.log('Realizando solicitud de eliminación del producto');
-        const response = await fetch(`http://localhost:8080/users/${user.id}`, {
-            method: 'DELETE',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
-        // console.log('Respuesta de la solicitud de eliminación del producto:', response);
-        return response;
-    } catch {
-        throw new Error('Error de la solicitud HTTP');
-    }
-};
+    // Eliminar personal
+    const fetchDeleteStaff = async ({ token, user }) => {
+        try {
+            // console.log('Realizando solicitud de eliminación del producto');
+            const response = await fetch(`http://localhost:8080/users/${user.id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+            // console.log('Respuesta de la solicitud de eliminación del producto:', response);
+            return response;
+        } catch {
+            throw new Error('Error de la solicitud HTTP');
+        }
+    };
 
 
 

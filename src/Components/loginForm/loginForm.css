@@ -1,4 +1,3 @@
-/* -------------------------formulario-----------*/
 /* pantalla chicas */
 .login-form {
     background-color: #696969a5;
@@ -58,6 +57,7 @@
 .inp::placeholder {
     color: rgb(130, 126, 126);
 }
+
 
 @media (min-width:750px) {
     .global-container {

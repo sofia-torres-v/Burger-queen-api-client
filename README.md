@@ -26,12 +26,14 @@ restaurantes en la era digital.
 
 Es un pequeño restaurante de hamburguesas, que está creciendo y se ha implementado un
 sistema a través del cual puedan tomar pedidos usando una tablet y enviarlos
-a la cocina para que se preparen ordenada y eficientemente.
+a la cocina para que se preparen de forma ordenada y eficientemente.
 
-Sistema implementado con React y testeado con Jest.
+Sistema implementado con React, testeado con Jest y desplegado en Vercel.
 
-Te invitamos a navegar en la aplicación ingresando a este link: 
-(https://),
+Para poder usarla, debes tener localmente la siguiente [API](https://github.com/ClauOrtiiz/api-mockBbq)
+
+Te invitamos a navegar en la aplicación ingresando al siguiente link: 
+(https://burger-queen-api-client-iota.vercel.app/),
 
 Accesos: 
 

@@ -9,12 +9,12 @@ const ModalDeleteProduct = ({ product, cancel, setBreakfasts, setLunches}) => {
 
     const deletetProduct = async () => {
         try {
-            console.log('Realizando solicitud de eliminación del producto');
+            // console.log('Realizando solicitud de eliminación del producto');
             const response = await Api().fetchDeleteProduct({
             productId: product.id,
             token
         });
-            console.log('producto se elimino correctamente:', response);  
+            // console.log('producto se elimino correctamente:', response);  
             // Actualizamos el estado de breakfasts después de eliminar el producto
             setBreakfasts(prevBreakfasts => prevBreakfasts.filter(item => item.id !== product.id));
             setLunches(prevLunches=> prevLunches.filter(item => item.id !== product.id));

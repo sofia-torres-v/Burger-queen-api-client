@@ -25,10 +25,10 @@ const Login = () => {
       setErrorMessage('* These fields are required');
       return;
     }
-    
+
     try {
       const data = await api().login(email, password);
-      console.log(data);
+      // console.log(data);
 
       if (data.user.role === 'waiter') {
         navigate('/waiter');
@@ -48,7 +48,7 @@ const Login = () => {
 
     } catch (err) {
       // console.log(err)
-     setErrorMessage('Oops! That username and password combination is incorrect. Please try again.');
+      setErrorMessage('Oops! That username and password combination is incorrect. Please try again.');
     }
   };
 

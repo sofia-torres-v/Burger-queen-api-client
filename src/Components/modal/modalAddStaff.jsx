@@ -34,7 +34,7 @@ const ModalAddStaff = ({ cancel }) => {
                         <label>Email:</label>
                         <input className="inp-modal inp-modal-edit" onChange={(e) => setEmail(e.target.value)} type="text" placeholder="example@example.com" />
                     </div>
-   
+
                     <div className='item'>
                         <label>Password: </label>
                         <input className="inp-modal" onChange={(e) => setPassword(e.target.value)} type="text" placeholder="********" />

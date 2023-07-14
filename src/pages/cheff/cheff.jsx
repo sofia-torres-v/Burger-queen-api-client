@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Logout from '../../Components/Logout/logout';
-import LogoBurger from '../../Components/Logo/logo';
+import LogoBurger from '../../Components/logo/logo.jsx';
 import Icon from '../../assets/iconCheff.png';
 import './cheff.css'
 import CardListProductCheff from '../../Components/cardOrderCheff/cardListProductCheff'

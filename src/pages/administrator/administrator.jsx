@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import api from '../../api_client/api';
 import Logout from '../../Components/Logout/logout';
-import LogoBurger from '../../Components/Logo/logo';
+import LogoBurger from '../../Components/logo/logo.jsx';
 import CardProductAdmin from '../../Components/cardsAdministrator/cardsProductAdmin';
 import ModalAddProduct from '../../Components/modal/modalAddProduct';
 import ModalAddStaff from '../../Components/modal/modalAddStaff';

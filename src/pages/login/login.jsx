@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LogoBurger from '../../Components/Logo/logo';
+import LogoBurger from '../../Components/logo/logo.jsx';
 import '../../Components/logo/logo.css'
 import LoginForm from '../../Components/loginForm/loginForm.jsx';
 import '../../Components/loginForm/loginForm.css'

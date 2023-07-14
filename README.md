@@ -1,6 +1,6 @@
 # Burger Queen (API Client)
 
-![BurguesQueen](/src/assets/imgOffReadme/burgerQueen.png)
+![BurguesQueen](src\assets\imgOfReadme\burgerQueen.png)
 
 ## Índice
 
@@ -613,9 +613,9 @@ para mantener actualizado el menú.
 
 ## 5. Prototipo en alta fidelidad
 
-![PrototipoBajaFidelidad](./src/assets/imgOffReadme/bajaFidelidad.png)
+![PrototipoBajaFidelidad](src\assets\imgOfReadme\bajaFidelidad.png)
 
-![PrototipoAltaFIdelidad](./src/assets/imgOffReadme/bajaFidelidad.png)
+![PrototipoAltaFIdelidad](src\assets\imgOfReadme\bajaFidelidad.png)
 
 ***
 

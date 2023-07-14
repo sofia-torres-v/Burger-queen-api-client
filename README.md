@@ -1,6 +1,6 @@
 # Burger Queen (API Client)
 
-![BurguesQueen](./src/assets/imgOffReadme/burgerQueen.png)
+![BurguesQueen](/src/assets/imgOffReadme/burgerQueen.png)
 
 ## Índice
 

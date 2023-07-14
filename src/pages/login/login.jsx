@@ -43,12 +43,12 @@ const Login = () => {
       try {
         localStorage.setItem('token', accessToken);
       } catch (err) {
-        // setErrorMessage('Connection error.');
+        // setErrorMessage('Connection error.')
       }
 
     } catch (err) {
       // console.log(err)
-      setErrorMessage('Oops! That username and password combination is incorrect. Please try again.');
+      setErrorMessage('Oops! That username and password combination is incorrect. Please try again');
     }
   };
 

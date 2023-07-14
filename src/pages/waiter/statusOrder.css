@@ -1,10 +1,10 @@
-
 .global-container-waiter {
     background-image: url('../../assets/fondoGeneral.jpg');
-    background-size: cover;
-    height: 100vh;
 }
-
+.content-viewOrder{
+ display: flex;
+ flex-wrap: wrap;
+}
 .title-columns-pending {
     color: white;
     font-size: 3rem;

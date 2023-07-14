@@ -1,5 +1,5 @@
 import React from 'react';
-import './CardOrderDelivered.css'
+import './cardOrderDelivered.css'
 
 export default function CardOrderDelivered({ status, client, items, }) {
 

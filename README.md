@@ -1,5 +1,7 @@
 # Burger Queen (API Client)
 
+![BurguesQueen](./src/assets/imgOffReadme/burgerQueen.png)
+
 ## Índice
 
 * [1. Preámbulo](#1-preámbulo)
@@ -608,6 +610,13 @@ para mantener actualizado el menú.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 
+
+## 5. Prototipo en alta fidelidad
+
+![PrototipoBajaFidelidad](./src/assets/imgOffReadme/bajaFidelidad.png)
+
+![PrototipoAltaFIdelidad](./src/assets/imgOffReadme/bajaFidelidad.png)
+
 ***
 
 ## 6. Despliegue
@@ -626,28 +635,7 @@ plataforma de _despliegue_ que nos permite desplegar nuestra aplicación
 web estática (HTML, CSS y JavaScript) y también nos permite desplegar
 aplicaciones web que se ejecutan en el servidor (Node.js).
 
-## 7. Pistas / Tips
+## 7. Participantes del proyecto
 
-Súmate al canal de Slack
-[#project-bq-api-client](https://claseslaboratoria.slack.com/archives/C04A0GS1WJX)
-para conversar y pedir ayuda del proyecto.
-
-### Frameworks / libraries
-
-* [React](https://react.dev/)
-* [Angular](https://angular.io/)
-
-### Herramientas
-
-* [npm-scripts](https://docs.npmjs.com/misc/scripts)
-* [Babel](https://babeljs.io/)
-* [webpack](https://webpack.js.org/)
-* [json-server](https://www.npmjs.com/package/json-server)
-* [mockoon](https://mockoon.com)
-* [nock](https://github.com/nock/nock)
-
-### PWA
-
-* [Tu primera Progressive Web App - Google developers](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/?hl=es)
-* [Progressive Web Apps - codigofacilito.com](https://codigofacilito.com/articulos/progressive-apps)
-* [Usando Service Workers - MDN](https://developer.mozilla.org/es/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+* [Sofia Torrez ](https://github.com/sofia-torres-v)
+* [Claudia Ortiz LLamoca](https://github.com/ClauOrtiiz)

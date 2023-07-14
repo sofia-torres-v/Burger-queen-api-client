@@ -5,7 +5,7 @@ import back from '../../assets/back.png';
 import Api from '../../api_client/api';
 import CardOrderStatus from '../../Components/cardOrderStatusWaiter/cardOrderStatus';
 import ModalDelivered from '../../Components/modal/modalDelivered';
-import LogoBurger from '../../Components/Logo/logo';
+import LogoBurger from '../../Components/logo/logo.jsx';
 import './statusOrder.css'
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Logout from '../../Components/Logout/logout';
-import LogoBurger from '../../Components/Logo/logo';
+import LogoBurger from '../../Components/logo/logo.jsx';
 import Products from '../../Components/productsForWaiters/products';
 import './waiter.css';
 import api from '../../api_client/api';

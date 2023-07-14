@@ -44,7 +44,7 @@ Accesos:
 
 ## 3. Planificación
 
-La planificación del proyecto se realizo a través de GitHub Projetc ejecutandose 
+La planificación del proyecto se realizó a través de GitHub Projetc ejecutandose 
 6 historias de usuario y se prototipo en la plataforma de Figma.
 
 ### Historia de usuario
@@ -127,7 +127,7 @@ Si eres jefe/a de cocina 👩🏽‍🍳 puedes:
 *** 
 
 
-## 7. Desarrolladoras
+## 5. Desarrolladoras
 
 * [Sofia Torres Vilca ](https://github.com/sofia-torres-v)
 * [Claudia Ortiz LLamoca](https://github.com/ClauOrtiiz)

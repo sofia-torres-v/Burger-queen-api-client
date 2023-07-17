@@ -30,7 +30,7 @@ a la cocina para que se preparen de forma ordenada y eficientemente.
 
 Sistema implementado con React, testeado con Jest y desplegado en Vercel.
 
-Para poder usarla, debes tener localmente la siguiente [API](https://github.com/ClauOrtiiz/api-mockBbq)
+Para poder usarla, debes tener localmente la siguiente [API](https://github.com/sofia-torres-v/api-mock-burger-queen)
 
 Te invitamos a navegar en la aplicación ingresando al siguiente link: 
 (https://burger-queen-api-client-iota.vercel.app/),

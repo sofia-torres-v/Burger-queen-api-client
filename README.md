@@ -33,7 +33,7 @@ Sistema implementado con React, testeado con Jest y desplegado en Vercel.
 Para poder usarla, debes tener localmente la siguiente [API](https://github.com/sofia-torres-v/api-mock-burger-queen)
 
 Te invitamos a navegar en la aplicación ingresando al siguiente link: 
-(https://burger-queen-api-client-iota.vercel.app/),
+(https://burger-queen-api-client-henna.vercel.app/),
 
 Accesos: 
 

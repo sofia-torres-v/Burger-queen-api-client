@@ -9,8 +9,6 @@ html {
     font-size: 62.5%;
 }
 
-
-/* Márgenes a los lados de todas las vistas, evitando que ocupen toda la pantalla. */
 .container {
     width: 95%;
     margin: 0 auto;

@@ -19,7 +19,7 @@ const api = () => {
     };
 
 
-    // accedemos a los productos de la Api
+    // Accedemos a los productos de la Api
     const fetchProducts = async ({ token }) => {
         try {
             const response = await fetch('https://burger-queen-mock.onrender.com/products', {
@@ -69,7 +69,7 @@ const api = () => {
     };
 
 
-    // trae lista de pedidos  a la Api
+    // Trae lista de pedidos  a la Api
     const fetchGetOrder = async ({ token }) => {
         try {
             const response = await fetch('https://burger-queen-mock.onrender.com/orders', {
@@ -96,7 +96,7 @@ const api = () => {
 
 
 
-    //Cambiando el estado de la orden 
+    // Cambiando el estado de la orden 
     const changeStatus = async (order, status, token) => {
         try {
             const response = await fetch(`https://burger-queen-mock.onrender.com/orders/${order.id}`, {
@@ -120,7 +120,7 @@ const api = () => {
     }
 
 
-    // traer usuarios 
+    // Traer usuarios 
     const fetchShowUsers = async ({ token }) => {
         try {
             const response = await fetch('https://burger-queen-mock.onrender.com/users', {
@@ -143,7 +143,8 @@ const api = () => {
         }
     };
 
-    //Crear productos
+
+    // Crear productos
     const fetchCreateProduct = async ({ token, name, price, img, type }) => {
         return fetch('https://burger-queen-mock.onrender.com/products', {
             method: 'POST',
@@ -161,7 +162,8 @@ const api = () => {
         })
     };
 
-    //Crear usuarios
+
+    // Crear usuarios
     const fetchCreateStaff = async ({ token, email, password, role }) => {
         return fetch('https://burger-queen-mock.onrender.com/users', {
             method: 'POST',
@@ -177,7 +179,8 @@ const api = () => {
         })
     };
 
-    //editar producto
+
+    // Editar productos
     const fetchEditProducts = (token, product) => {
         return fetch(`https://burger-queen-mock.onrender.com/products/${product.id}`, {
             method: 'PATCH',
@@ -194,7 +197,8 @@ const api = () => {
         })
     }
 
-    //editar staff
+
+    // Editar staff
     const fetchEditStaff = (token, user) => {
         return fetch(`https://burger-queen-mock.onrender.com/users/${user.id}`, {
             method: 'PATCH',
@@ -208,8 +212,6 @@ const api = () => {
             })
         })
     }
-
-
 
 
     // Eliminar productos

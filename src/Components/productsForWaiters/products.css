@@ -6,7 +6,7 @@
     justify-content: center;
     gap: 15px;
     overflow: auto;
-    max-height: 435px;
+    max-height: 496px;
 }
 
 .content-list-breakfast::-webkit-scrollbar {

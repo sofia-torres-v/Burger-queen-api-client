@@ -1,6 +1,5 @@
 .global-container-Admi {
     background-image: url('../../assets/fondoGeneral.jpg');
-    background-color: #000;
     padding: 20px 0 90px 0;
 }
 
@@ -73,12 +72,10 @@
 
 
 @media (min-width:1024px) {
-
     .btn-product,
     .btn-staff {
         margin: -20px 0px 0px -1px;
     }
-
     .content-general-products {
         height: 570px;
     }

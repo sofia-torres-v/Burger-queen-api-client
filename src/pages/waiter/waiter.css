@@ -68,7 +68,7 @@
     text-align: center;
     color: #fff;
     padding: 10px;
-    font-size: 2rem;
+    font-size: 2.6rem;
 }
 
 .content-buttons {
@@ -77,8 +77,8 @@
 
 .btn-break,
 .btn-lunch {
-    font-size: 2.3rem;
-    padding: 18px;
+    font-size: 2rem;
+    padding: 12px 10px 12px;
     width: 50%;
     border-radius: 0 0 20px 20px;
     background-color: transparent;
@@ -111,8 +111,8 @@
 .ticket-subtitle {
     background-color: #fffffff1;
     text-align: center;
+    font-size: 2.6rem;
 }
-
 
 .ticket-subtitle .ticket-header p {
     color: #000;
@@ -175,141 +175,108 @@
         background-image: url('../../assets/fondoGeneral.jpg');
         background-size: cover;
     }
-
     .container-columns1 {
         flex-wrap: nowrap;
     }
-
     .column-menu,
     .column-ticket {
         flex: 1 1 400px;
     }
-
     .btn-viewOrder {
         font-size: 1.8rem;
-
     }
     .btn-break,
     .btn-lunch{
         font-size: 2.1rem;
     }
-
     .ticket-body {
         min-height: 570px;
         border-top: solid 3px #000;
     }
-
     .content-order {
-        min-height: 720px;
+        min-height: 761px;
     }
-
     .ticket-enviar,
     .ticket-cancel {
         padding: 8px;
     }
-
     .ticket-subtitle {
-        font-size: 3.4rem;
+        font-size: 3.2rem;
         padding: 10px;
         margin-bottom: 12px;
         border-bottom: solid 3px #000;
         border-radius: 12px 12px 0 0;
     }
-
     .ticket-footer p {
         font-size: 2.6rem;
         font-weight: bold;
         margin-right: 10px;
-    }
-
-    .sub-title {
-        font-size: 2.6rem;
     }
 }
 
 
 @media (min-width: 820px){
     .content-order {
-        min-height: 785px;
+        min-height: 773px;
     }
 }
+
 
 @media (min-width: 1000px) {
     .ticket-body {
         min-height: 300px;
-    }
-    
+    }   
     .content-order {
         min-height: 450px;
         border-radius: 0 0 20px 20px;
     }
-
     .ticket-enviar,
     .ticket-cancel {
         padding: 8px;
     }
-
     .ticket-subtitle {
         font-size: 2.7rem;
     }
-
     .btn-viewOrder {
-
         margin-top: -22px;
     }
-
     .subtitle-product {
         font-size: 2rem;
     }
-
     .ticket-footer p {
         font-size: 2.3rem;
         font-weight: bold;
         margin-right: 10px;
     }
-
-    .sub-title {
-        font-size: 2.6rem;
-    }
-
     .btn-break,
     .btn-lunch {
         padding: 15px;
     }
 }
 
+
 @media (min-width: 1024px) {
     .ticket-body {
         min-height: 285px;
     }
-
     .content-order {
         min-height: 472px;
         border-radius: 0 0 20px 20px;
     }
-
     .group-client input {
         padding: 10px 14px;
     }
-
     .group-client {
         padding-bottom: 15px;
     }
-
-    .ticket-subtitle {
-        font-size: 2.4rem;
-    }
-
     .ticket-header p {
         font-size: 2.4rem;
     }
-
     .ticket-btns {
         display: grid;
         gap: 7px;
         margin: 10px 0 15px 0;
     }
-
     .ticket-enviar,
     .ticket-cancel {
         padding: 10px;

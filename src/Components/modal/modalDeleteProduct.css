@@ -1,17 +1,28 @@
 .modal-admin{
     height: 350px;
-    padding-bottom: 50px;
+    padding: 10px 20px 60px 25px;
 }
 
 .modal-text-admin {
-    margin-top: 20px; 
     color: #fff;
-    font-size: 2.2rem;
-    line-height: 1.5;
+    font-size: 2rem;
+    line-height: 1.3;
     font-weight: lighter;
+    padding: 0 25px 10px 25px;
 }
 
 .btn-admin{
     background-color: #F8B504;
     color: #000;
+}
+
+@media (min-width: 750px) {
+    .modal-admin{
+        height: 450px;
+        padding: 0px 25px 30px 25px;
+    }
+    .modal-text-admin {
+        font-size: 2.7rem;
+        line-height: 1.5;
+    }
 }

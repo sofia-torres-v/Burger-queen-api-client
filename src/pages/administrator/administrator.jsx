@@ -107,9 +107,6 @@ export default function Administrator() {
     }, [showModalAddProduct, showModalEditProduct])
 
 
-
-
-
     return (
         <>
             <div className='global-container-Admi'>
@@ -159,8 +156,9 @@ export default function Administrator() {
                                             <CardProductAdmin products={lunches} handleClickDeleteProduct={handleClickDelete} handleClickEdit={handleClickEdit} />
 
                                         </ul>
-                                    </div></> :
-                                <><div className='content-add'>
+                                    </div>
+                                </> :
+                                <> <div className='content-add'>
                                     <button
                                         id='addProduct'
                                         onClick={handleClickModalAddStaff}
@@ -185,7 +183,8 @@ export default function Administrator() {
                                         <ul className='content-cards-products'>
                                             <CardProductAdmin products={userAdmin} handleClickDeleteProduct={handleClickDelete} handleClickEdit={handleClickEdit} />
                                         </ul>
-                                    </div></>
+                                    </div>
+                                </>
                             }
 
                         </div>

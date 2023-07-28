@@ -17,19 +17,19 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    gap: 17px;
+    gap: 8px;
 }
 
 #messageError {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     color: rgb(70, 3, 3);
     font-weight: bold;  
-    height: 30px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 20px;  
-    margin: 12px 0 7px 0;  
+    margin: 4px 0 5px 0;  
 }
 
 .activate  {
@@ -41,7 +41,7 @@
 .btn {
     width: 100%;
     padding: 8px;
-    border-radius: 18px;
+    border-radius: 13px;
     font-size: 1.5rem;
     margin-top: 20px;
     outline: none;
@@ -62,25 +62,27 @@
     .global-container {
         background-image: url('../../assets/lgVertical.png');
     }
-
     .login-form {
         max-width: 570px;
     }
-
+    .group{
+        gap: 17px;
+    }
     .inp,
     .btn {
         padding: 20px;
         font-size: 2.2rem;
+        border-radius: 22px;
     }
-
     .login-form h2 {
         font-size: 3.5rem;
         padding: 10px;
     }
-
     #messageError {
-        font-size: 2rem;
-        height: 60px;
+        font-size: 1.7rem;
+        height: 40px;
+        padding: 0 20px;  
+        margin: 12px 0 7px 0;  
     }
 }
 

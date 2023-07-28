@@ -32,14 +32,14 @@ const ModalAddProduct = ({ cancel }) => {
                 
                 <form className='content-item' onSubmit={fetchCreateProduct}>
                     <div className='item' >
-                        <label>Name:</label>
+                        <label className='label-text-input' >Name:</label>
                         <input className="inp-modal" type="text" onChange={(e) => setName(e.target.value)} placeholder="Enter product name" />
                     </div>
 
                 
                     <div className='item'>
-                        <label>Image:  </label>
-                        <input className="inp-modal" type="text" placeholder="Enter URL" onChange={(e) => setImage(e.target.value)} />
+                        <label className='label-text-input'>Image:</label>
+                        <input className="inp-modal" type="text" placeholder="Enter Url" onChange={(e) => setImage(e.target.value)} />
                     </div>
 
                     <div className='item-select-price'>
@@ -53,7 +53,7 @@ const ModalAddProduct = ({ cancel }) => {
                     
 
                         <div className='item-price'>
-                            <label className='labels'>Price:$</label>
+                            <label className='labels'>Price: $</label>
                             <input className="inp-price" type="number" placeholder="1000" onChange={(e) => setPrice(e.target.value)} />
                         </div>
 

@@ -23,31 +23,34 @@
 
 .list-btn-edit,
 .list-btn-delete {
-    padding: 6px 28px 6px 28px;
-    font-size: 2rem;
+    padding: 3px 10px;
+    font-size: 1.8rem;
     border-radius: 15px;
     margin-left: 25px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 18px;
+    margin-top: 12px;
 }
 
+.icon-edit{
+    width: 28px;
+}
+
+.icon-delete{
+    width: 24px;
+}
 
 @media (min-width: 768px) {
     .content-btns {
         flex-direction: row;
     }
-}
-
-@media (min-width: 820px) {
-    .content-btns {
-        flex-direction: row;
+    .list-btn-edit, .list-btn-delete {
+        padding: 6px 18px;
+        font-size: 2.7rem;
     }
-}
-
-@media (min-width: 1024px) {
-    .content-btns {
-        flex-direction: row;
+    .icon-edit{
+        width: 35px;
     }
 }

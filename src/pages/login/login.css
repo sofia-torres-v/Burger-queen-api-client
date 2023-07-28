@@ -3,7 +3,7 @@
 .global-container {
     background-image: url('../../assets/lgVertical.png');
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

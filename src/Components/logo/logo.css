@@ -19,7 +19,7 @@
     .content-logo img{
         display: block;
         width: 100%;
-        margin: 0 auto;
+        margin: 20px auto;
         max-width: 330px;
     }
 }

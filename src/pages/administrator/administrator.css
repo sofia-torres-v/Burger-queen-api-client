@@ -5,7 +5,7 @@
 
 .content-general-products {
     background-color: #4e4e4e;
-    padding: 20px;
+    padding: 0 20px;
     height: 750px;
     overflow: auto;
     border-radius: 18px;
@@ -19,7 +19,7 @@
 .btn-addProduct {
     display: flex;
     align-items: center;
-    padding: 10px 25px 10px 25px;
+    padding: 7px 8px;
     gap: 10px;
     border-radius: 18px;
     font-size: 2rem;
@@ -28,20 +28,20 @@
 
 .rolTitle {
     color: #F8B504;
-    font-size: 3rem;
+    font-size: 2.2rem;
     padding-bottom: 5px;
 }
 
 .content-cards-products {
     border-top: solid 2px #F8B504;
-    padding: 25px;
+    margin-bottom: 35px;
 }
 
 .btn-product,
 .btn-staff {
-    font-size: 2.3rem;
+    font-size: 1.9rem;
     font-weight: bold;
-    padding: 18px;
+    padding: 12px;
     width: 50%;
     border-radius: 0 0 20px 20px;
     background-color: transparent;
@@ -54,28 +54,34 @@
 }
 
 
+
+@media (min-width:750px) {
+    .btn-product,
+    .btn-staff {
+        padding: 15px;
+        font-size: 2.9rem;
+    }
+}
 @media (min-width:820px) {
     .content-general-products {
         height: 900px;
     }
-
     .btn-product,
     .btn-staff {
-        margin: -20px 0px 0px -1px;
+        padding: 20px;
+        font-size: 3rem;
     }
-
-    .btn-product,
-    .btn-staff {
-        padding: 11px;
+    .btn-addProduct {
+        padding: 15px 12px;
+        font-size: 2.5rem;
+    }
+    .rolTitle {
+        font-size: 3rem;
     }
 }
 
 
 @media (min-width:1024px) {
-    .btn-product,
-    .btn-staff {
-        margin: -20px 0px 0px -1px;
-    }
     .content-general-products {
         height: 570px;
     }

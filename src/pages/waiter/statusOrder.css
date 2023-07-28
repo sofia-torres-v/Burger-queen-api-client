@@ -1,6 +1,6 @@
 .global-container-waiter {
     background-image: url('../../assets/fondoGeneral.jpg');
-    padding: 0 0 17px 0;
+    min-height: 100vh;
 }
 
 .content-viewOrder{
@@ -22,7 +22,7 @@
 
 .back {
     background-color: #f8b704;
-    width: 50px;
+    width: 40px;
     padding: 5px;
     border-radius: 50%;
 }
@@ -32,19 +32,13 @@
     .title-columns-pending {
         font-size: 3rem;
     }
-    .box-back {
-        padding: 30px 0 0 40px;
-    }
     .back {
         width: 60px;
         padding: 8px;
-    }
+    } 
 }
 
 @media (min-width: 1024px) {
-    .box-back {
-        padding: 28px 0px 0px 22px
-    }
     .back {
         width: 70px;
         padding: 10px;

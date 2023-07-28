@@ -10,7 +10,7 @@ export default function cardproductAdmin({ products, handleClickDeleteProduct, h
                 // console.log(product)
                 return <section key={index} className='content-text-btn' >
                     {product.name ? (
-                        <p>{product.name}</p>
+                        <p className="name-products">{product.name}</p>
                     ) : (
                         <p>{product.email}</p>
                     )} <EditAndDelete onDelete={() => handleClickDeleteProduct(product)} onEdit={() => handleClickEdit(product)} />

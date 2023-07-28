@@ -35,7 +35,7 @@ Te invitamos a navegar en la aplicación ingresando al siguiente link:
 
 Accesos: 
 
-|Mesero                   |Chef                   |Admin                  |
+|Mesero                   |Cocinero                   |Administrador                 |
 |-------------------------|-----------------------|-----------------------|
 |email: waiter@bbq.com    |email: cheff@bbq.com   |email: admin@bbq.com          |
 |contraseña: 123456       |contraseña: 123456     |contraseña: 123456     |

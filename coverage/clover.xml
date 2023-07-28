@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1689889256388" clover="3.2.0">
-  <project timestamp="1689889256388" name="All files">
+<coverage generated="1690572078891" clover="3.2.0">
+  <project timestamp="1690572078891" name="All files">
     <metrics statements="108" coveredstatements="99" conditionals="24" coveredconditionals="13" methods="35" coveredmethods="35" elements="167" coveredelements="147" complexity="0" loc="108" ncloc="108" packages="8" files="8" classes="8"/>
     <package name="Components.cardElement">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -106,25 +106,25 @@
         <line num="137" count="3" type="stmt"/>
         <line num="138" count="3" type="stmt"/>
         <line num="142" count="1" type="stmt"/>
-        <line num="147" count="20" type="stmt"/>
-        <line num="148" count="1" type="stmt"/>
-        <line num="165" count="20" type="stmt"/>
-        <line num="166" count="1" type="stmt"/>
-        <line num="181" count="20" type="stmt"/>
-        <line num="182" count="1" type="stmt"/>
-        <line num="198" count="20" type="stmt"/>
-        <line num="199" count="1" type="stmt"/>
-        <line num="216" count="20" type="stmt"/>
-        <line num="217" count="2" type="stmt"/>
+        <line num="148" count="20" type="stmt"/>
+        <line num="149" count="1" type="stmt"/>
+        <line num="167" count="20" type="stmt"/>
+        <line num="168" count="1" type="stmt"/>
+        <line num="184" count="20" type="stmt"/>
+        <line num="185" count="1" type="stmt"/>
+        <line num="202" count="20" type="stmt"/>
+        <line num="203" count="1" type="stmt"/>
+        <line num="218" count="20" type="stmt"/>
         <line num="219" count="2" type="stmt"/>
-        <line num="226" count="1" type="stmt"/>
+        <line num="221" count="2" type="stmt"/>
         <line num="228" count="1" type="stmt"/>
-        <line num="234" count="20" type="stmt"/>
-        <line num="235" count="2" type="stmt"/>
+        <line num="230" count="1" type="stmt"/>
+        <line num="236" count="20" type="stmt"/>
         <line num="237" count="2" type="stmt"/>
-        <line num="244" count="1" type="stmt"/>
+        <line num="239" count="2" type="stmt"/>
         <line num="246" count="1" type="stmt"/>
-        <line num="252" count="20" type="stmt"/>
+        <line num="248" count="1" type="stmt"/>
+        <line num="254" count="20" type="stmt"/>
       </file>
     </package>
     <package name="pages.login">

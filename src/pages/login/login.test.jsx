@@ -49,7 +49,7 @@ jest.mock('react-router-dom', () => ({
         fireEvent.click(loginButton);
       });
   
-      const errorMessage = screen.queryByText('Oops! That username and password combination is incorrect. Please try again');
+      const errorMessage = screen.queryByText('Oops! That username and password combination is incorrect.');
     expect(errorMessage).toBeTruthy();
     
     });
